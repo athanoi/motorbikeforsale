@@ -1,0 +1,14 @@
+# robots.txt for Hanoi Motorbike For Sale & Rent - Nguyen Tu
+# Author: Nguyen Tu
+# Website: https://athanoi.github.io/motorbikeforsale/
+
+User-agent: *
+Allow: /
+
+# Disallow optional files (nếu có)
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /backup/
+
+# Sitemap
+Sitemap: https://athanoi.github.io/motorbikeforsale/sitemap.xml
