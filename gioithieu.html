@@ -38,31 +38,25 @@
     .site-title{font-weight:800;color:#fff;margin:0;font-size:16px}
     .site-sub{font-size:12px;color:rgba(255,255,255,0.9)}
     .phone-cta{background:var(--primary);color:#fff;padding:8px 12px;border-radius:10px;font-weight:800;border:none}
-
     nav.desktop-nav ul{display:flex;gap:14px;list-style:none;margin:0;padding:0;align-items:center}
     nav.desktop-nav a{color:#fff;font-weight:700;display:inline-flex;align-items:center;gap:8px;padding:8px 6px;border-radius:8px;transition:transform .18s, color .18s}
     nav.desktop-nav a:hover{transform:translateY(-4px) scale(1.03); color: #fff;}
-    nav.desktop-nav a .icon{display:inline-block;transform-origin:center;transition: transform .3s ease;}
-    nav.desktop-nav a:hover .icon{transform: translateY(-6px) rotate(-8deg);}
-
     .mobile-menu-btn{background:transparent;border:2px solid rgba(255,255,255,0.08);color:#fff;padding:6px 10px;border-radius:8px;}
 
-    /* ===== HERO (3D parallax + shimmer + bike animation) ===== */
+    /* ===== HERO (gradient + bike icon animation) ===== */
     #hero{
-      min-height:72vh;
-      display:flex;align-items:center;justify-content:center;text-align:center;position:relative;padding:64px 16px;color:var(--accent);overflow:hidden;
-      background: linear-gradient(135deg,#111 0%, #2b0000 60%, #120000 100%);
+      min-height:78vh;
+      display:flex;align-items:center;justify-content:center;text-align:center;position:relative;padding:48px 16px;color:var(--accent);overflow:hidden;
+      background: linear-gradient(135deg,#0b0b0b 0%, #2a0000 50%, #120000 100%);
     }
-
     /* shimmer light layer */
-    #hero .light-shimmer{position:absolute;left:-20%;top:-30%;width:180%;height:180%;background:radial-gradient(circle at 40% 20%, rgba(255,255,255,0.06), transparent 15%);mix-blend-mode:overlay;pointer-events:none;animation:shimmer 10s linear infinite;}
+    #hero .light-shimmer{position:absolute;left:-20%;top:-30%;width:180%;height:180%;background:radial-gradient(circle at 40% 20%, rgba(255,255,255,0.04), transparent 15%);mix-blend-mode:overlay;pointer-events:none;animation:shimmer 12s linear infinite;}
     @keyframes shimmer{0%{transform:translateX(-10%) translateY(0)}50%{transform:translateX(10%) translateY(4%)}100%{transform:translateX(-10%) translateY(0)}}
 
     .hero-inner{position:relative;z-index:4;max-width:1100px;margin:auto;perspective:1000px;}
-    .hero-card{display:inline-block;padding:22px 28px;border-radius:14px;background:rgba(255,255,255,0.04);backdrop-filter:blur(6px);box-shadow:0 12px 36px rgba(0,0,0,0.45);transform-style:preserve-3d;transition:transform 0.15s ease;}
+    .hero-card{display:inline-block;padding:22px 28px;border-radius:14px;background:rgba(255,255,255,0.02);backdrop-filter:blur(6px);box-shadow:0 12px 36px rgba(0,0,0,0.45);transform-style:preserve-3d;transition:transform 0.15s ease;}
 
-    .hero-title{font-size:2.1rem;font-weight:800;margin-bottom:12px;line-height:1.05;color:#fff}
-    /* neon glow for hero title */
+    .hero-title{font-size:2.25rem;font-weight:800;margin-bottom:12px;line-height:1.05;color:#fff}
     .hero-title.glow{
       text-shadow:
         0 0 6px #fff,
@@ -76,59 +70,64 @@
       to { text-shadow: 0 0 18px #fff, 0 0 36px #ff0000, 0 0 56px #ff6600; }
     }
 
-    .hero-sub{font-size:1.05rem;margin-bottom:14px;color:rgba(255,255,255,0.95);}
-    .cta-btn{background:#fff;color:var(--primary);padding:10px 22px;border-radius:30px;font-weight:800;display:inline-flex;gap:10px;align-items:center;box-shadow:0 8px 20px rgba(0,0,0,0.18)}
-    .cta-btn:hover{transform:translateY(-4px)}
+    .hero-sub{font-size:1.05rem;margin-bottom:14px;color:rgba(255,255,255,0.95);max-width:860px;margin-left:auto;margin-right:auto}
 
-    /* decorative layers */
-    .layer{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);pointer-events:none}
-    .layer.logo{width:140px;height:140px;border-radius:12px;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,0.4);transform-origin:center}
-    .layer.logo img{width:100%;height:100%;object-fit:cover;display:block}
-    .layer.bike-emoji{font-size:4rem;filter:drop-shadow(0 8px 24px rgba(0,0,0,0.5));}
+    /* Visit site + whatsapp buttons */
+    .hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+    .btn-site{
+      background: linear-gradient(90deg,#FFD700,#FFB200);
+      color:#111;font-weight:800;padding:10px 18px;border-radius:999px;border:none;box-shadow:0 8px 26px rgba(255,182,0,0.18);
+      text-decoration:none;
+    }
+    .btn-site:hover{transform:translateY(-4px)}
+    .btn-wp {
+      background: linear-gradient(90deg, #25D366, #128C7E);
+      color: #fff;
+      border-radius: 999px;
+      padding: 10px 18px;
+      font-weight:800;
+      box-shadow:0 0 20px rgba(37,211,102,0.45);
+      display:inline-flex;align-items:center;gap:10px;border:none;cursor:pointer;
+      animation: pulseGlow 3s infinite ease-in-out, slightShake 6s infinite;
+      text-decoration:none;
+    }
+    @keyframes pulseGlow {
+      0%,100%{box-shadow:0 0 12px rgba(37,211,102,0.45),0 0 24px rgba(37,211,102,0.3)}
+      50%{box-shadow:0 0 30px rgba(37,211,102,0.9),0 0 60px rgba(37,211,102,0.45)}
+    }
+    @keyframes slightShake {
+      0%,92%,100%{transform:translateX(0)}
+      93%{transform:translateX(-2px)}
+      94%{transform:translateX(2px)}
+      95%{transform:translateX(-1px)}
+      96%{transform:translateX(1px)}
+    }
 
-    /* ===== Motorbike loop animation (CSS) ===== */
-    .motorbike {
-      position: absolute;
-      bottom: 10%;
-      left: -180px;
-      width: 110px;
-      height: 72px;
-      background: url('https://i.postimg.cc/3w3y5c4b/motorbike-icon.png') no-repeat center/contain;
-      /* fallback to your real image if you prefer, currently placeholder link */
-      animation: bikeMove 8s linear infinite;
-      z-index: 6;
+    /* ===== Bike icon animation (emoji-based, lightweight) ===== */
+    .bike-anim {
+      position:absolute;
+      bottom:8%;
+      left:-18%;
+      font-size:48px;
+      transform-origin:center;
+      z-index:5;
+      will-change:transform,left,opacity;
+      animation: bikeRun 8s linear infinite;
+      filter: drop-shadow(0 16px 18px rgba(0,0,0,0.6));
+      user-select:none;
       pointer-events:none;
     }
-    /* If user doesn't have a transparent PNG, fallback to Airblade picture */
-    .motorbike.fallback { background-image: url('https://i.postimg.cc/KzJ68YdW/IMG-5258.jpg'); background-size:cover; border-radius:8px; opacity:0.95 }
-
-    @keyframes bikeMove {
-      0% { left: -200px; transform: translateY(0) scale(1) ; opacity: 0; }
-      6% { opacity: 1; }
-      45% { left: 48%; transform: translateY(-6px) scale(1.02); }
-      90% { opacity: 1; }
-      100% { left: 110%; transform: translateY(0) scale(1); opacity: 0; }
+    @keyframes bikeRun {
+      0% { left:-18%; transform: translateY(0) rotateY(0) scale(0.95) ; opacity:0; }
+      6% { opacity:1; }
+      40% { left:48%; transform: translateY(-8px) rotateY(0) scale(1.05); }
+      50% { transform: translateY(-10px) rotateY(0) scale(1.06); }
+      92% { left:110%; opacity:1; transform: translateY(0) rotateY(0) scale(0.98); }
+      100% { left:120%; opacity:0; transform: translateY(0) rotateY(0) scale(1); }
     }
 
-    .trail {
-      position: absolute;
-      bottom: 13%;
-      left: -260px;
-      width: 180px;
-      height: 10px;
-      background: radial-gradient(circle, rgba(255,255,255,0.9) 0%, rgba(255,0,0,0) 70%);
-      filter: blur(6px);
-      animation: trailMove 8s linear infinite;
-      opacity: 0;
-      z-index: 5;
-      pointer-events:none;
-    }
-    @keyframes trailMove {
-      0% { left: -260px; opacity: 0; }
-      6% { opacity: 0.85; }
-      45% { left: 44%; opacity: 1; }
-      100% { left: 110%; opacity: 0; }
-    }
+    /* subtle 3D tilt when hovering the hero area */
+    #hero:hover .hero-card{ transform: translateZ(10px) rotateX(2deg) rotateY(-2deg); }
 
     /* ===== CONTENT (BIKES GRID) ===== */
     section{padding:48px 16px}
@@ -153,56 +152,44 @@
     /* ===== Map embed ===== */
     .map-embed{width:100%;height:320px;border-radius:10px;border:0;box-shadow:0 8px 28px rgba(0,0,0,0.08)}
 
-    /* ===== Footer with LED border & readable text ===== */
-    footer{background: linear-gradient(135deg, #000 10%, #1a0000 60%, #D6001C 100%);color:#fefefe;padding:40px 16px;position:relative;overflow:hidden}
-    .led-border{position:absolute;inset:0;pointer-events:none;border-radius:8px}
-    .led-border::before{content:"";position:absolute;top:-2px;left:-2px;right:-2px;bottom:-2px;background:linear-gradient(90deg,#ff0000,#ff6600,#ff0000,#ff6600);background-size:400% 400%;z-index:1;animation:moveLights 8s linear infinite;border-radius:8px;filter:blur(3px);opacity:0.8}
+    /* ===== FOOTER (improved readability) ===== */
+    footer{
+      background: linear-gradient(135deg, #0f0f0f 10%, #1c1c1c 50%, #330000 100%);
+      color: #f5f5f5;
+      padding:40px 16px;
+      position:relative;
+      overflow:hidden;
+    }
+    .led-border{position:absolute;inset:0;pointer-events:none;border-radius:10px}
+    .led-border::before{
+      content:"";
+      position:absolute;
+      top:-2px;left:-2px;right:-2px;bottom:-2px;
+      background:linear-gradient(90deg,#FFD700,#FF0000,#FFD700,#FF0000);
+      background-size:400% 400%;
+      z-index:1;animation:moveLights 10s linear infinite;border-radius:10px;filter:blur(4px);opacity:0.6;
+    }
     @keyframes moveLights{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
 
-    .footer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1100px;margin:0 auto}
+    .footer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1100px;margin:0 auto;position:relative;z-index:2}
     @media(max-width:768px){.footer-grid{grid-template-columns:1fr}}
-    footer h5{color:#FFD700;text-shadow:0 0 8px rgba(255,215,0,0.7);letter-spacing:1px}
-    .footer-link{color:#f9f9f9;display:inline-block;margin:4px 0;transition:color .3s,transform .3s}
-    .footer-link:hover{color:#fff;transform:translateX(5px)}
-    .social-icon{font-size:1.6rem;color:#fff;transition:transform .3s,color .3s,text-shadow .3s}
-    .social-icon:hover{color:#FFD700;transform:scale(1.3) rotate(-10deg);text-shadow:0 0 10px rgba(255,255,255,0.8)}
+    footer h5{color:#FFD700;text-shadow:0 0 6px rgba(255,215,0,0.25);letter-spacing:1px}
+    .footer-link{color:#f5f5f5;display:inline-block;margin:6px 0;font-weight:600;transition:color .25s,transform .25s}
+    .footer-link:hover{color:#FFD700;transform:translateX(6px)}
+    .social-icon{font-size:1.7rem;color:#f5f5f5;transition:transform .3s,color .3s,text-shadow .3s}
+    .social-icon:hover{color:#FFD700;transform:scale(1.25) rotate(-8deg);text-shadow:0 0 12px #FFD700}
     .back-to-top{font-weight:700;transition:all .3s}
     .back-to-top:hover{color:#FFD700;text-shadow:0 0 10px #FFD700}
 
-    /* ===== Floating Contact Menu Pro (Call / Zalo / WhatsApp) ===== */
+    /* ===== Floating Contact Menu Pro ===== */
     .contact-floating{position:fixed;bottom:22px;right:18px;z-index:1400}
     .main-btn{width:60px;height:60px;background:linear-gradient(135deg,#D6001C,#ff3c3c);border-radius:50%;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.6rem;cursor:pointer;box-shadow:0 0 15px rgba(255,60,60,0.6);animation:pulse 2s infinite;transition:transform .2s}
     .main-btn:hover{transform:scale(1.06)}
     .contact-options{display:flex;flex-direction:column;align-items:center;gap:10px;margin-bottom:10px;opacity:0;pointer-events:none;transform:translateY(20px);transition:all .4s ease}
-    .contact-options a{width:50px;height:50px;border-radius:50%;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;text-decoration:none;box-shadow:0 3px 10px rgba(0,0,0,0.2);background:linear-gradient(135deg,#ff3c3c,#ff7070);transition:all .3s}
-    .contact-options a:hover{transform:scale(1.15)}
+    .contact-options a{width:50px;height:50px;border-radius:50%;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;text-decoration:none;box-shadow:0 3px 12px rgba(0,0,0,0.25);background:linear-gradient(135deg,#ff3c3c,#ff7070);transition:all .25s}
+    .contact-options a:hover{transform:scale(1.12)}
     .contact-floating.active .contact-options{opacity:1;pointer-events:auto;transform:translateY(0)}
-    @keyframes pulse{0%{box-shadow:0 0 10px rgba(255,60,60,0.4),0 0 20px rgba(255,60,60,0.2)}50%{box-shadow:0 0 25px rgba(255,60,60,0.7),0 0 40px rgba(255,60,60,0.4)}100%{box-shadow:0 0 10px rgba(255,60,60,0.4),0 0 20px rgba(255,60,60,0.2)}}
-
-    /* WhatsApp CTA button style (pulsing + slight shake) */
-    .btn-wp {
-      background: linear-gradient(90deg, #25D366, #128C7E);
-      color: #fff;
-      border-radius: 999px;
-      padding: 10px 18px;
-      font-weight:800;
-      box-shadow:0 0 20px rgba(37,211,102,0.5);
-      display:inline-flex;align-items:center;gap:10px;border:none;cursor:pointer;
-      animation: pulseGlow 3s infinite ease-in-out, slightShake 6s infinite;
-      text-decoration:none;
-    }
-    .btn-wp:hover{transform:scale(1.04)}
-    @keyframes pulseGlow {
-      0%,100%{box-shadow:0 0 12px rgba(37,211,102,0.45),0 0 24px rgba(37,211,102,0.3)}
-      50%{box-shadow:0 0 30px rgba(37,211,102,0.9),0 0 60px rgba(37,211,102,0.45)}
-    }
-    @keyframes slightShake {
-      0%,92%,100%{transform:translateX(0)}
-      93%{transform:translateX(-2px)}
-      94%{transform:translateX(2px)}
-      95%{transform:translateX(-1px)}
-      96%{transform:translateX(1px)}
-    }
+    @keyframes pulse{0%{box-shadow:0 0 10px rgba(255,60,60,0.35),0 0 20px rgba(255,60,60,0.15)}50%{box-shadow:0 0 25px rgba(255,60,60,0.6),0 0 40px rgba(255,60,60,0.25)}100%{box-shadow:0 0 10px rgba(255,60,60,0.35),0 0 20px rgba(255,60,60,0.15)}}
 
     /* small helpers */
     .muted{color:var(--muted)}
@@ -260,26 +247,20 @@
 <section id="hero" class="fade-in" aria-label="Hero">
   <div class="light-shimmer" aria-hidden="true"></div>
 
-  <!-- decorative parallax layers -->
-  <div class="layer logo" style="transform: translate(-50%,-45%) scale(1) translateZ(0); left:12%; top:46%;">
-    <img src="https://i.postimg.cc/3NwHXGgc/13803262-651-D-43-F4-8-DA2-8-DAED35-FEEA5.png" alt="NT logo">
-  </div>
-  <div class="layer bike-emoji" style="left:82%; top:28%; transform: translate(-50%,-50%);opacity:0.95;">🛵</div>
-
   <div class="hero-inner">
     <div class="hero-card" id="heroCard" role="region" aria-label="Main hero">
       <h1 class="hero-title glow">Hanoi Motorbike For Sale & Rent</h1>
       <p class="hero-sub">Reliable scooters & motorbikes for sale or rent in Hanoi — all with complete papers and ready to ride.</p>
-      <a class="btn-wp" href="https://wa.me/84942467674" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
-        <i class="bi bi-whatsapp"></i> Chat on WhatsApp
-      </a>
+
+      <div class="hero-actions">
+        <a class="btn-site" href="https://athanoi.github.io/moto/" target="_blank" rel="noopener noreferrer" aria-label="Visit official site">🌐 Visit Official Website</a>
+        <a class="btn-wp" href="https://wa.me/84942467674" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><i class="bi bi-whatsapp"></i> Chat on WhatsApp</a>
+      </div>
     </div>
   </div>
 
-  <!-- Motorbike animation (loop) -->
-  <!-- Note: preferred to use a transparent PNG for best visual. If you don't have one, fallback class 'fallback' uses the Airblade image. -->
-  <div class="motorbike" id="motorbike"></div>
-  <div class="trail" aria-hidden="true"></div>
+  <!-- bike icon animation (emoji) -->
+  <div class="bike-anim" aria-hidden="true">🏍️</div>
 </section>
 
 <!-- ABOUT -->
@@ -287,7 +268,7 @@
   <div class="container-max">
     <h2 class="text-center mb-3">About Us</h2>
     <p class="muted text-center" style="max-width:900px;margin:0 auto 12px">We offer reliable scooters & motorbikes for sale or rent across Hanoi. All bikes are well-maintained, include complete paperwork, and can be transferred quickly.</p>
-    <div class="text-center"><a class="btn btn-danger cta-btn" href="https://zalo.me/0942467674" target="_blank" rel="noopener noreferrer">💬 Chat on Zalo</a></div>
+    <div class="text-center"><a class="btn cta-btn" href="https://zalo.me/0942467674" target="_blank" rel="noopener noreferrer">💬 Chat on Zalo</a></div>
   </div>
 </section>
 
@@ -351,7 +332,7 @@
   <div class="container-max">
     <h2 class="text-center mb-3">❓ Frequently Asked Questions</h2>
     <div class="accordion" id="faqAccordion">
-      <!-- 1 -->
+      <!-- 8 FAQ items (kept from previous) -->
       <div class="accordion-item">
         <h3 class="accordion-header" id="faq1">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">
@@ -362,7 +343,7 @@
           <div class="accordion-body">Yes, most bikes are registered in Hanoi. Hanoi-registered bikes may cost slightly more due to local registration.</div>
         </div>
       </div>
-      <!-- 2 -->
+      <!-- ... other FAQs (2-8) same as before ... -->
       <div class="accordion-item">
         <h3 class="accordion-header" id="faq2">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">
@@ -373,7 +354,7 @@
           <div class="accordion-body">Of course. You are welcome to test-ride the bike before purchasing to ensure it meets your needs.</div>
         </div>
       </div>
-      <!-- 3 -->
+
       <div class="accordion-item">
         <h3 class="accordion-header" id="faq3">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">
@@ -384,7 +365,7 @@
           <div class="accordion-body">Bring your ID card or passport. All bikes come with full registration papers; we assist with ownership transfer.</div>
         </div>
       </div>
-      <!-- 4 -->
+
       <div class="accordion-item">
         <h3 class="accordion-header" id="faq4">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4">
@@ -395,7 +376,7 @@
           <div class="accordion-body">Yes. We can help with paperwork and guide you through the legal transfer process in Hanoi.</div>
         </div>
       </div>
-      <!-- 5 -->
+
       <div class="accordion-item">
         <h3 class="accordion-header" id="faq5">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5">
@@ -406,7 +387,7 @@
           <div class="accordion-body">Yes — delivery is available. Fees vary by location (typically 50,000 – 150,000 VND).</div>
         </div>
       </div>
-      <!-- 6 -->
+
       <div class="accordion-item">
         <h3 class="accordion-header" id="faq6">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6">
@@ -417,7 +398,7 @@
           <div class="accordion-body">Every bike is checked and serviced by our mechanic before listing to ensure safety and reliability.</div>
         </div>
       </div>
-      <!-- 7 -->
+
       <div class="accordion-item">
         <h3 class="accordion-header" id="faq7">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7">
@@ -428,7 +409,7 @@
           <div class="accordion-body">Yes. Contact us via WhatsApp or Zalo to reserve a bike before arriving at our shop.</div>
         </div>
       </div>
-      <!-- 8 -->
+
       <div class="accordion-item">
         <h3 class="accordion-header" id="faq8">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8">
@@ -439,6 +420,7 @@
           <div class="accordion-body">We accept cash (VND) and bank transfer. For foreign buyers, international transfer can be arranged if needed.</div>
         </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -479,7 +461,7 @@
   </div>
 </section>
 
-<!-- FOOTER (LED border, improved contrast) -->
+<!-- FOOTER (improved readability) -->
 <footer id="footer" class="fade-in" role="contentinfo">
   <div class="led-border" aria-hidden="true"></div>
   <div class="container-max">
@@ -487,11 +469,11 @@
       <!-- Column 1 -->
       <div>
         <h5 class="fw-bold text-uppercase mb-3">About Nguyen Tu Motorbike</h5>
-        <p>We provide quality used motorbikes for sale and long-term rentals in Hanoi. Trusted by both locals and expats for reliability, good service, and fair prices.</p>
-        <p class="mb-1">📍 112 Nguyen Van Cu, Long Bien, Hanoi</p>
-        <p class="mb-1">📞 <a href="tel:+84942467674" class="text-light fw-bold">+84 942 467 674</a></p>
-        <p class="mb-1">🕘 Opening Hours: 09:00 – 21:00 (Open Daily)</p>
-        <p>✉️ <a href="mailto:nguyentuantu8@gmail.com" class="text-light">nguyentuantu8@gmail.com</a></p>
+        <p style="color:#f5f5f5">We provide quality used motorbikes for sale and long-term rentals in Hanoi. Trusted by both locals and expats for reliability, good service, and fair prices.</p>
+        <p class="mb-1">📍 <span style="color:#f5f5f5">112 Nguyen Van Cu, Long Bien, Hanoi</span></p>
+        <p class="mb-1">📞 <a href="tel:+84942467674" class="fw-bold" style="color:#f5f5f5">+84 942 467 674</a></p>
+        <p class="mb-1">🕘 <span style="color:#f5f5f5">09:00 – 21:00 (Open Daily)</span></p>
+        <p>✉️ <a href="mailto:nguyentuantu8@gmail.com" style="color:#f5f5f5">nguyentuantu8@gmail.com</a></p>
       </div>
       <!-- Column 2 -->
       <div>
@@ -513,14 +495,14 @@
           <a href="https://www.facebook.com/chothuexemaynguyentu/" target="_blank" class="social-icon" title="Visit Facebook" rel="noopener noreferrer"><i class="bi bi-facebook"></i></a>
           <a href="https://athanoi.github.io/moto/" target="_blank" class="social-icon" title="Official Website" rel="noopener noreferrer"><i class="bi bi-globe"></i></a>
         </div>
-        <p>🌐 Official Website:<br><a href="https://athanoi.github.io/moto/" class="fw-bold text-light" target="_blank" rel="noopener noreferrer">athanoi.github.io/moto</a></p>
+        <p style="color:#f5f5f5">🌐 Official Website:<br><a href="https://athanoi.github.io/moto/" class="fw-bold" style="color:#FFD700" target="_blank" rel="noopener noreferrer">athanoi.github.io/moto</a></p>
       </div>
     </div>
 
-    <hr style="border-color: rgba(255,255,255,0.2);">
-    <div class="text-center small">
+    <hr style="border-color: rgba(255,255,255,0.15);">
+    <div class="text-center small" style="color:#f5f5f5">
       <p class="mb-0">© 2025 Nguyen Tu Motorbike | Designed with ❤️ in Hanoi</p>
-      <a href="#hero" class="back-to-top d-inline-block mt-2 text-light text-decoration-none">↑ Back to Top</a>
+      <a href="#hero" class="back-to-top d-inline-block mt-2 text-decoration-none" style="color:#FFD700">↑ Back to Top</a>
     </div>
   </div>
 </footer>
@@ -561,7 +543,6 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     if (target) {
       e.preventDefault();
       window.scrollTo({ top: target.offsetTop - 70, behavior: 'smooth' });
-      // hide offcanvas if open
       const off = document.getElementById('offcanvasMenu');
       if (off && off.classList.contains('show')) bootstrap.Offcanvas.getInstance(off).hide();
     }
@@ -597,7 +578,7 @@ try {
   document.querySelectorAll('.fade-in').forEach(s => observer.observe(s));
 })();
 
-/* ===== Hero 3D parallax (lightweight) - mouse & device tilt ===== */
+/* ===== Hero parallax (mouse & device tilt) - lightweight ===== */
 (function(){
   const hero = document.getElementById('hero');
   const heroCard = document.getElementById('heroCard');
@@ -659,19 +640,6 @@ try {
   mainContactBtn.addEventListener('touchstart', ev=>{ ev.preventDefault(); mainContactBtn.click(); }, { passive: false });
 })();
 
-/* ===== Motorbike fallback: if custom transparent png unavailable, use user's Airblade image (keeps visual neat) ===== */
-(function(){
-  const bike = document.getElementById('motorbike');
-  // Try to load a transparent png (preferred). If it 404s, fallback to user image.
-  // For reliability we set class 'fallback' if not using custom PNG path.
-  // Replace 'motorbike-icon.png' with your PNG path if you have it.
-  // We'll check via Image object:
-  const testUrl = 'https://i.postimg.cc/3w3y5c4b/motorbike-icon.png'; // placeholder (may 404)
-  const img = new Image();
-  img.onload = function(){ /* ok: the CSS background will show it */ };
-  img.onerror = function(){ if (bike) bike.classList.add('fallback'); };
-  img.src = testUrl;
-})();
 </script>
 </body>
 </html>
