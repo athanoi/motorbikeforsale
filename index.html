@@ -2,26 +2,122 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <!-- Primary SEO -->
   <title>Hanoi Motorbike For Sale & Rent - Nguyen Tu</title>
   <meta name="description" content="Hanoi Motorbike For Sale & Rent - Buy or rent scooters and motorbikes in Hanoi. Contact: +84 942 467 674 (Zalo/WhatsApp)" />
+  <meta name="keywords" content="Hanoi motorbike, motorbike for sale, motorbike for rent, scooters Hanoi, Nguyen Tu, Honda Vision, Airblade, used motorbike Hanoi, rent scooter Hanoi" />
+  <meta name="author" content="Nguyen Tu" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://athanoi.github.io/moto/" />
+
+  <!-- Social / Open Graph -->
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Hanoi Motorbike For Sale & Rent - Nguyen Tu" />
+  <meta property="og:description" content="Reliable scooters & motorbikes for sale or rent in Hanoi — all with complete papers and ready to ride. Contact: +84 942 467 674." />
+  <meta property="og:url" content="https://athanoi.github.io/moto/" />
+  <meta property="og:site_name" content="Hanoi Motorbike" />
+  <meta property="og:image" content="https://i.postimg.cc/3NwHXGgc/13803262-651-D-43-F4-8-DA2-8-DAED35-FEEA5.png" />
+  <meta property="og:image:alt" content="Hanoi Motorbike - Nguyen Tu logo / shop" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Hanoi Motorbike For Sale & Rent - Nguyen Tu" />
+  <meta name="twitter:description" content="Reliable scooters & motorbikes for sale or rent in Hanoi — all with complete papers and ready to ride. Contact: +84 942 467 674." />
+  <meta name="twitter:image" content="https://i.postimg.cc/3NwHXGgc/13803262-651-D-43-F4-8-DA2-8-DAED35-FEEA5.png" />
+
+  <!-- Technical & UX -->
+  <meta name="format-detection" content="telephone=yes,address=no,email=no" />
+  <meta name="theme-color" content="#D6001C" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="content-language" content="en" />
+
+  <!-- Favicon (kept as in original file) -->
+  <link rel="icon" href="https://i.postimg.cc/3NwHXGgc/13803262-651-D-43-F4-8-DA2-8-DAED35-FEEA5.png">
+
+  <!-- Structured Data (LocalBusiness) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Nguyen Tu Motorbike",
+    "alternateName": "Hanoi Motorbike For Sale & Rent",
+    "url": "https://athanoi.github.io/moto/",
+    "logo": "https://i.postimg.cc/3NwHXGgc/13803262-651-D-43-F4-8-DA2-8-DAED35-FEEA5.png",
+    "image": [
+      "https://i.postimg.cc/3NwHXGgc/13803262-651-D-43-F4-8-DA2-8-DAED35-FEEA5.png"
+    ],
+    "description": "Reliable scooters & motorbikes for sale or rent in Hanoi — all with complete papers and ready to ride.",
+    "telephone": "+84 942 467 674",
+    "email": "nguyentuantu8@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "112 Nguyen Van Cu",
+      "addressLocality": "Long Bien",
+      "addressRegion": "Hanoi",
+      "postalCode": "",
+      "addressCountry": "VN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 21.0409222,
+      "longitude": 105.8692870
+    },
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "09:00",
+      "closes": "21:00"
+    }],
+    "sameAs": [
+      "https://www.facebook.com/chothuexemaynguyentu/",
+      "https://wa.me/84942467674",
+      "https://zalo.me/0942467674",
+      "https://athanoi.github.io/moto/"
+    ]
+  }
+  </script>
+
+  <!-- CSS & libs -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+
   <style>
     :root{
       --primary:#D6001C;
       --accent:#fff;
-      --muted:#666;
+      --muted:#7a7a7a;
       --bg:#fff;
+      --fade-duration: 0.9s;
     }
     *{box-sizing:border-box}
-    body{font-family:Inter, "Be Vietnam Pro", Arial, sans-serif; margin:0; color:#111; background:var(--bg); -webkit-font-smoothing:antialiased;}
-    a{color:inherit; text-decoration:none;}
-    section{padding:48px 16px;}
-    /* Header */
-    header{position:sticky;top:0;z-index:1200;background:rgba(0,0,0,0.6);backdrop-filter:blur(6px);color:#fff;box-shadow:0 4px 14px rgba(0,0,0,0.15);}
-    .brand-row{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;gap:12px;}
+    html,body{height:100%}
+    body{font-family:Inter, "Be Vietnam Pro", Arial, sans-serif;margin:0;color:#111;background:var(--bg);-webkit-font-smoothing:antialiased;}
+
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+
+    /* Fade-in (0.9s) for sections */
+    .fade-in { opacity:0; transform: translateY(10px); transition: opacity var(--fade-duration) ease, transform var(--fade-duration) ease; }
+    .fade-in.visible { opacity:1; transform: translateY(0); }
+
+    /* ===== HEADER ===== */
+    header{
+      position:sticky;top:0;z-index:1200;background:rgba(0,0,0,0.55);backdrop-filter:blur(6px);color:#fff;box-shadow:0 4px 14px rgba(0,0,0,0.12);
+    }
+    .brand-row{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;gap:12px;max-width:1200px;margin:auto;}
     .logo-badge{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--primary),#FF3C3C);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:18px;}
     .site-title{font-weight:800;color:#fff;margin:0;font-size:16px}
     .site-sub{font-size:12px;color:rgba(255,255,255,0.9)}
@@ -29,317 +125,605 @@
     nav.desktop-nav ul{display:flex;gap:14px;list-style:none;margin:0;padding:0;align-items:center}
     nav.desktop-nav a{color:#fff;font-weight:700;display:inline-flex;align-items:center;gap:8px;padding:8px 6px;border-radius:8px;transition:transform .18s, color .18s}
     nav.desktop-nav a:hover{transform:translateY(-4px) scale(1.03); color: #fff;}
-    nav.desktop-nav a .icon { display:inline-block; transform-origin:center; transition: transform .3s ease; }
-    nav.desktop-nav a:hover .icon { transform: translateY(-6px) rotate(-8deg); }
-
     .mobile-menu-btn{background:transparent;border:2px solid rgba(255,255,255,0.08);color:#fff;padding:6px 10px;border-radius:8px;}
 
-    /* Hero */
-    #hero{min-height:60vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;padding:64px 16px;color:var(--accent);
-      background: radial-gradient(circle at 10% 20%, rgba(255,255,255,0.04), transparent 5%),
-                  linear-gradient(135deg,#D6001C 0%, #FF6A6A 35%, #111 100%);
+    /* ===== HERO (gradient + bike icon animation) ===== */
+    #hero{
+      min-height:78vh;
+      display:flex;align-items:center;justify-content:center;text-align:center;position:relative;padding:48px 16px;color:var(--accent);overflow:hidden;
+      background: linear-gradient(135deg,#0b0b0b 0%, #2a0000 50%, #120000 100%);
+    }
+    /* shimmer light layer */
+    #hero .light-shimmer{position:absolute;left:-20%;top:-30%;width:180%;height:180%;background:radial-gradient(circle at 40% 20%, rgba(255,255,255,0.04), transparent 15%);mix-blend-mode:overlay;pointer-events:none;animation:shimmer 12s linear infinite;}
+    @keyframes shimmer{0%{transform:translateX(-10%) translateY(0)}50%{transform:translateX(10%) translateY(4%)}100%{transform:translateX(-10%) translateY(0)}}
+
+    .hero-inner{position:relative;z-index:4;max-width:1100px;margin:auto;perspective:1000px;}
+    .hero-card{display:inline-block;padding:22px 28px;border-radius:14px;background:rgba(255,255,255,0.02);backdrop-filter:blur(6px);box-shadow:0 12px 36px rgba(0,0,0,0.45);transform-style:preserve-3d;transition:transform 0.15s ease;}
+
+    .hero-title{font-size:2.25rem;font-weight:800;margin-bottom:12px;line-height:1.05;color:#fff}
+    .hero-title.glow{
+      text-shadow:
+        0 0 6px #fff,
+        0 0 12px #ff0000,
+        0 0 20px #ff4500,
+        0 0 36px #ff0000;
+      animation: glowPulse 3s infinite alternate;
+    }
+    @keyframes glowPulse {
+      from { text-shadow: 0 0 8px #ff0000, 0 0 16px #ff6600, 0 0 26px #ff0000; }
+      to { text-shadow: 0 0 18px #fff, 0 0 36px #ff0000, 0 0 56px #ff6600; }
+    }
+
+    .hero-sub{font-size:1.05rem;margin-bottom:14px;color:rgba(255,255,255,0.95);max-width:860px;margin-left:auto;margin-right:auto}
+
+    /* Visit site + whatsapp buttons */
+    .hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+    .btn-site{
+      background: linear-gradient(90deg,#FFD700,#FFB200);
+      color:#111;font-weight:800;padding:10px 18px;border-radius:999px;border:none;box-shadow:0 8px 26px rgba(255,182,0,0.18);
+      text-decoration:none;
+    }
+    .btn-site:hover{transform:translateY(-4px)}
+    .btn-wp {
+      background: linear-gradient(90deg, #25D366, #128C7E);
+      color: #fff;
+      border-radius: 999px;
+      padding: 10px 18px;
+      font-weight:800;
+      box-shadow:0 0 20px rgba(37,211,102,0.45);
+      display:inline-flex;align-items:center;gap:10px;border:none;cursor:pointer;
+      animation: pulseGlow 3s infinite ease-in-out, slightShake 6s infinite;
+      text-decoration:none;
+    }
+    @keyframes pulseGlow {
+      0%,100%{box-shadow:0 0 12px rgba(37,211,102,0.45),0 0 24px rgba(37,211,102,0.3)}
+      50%{box-shadow:0 0 30px rgba(37,211,102,0.9),0 0 60px rgba(37,211,102,0.45)}
+    }
+    @keyframes slightShake {
+      0%,92%,100%{transform:translateX(0)}
+      93%{transform:translateX(-2px)}
+      94%{transform:translateX(2px)}
+      95%{transform:translateX(-1px)}
+      96%{transform:translateX(1px)}
+    }
+
+    /* ===== Bike icon animation (emoji-based, lightweight) ===== */
+    .bike-anim {
+      position:absolute;
+      bottom:8%;
+      left:-18%;
+      font-size:48px;
+      transform-origin:center;
+      z-index:5;
+      will-change:transform,left,opacity;
+      animation: bikeRun 8s linear infinite;
+      filter: drop-shadow(0 16px 18px rgba(0,0,0,0.6));
+      user-select:none;
+      pointer-events:none;
+    }
+    @keyframes bikeRun {
+      0% { left:-18%; transform: translateY(0) rotateY(0) scale(0.95) ; opacity:0; }
+      6% { opacity:1; }
+      40% { left:48%; transform: translateY(-8px) rotateY(0) scale(1.05); }
+      50% { transform: translateY(-10px) rotateY(0) scale(1.06); }
+      92% { left:110%; opacity:1; transform: translateY(0) rotateY(0) scale(0.98); }
+      100% { left:120%; opacity:0; transform: translateY(0) rotateY(0) scale(1); }
+    }
+
+    /* subtle 3D tilt when hovering the hero area */
+    #hero:hover .hero-card{ transform: translateZ(10px) rotateX(2deg) rotateY(-2deg); }
+
+    /* ===== CONTENT (BIKES GRID) ===== */
+    section{padding:48px 16px}
+    .container-max{max-width:1100px;margin:0 auto}
+    .bike-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    @media(max-width:992px){.bike-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:576px){.bike-grid{grid-template-columns:1fr}}
+    .bike-card{background:#fff;border-radius:12px;padding:14px;text-align:center;box-shadow:0 12px 30px rgba(0,0,0,0.06);transition:transform .28s;overflow:hidden}
+    .bike-card:hover{transform:translateY(-8px)}
+    .bike-card img{width:100%;height:180px;object-fit:cover;border-radius:8px;margin-bottom:10px}
+    .bike-card h4{font-weight:700;margin-bottom:6px}
+    .bike-note{color:var(--muted);font-size:0.95rem;margin-top:12px;text-align:center}
+
+    /* ===== FAQ / Accordion tweaks ===== */
+    .accordion-button { transition: all 0.25s ease; }
+    .accordion-button:hover { transform: scale(1.01); background: #fff7f5; }
+
+    /* ===== Reviews (Swiper) ===== */
+    .swiper-slide{background:#fff;border-radius:12px;padding:18px;box-shadow:0 8px 30px rgba(0,0,0,0.06)}
+    .swiper-pagination-bullet{background:var(--primary) !important}
+
+    /* ===== Map embed ===== */
+    .map-embed{width:100%;height:320px;border-radius:10px;border:0;box-shadow:0 8px 28px rgba(0,0,0,0.08)}
+
+    /* ===== FOOTER (improved readability) ===== */
+    footer{
+      background: linear-gradient(135deg, #0f0f0f 10%, #1c1c1c 50%, #330000 100%);
+      color: #f5f5f5;
+      padding:40px 16px;
+      position:relative;
       overflow:hidden;
     }
-    #hero .hero-inner{max-width:980px; z-index:2;}
-    #hero h1{font-size:2.1rem;font-weight:800;margin-bottom:8px;text-shadow:0 6px 18px rgba(0,0,0,0.35);}
-    #hero p{margin-bottom:16px;color:rgba(255,255,255,0.95);opacity:0.95}
-    .cta-btn{background:#fff;color:var(--primary);padding:10px 22px;border-radius:30px;font-weight:800;display:inline-flex;gap:10px;align-items:center;box-shadow:0 8px 20px rgba(0,0,0,0.18)}
-    .cta-btn:hover{background:#ffdede; transform:translateY(-4px)}
+    .led-border{position:absolute;inset:0;pointer-events:none;border-radius:10px}
+    .led-border::before{
+      content:"";
+      position:absolute;
+      top:-2px;left:-2px;right:-2px;bottom:-2px;
+      background:linear-gradient(90deg,#FFD700,#FF0000,#FFD700,#FF0000);
+      background-size:400% 400%;
+      z-index:1;animation:moveLights 10s linear infinite;border-radius:10px;filter:blur(4px);opacity:0.6;
+    }
+    @keyframes moveLights{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
 
-    /* bike emoji animation (lightweight) */
-    .bike-emoji{position:absolute;bottom:8%;left:-12%;font-size:3rem;opacity:0.95;filter:drop-shadow(0 8px 18px rgba(0,0,0,0.45));animation:moveBike 10s linear infinite;}
-    @keyframes moveBike{0%{left:-12%; transform:rotate(-4deg)}50%{left:52%; transform:rotate(2deg)}100%{left:112%; transform:rotate(-4deg)}}
+    .footer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1100px;margin:0 auto;position:relative;z-index:2}
+    @media(max-width:768px){.footer-grid{grid-template-columns:1fr}}
+    footer h5{color:#FFD700;text-shadow:0 0 6px rgba(255,215,0,0.25);letter-spacing:1px}
+    .footer-link{color:#f5f5f5;display:inline-block;margin:6px 0;font-weight:600;transition:color .25s,transform .25s}
+    .footer-link:hover{color:#FFD700;transform:translateX(6px)}
+    .social-icon{font-size:1.7rem;color:#f5f5f5;transition:transform .3s,color .3s,text-shadow .3s}
+    .social-icon:hover{color:#FFD700;transform:scale(1.25) rotate(-8deg);text-shadow:0 0 12px #FFD700}
+    .back-to-top{font-weight:700;transition:all .3s}
+    .back-to-top:hover{color:#FFD700;text-shadow:0 0 10px #FFD700}
 
-    /* subtle 3D card effect for hero CTA area */
-    .hero-card{background:rgba(255,255,255,0.06);border-radius:12px;padding:18px;display:inline-block;backdrop-filter:blur(6px);box-shadow:0 10px 30px rgba(0,0,0,0.35)}
-    .hero-card:hover{transform:translateY(-6px) rotateX(1deg);transition:transform .28s ease}
+    /* ===== Floating Contact Menu Pro ===== */
+    .contact-floating{position:fixed;bottom:22px;right:18px;z-index:1400}
+    .main-btn{width:60px;height:60px;background:linear-gradient(135deg,#D6001C,#ff3c3c);border-radius:50%;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.6rem;cursor:pointer;box-shadow:0 0 15px rgba(255,60,60,0.6);animation:pulse 2s infinite;transition:transform .2s}
+    .main-btn:hover{transform:scale(1.06)}
+    .contact-options{display:flex;flex-direction:column;align-items:center;gap:10px;margin-bottom:10px;opacity:0;pointer-events:none;transform:translateY(20px);transition:all .4s ease}
+    .contact-options a{width:50px;height:50px;border-radius:50%;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;text-decoration:none;box-shadow:0 3px 12px rgba(0,0,0,0.25);background:linear-gradient(135deg,#ff3c3c,#ff7070);transition:all .25s}
+    .contact-options a:hover{transform:scale(1.12)}
+    .contact-floating.active .contact-options{opacity:1;pointer-events:auto;transform:translateY(0)}
+    @keyframes pulse{0%{box-shadow:0 0 10px rgba(255,60,60,0.35),0 0 20px rgba(255,60,60,0.15)}50%{box-shadow:0 0 25px rgba(255,60,60,0.6),0 0 40px rgba(255,60,60,0.25)}100%{box-shadow:0 0 10px rgba(255,60,60,0.35),0 0 20px rgba(255,60,60,0.15)}}
 
-    /* Bikes cards */
-    .bike-logo img{max-width:150px;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,0.12);transition:transform .28s}
-    .bike-logo img:hover{transform:scale(1.04)}
-    .bike-card{background:#fff;border-radius:12px;padding:14px;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,0.06);transition:transform .28s, box-shadow .28s}
-    .bike-card:hover{transform:translateY(-8px); box-shadow:0 18px 40px rgba(0,0,0,0.12)}
-    .bike-card img{width:100%;height:170px;object-fit:cover;border-radius:8px;margin-bottom:10px}
-    .bike-card h4{font-size:1.05rem;margin-bottom:6px}
-    .bike-card p{color:var(--muted);margin-bottom:8px;font-size:0.95rem}
-    .bike-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    @media(max-width:992px){ .bike-grid{grid-template-columns:repeat(2,1fr)} }
-    @media(max-width:576px){ .bike-grid{grid-template-columns:1fr} .bike-card img{height:220px} .bike-logo img{max-width:120px} #hero h1{font-size:1.6rem} }
-
-    /* FAQ & Reviews */
-    ul.faq{list-style:disc;padding-left:18px}
-    .swiper-slide{background:#fff;border-radius:12px;padding:18px;box-shadow:0 8px 30px rgba(0,0,0,0.06)}
-
-    /* Footer */
-    footer{background:#0c0c0c;color:#fff;padding:28px 16px;text-align:center}
-    footer a{color:#fff;text-decoration:none;font-weight:600}
-    footer a.site-link{color:var(--primary)}
-    .social-links a{margin:0 8px;color:rgba(255,255,255,0.9)}
-
-    /* Floating CTA */
-    .floating-cta{position:fixed;right:14px;bottom:18px;display:flex;flex-direction:column;gap:8px;z-index:1400}
-    .floating-cta a{background:var(--primary);color:#fff;padding:10px 12px;border-radius:999px;font-weight:800;display:inline-flex;align-items:center;gap:8px;box-shadow:0 10px 24px rgba(214,0,28,0.18)}
-    .map-embed{width:100%;height:300px;border-radius:10px;border:0;box-shadow:0 8px 28px rgba(0,0,0,0.08)}
+    /* small helpers */
+    .muted{color:var(--muted)}
+    .text-center { text-align:center }
+    .mb-2 { margin-bottom: .5rem; }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <div class="brand-row container">
-      <div style="display:flex;align-items:center;gap:12px">
-        <div class="logo-badge">NT</div>
-        <div>
-          <div class="site-title">Hanoi Motorbike For Sale & Rent</div>
-          <div class="site-sub">Scooters & Motorbikes in Hanoi</div>
-        </div>
-      </div>
-
-      <div style="display:flex;align-items:center;gap:10px">
-        <a href="tel:0942467674" class="phone-cta">📞 0942467674</a>
-        <button class="mobile-menu-btn d-lg-none" id="mobileMenuBtn">☰</button>
-
-        <nav class="desktop-nav d-none d-lg-block">
-          <ul>
-            <li><a href="#hero"><span class="icon">🏠</span> Home</a></li>
-            <li><a href="#about"><span class="icon">ℹ️</span> About</a></li>
-            <li><a href="#bikes-for-sale"><span class="icon">🛵</span> Bikes</a></li>
-            <li><a href="#reviews"><span class="icon">⭐</span> Reviews</a></li>
-            <li><a href="#footer"><span class="icon">📞</span> Contact</a></li>
-          </ul>
-        </nav>
+<!-- Header -->
+<header>
+  <div class="brand-row">
+    <div style="display:flex;align-items:center;gap:12px">
+      <div class="logo-badge">NT</div>
+      <div>
+        <div class="site-title">Hanoi Motorbike For Sale & Rent</div>
+        <div class="site-sub">Scooters & Motorbikes in Hanoi</div>
       </div>
     </div>
 
-    <!-- Offcanvas mobile menu -->
-    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu">
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title">Menu</h5>
-        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
-      </div>
-      <div class="offcanvas-body">
-        <a href="#hero" data-bs-dismiss="offcanvas">🏠 Home</a>
-        <a href="#about" data-bs-dismiss="offcanvas">ℹ️ About</a>
-        <a href="#bikes-for-sale" data-bs-dismiss="offcanvas">🛵 Bikes</a>
-        <a href="#faq" data-bs-dismiss="offcanvas">❓ FAQ</a>
-        <a href="#reviews" data-bs-dismiss="offcanvas">⭐ Reviews</a>
-        <a href="#footer" data-bs-dismiss="offcanvas">📞 Contact</a>
-      </div>
+    <div style="display:flex;align-items:center;gap:12px">
+      <a class="phone-cta" href="tel:+84942467674">📞 +84 942 467 674</a>
+      <button class="mobile-menu-btn d-lg-none" id="mobileMenuBtn" aria-label="Open menu">☰</button>
+      <nav class="desktop-nav d-none d-lg-block" aria-label="Main navigation">
+        <ul>
+          <li><a href="#hero"><span class="icon">🏠</span> Home</a></li>
+          <li><a href="#about"><span class="icon">ℹ️</span> About</a></li>
+          <li><a href="#bikes-for-sale"><span class="icon">🛵</span> Bikes</a></li>
+          <li><a href="#faq"><span class="icon">❓</span> FAQ</a></li>
+          <li><a href="#reviews"><span class="icon">⭐</span> Reviews</a></li>
+          <li><a href="#footer"><span class="icon">📞</span> Contact</a></li>
+        </ul>
+      </nav>
     </div>
-  </header>
-
-  <!-- HERO -->
-  <section id="hero" class="text-center">
-    <div class="hero-inner">
-      <div class="hero-card">
-        <h1>Hanoi Motorbike For Sale & Rent</h1>
-        <p>Find reliable scooters & motorbikes in Hanoi — buy or rent with complete papers.</p>
-        <div style="margin-top:12px">
-          <a class="cta-btn" href="https://zalo.me/0942467674" target="_blank">💬 Chat on WhatsApp / Zalo</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Bike emoji animation -->
-    <div class="bike-emoji" aria-hidden="true">🛵</div>
-  </section>
-
-  <!-- About -->
-  <section id="about" class="text-center">
-    <div class="container">
-      <h2 style="margin-bottom:10px">About Us</h2>
-      <p style="max-width:820px;margin:0 auto 12px">We offer reliable scooters & motorbikes for sale or rent in Hanoi.</p>
-      <a class="btn btn-danger" href="https://zalo.me/0942467674" target="_blank">💬 Chat on WhatsApp</a>
-    </div>
-  </section>
-
-  <!-- Bikes for Sale -->
-  <section id="bikes-for-sale" class="text-center">
-    <div class="container">
-      <h2>🏍️ Bikes for Sale</h2>
-
-      <!-- Brand logo -->
-      <div class="bike-logo my-3">
-        <img src="https://i.postimg.cc/3NwHXGgc/13803262-651-D-43-F4-8-DA2-8-DAED35-FEEA5.png" alt="Thuê Xe Máy Nguyễn Tú logo">
-      </div>
-
-      <!-- grid -->
-      <div class="bike-grid mt-3">
-
-        <!-- 1: Airblade -->
-        <div class="bike-card">
-          <img src="https://i.postimg.cc/KzJ68YdW/IMG-5258.jpg" alt="Honda Airblade 2012">
-          <h4>Honda Airblade 2012</h4>
-          <p>10 Million VND — Complete papers, ready to ride</p>
-          <a href="https://zalo.me/0942467674" class="btn btn-danger" target="_blank">💬 Chat on WhatsApp</a>
-        </div>
-
-        <!-- 2: Vision 2017 v2 (19M) -->
-        <div class="bike-card">
-          <img src="https://i.postimg.cc/rwx7tjBt/IMG-5259.jpg" alt="Honda Vision 2017 Version 2">
-          <h4>Honda Vision 2017 (Version 2)</h4>
-          <p>19 Million VND — Well-maintained, complete papers</p>
-          <a href="https://zalo.me/0942467674" class="btn btn-danger" target="_blank">💬 Chat on WhatsApp</a>
-        </div>
-
-        <!-- 3: Vision 2017 v2 Black (23M) -->
-        <div class="bike-card">
-          <img src="https://i.postimg.cc/m2F50V2p/IMG-5260.jpg" alt="Honda Vision 2017 Version 2 Black">
-          <h4>Honda Vision 2017 (Version 2, Black)</h4>
-          <p>23 Million VND — Two-tone / good condition</p>
-          <a href="https://zalo.me/0942467674" class="btn btn-danger" target="_blank">💬 Chat on WhatsApp</a>
-        </div>
-
-        <!-- 4: Vision 2020 Blue (26M) -->
-        <div class="bike-card">
-          <img src="https://i.postimg.cc/hGMy95px/IMG-5261.jpg" alt="Honda Vision 2020 Version 3 Blue">
-          <h4>Honda Vision 2020 (Version 3, Blue)</h4>
-          <p>26 Million VND — Smart Key, excellent condition</p>
-          <a href="https://zalo.me/0942467674" class="btn btn-danger" target="_blank">💬 Chat on WhatsApp</a>
-        </div>
-
-        <!-- 5: Vision 2020 Cream (26M) -->
-        <div class="bike-card">
-          <img src="https://i.postimg.cc/1z5hh6d9/IMG-5262.jpg" alt="Honda Vision 2020 Version 3 Cream">
-          <h4>Honda Vision 2020 (Version 3, Cream)</h4>
-          <p>26 Million VND — Smart Key, excellent condition</p>
-          <a href="https://zalo.me/0942467674" class="btn btn-danger" target="_blank">💬 Chat on WhatsApp</a>
-        </div>
-
-        <!-- optional empty card placeholder if you want even grid -->
-      </div>
-
-      <!-- short note about Vision series -->
-      <p style="margin-top:16px;color:var(--muted);max-width:820px;margin-left:auto;margin-right:auto;font-size:0.95rem">
-        We currently have 4 Honda Vision scooters available. The Honda Vision series has been produced from 2011 to 2025 — used prices vary by condition and mileage. All bikes are registered in Hanoi (prices slightly higher than out-of-province).
-      </p>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section id="faq">
-    <div class="container">
-      <h2>Frequently Asked Questions</h2>
-      <ul class="faq">
-        <li><strong>What documents are required to rent a motorbike?</strong> — ID/Passport, driving license A1 or higher, deposit 2–5 million VND depending on the bike.</li>
-        <li><strong>Do you offer delivery service?</strong> — Yes. Delivery fee from 50,000 – 150,000 VND depending on location. Contact +84 942 467 674.</li>
-        <li><strong>Is there a discount for monthly rental?</strong> — Yes, monthly rates are cheaper. Contact us for details.</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Reviews -->
-  <section id="reviews">
-    <div class="container">
-      <h2 class="text-center">Customer Reviews</h2>
-      <div class="swiper mySwiper mt-4">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <p>“Rented a scooter in Hoan Kiem / Old Quarter — pickup was fast, bike ran smoothly. Highly recommend Nguyen Tu!”</p>
-            <h5>— James, UK</h5>
-          </div>
-          <div class="swiper-slide">
-            <p>“Living near Tay Ho, needed monthly rental. Bike was excellent and smart key worked perfectly. Great service!”</p>
-            <h5>— Anna, Germany</h5>
-          </div>
-          <div class="swiper-slide">
-            <p>“Visited Ba Dinh — renting from Nguyen Tu was the easiest experience. Friendly staff, clear prices.”</p>
-            <h5>— Lucas, France</h5>
-          </div>
-        </div>
-        <div class="swiper-pagination mt-3"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- MAP -->
-  <section id="map">
-    <div class="container">
-      <h2 class="text-center">Find Us</h2>
-      <p class="text-center" style="color:var(--muted);">Open daily 09:00–21:00. Click the map to get directions.</p>
-
-      <!-- Button that opens the link you provided (maps.app...) -->
-      <p class="text-center">
-        <a class="btn btn-outline-primary" href="https://maps.app.goo.gl/c2sxNmnwuxMCo3bz7?g_st=ipc" target="_blank">📍 Open in Google Maps (Open App)</a>
-      </p>
-
-      <!-- Embedded map (using coordinates) -->
-      <div style="max-width:960px;margin:14px auto 0;">
-        <iframe class="map-embed" src="https://www.google.com/maps?q=21.0409222,105.8692870&z=15&output=embed" allowfullscreen loading="lazy"></iframe>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer id="footer">
-    <div class="container">
-      <p>🏠 112 Nguyễn Văn Cừ, Long Biên, Hà Nội</p>
-      <p>☎️ <a href="tel:0942467674">0942467674</a> | ✉️ <a href="mailto:nguyentuantu8@gmail.com">nguyentuantu8@gmail.com</a></p>
-      <p>🌐 Website chính: <a class="site-link" href="https://athanoi.github.io/moto/" target="_blank">Thuê Xe Máy Nguyễn Tú @ thuexemaynguyentu</a></p>
-      <div class="social-links" style="margin-top:10px">
-        <a href="https://www.facebook.com/chothuexemaynguyentu/" target="_blank">Facebook</a>
-        <a href="https://zalo.me/0942467674" target="_blank">Zalo</a>
-        <a href="https://www.instagram.com/thuexemaynguyentu/" target="_blank">Instagram</a>
-      </div>
-      <p style="margin-top:12px;opacity:0.8">© 2025 Thuê Xe Máy Nguyễn Tú</p>
-    </div>
-  </footer>
-
-  <!-- Floating CTA -->
-  <div class="floating-cta">
-    <a href="tel:0942467674">📞 Call</a>
-    <a href="https://zalo.me/0942467674" target="_blank">💬 Zalo</a>
-    <a href="https://maps.app.goo.gl/c2sxNmnwuxMCo3bz7?g_st=ipc" target="_blank">📍 Map</a>
   </div>
 
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-  <script>
-    // Offcanvas mobile menu toggle
-    const mobileBtn = document.getElementById('mobileMenuBtn');
-    if(mobileBtn){
-      mobileBtn.addEventListener('click', ()=>{
-        new bootstrap.Offcanvas(document.getElementById('offcanvasMenu')).toggle();
-      });
+  <!-- Offcanvas for mobile -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
+    <div class="offcanvas-header">
+      <h5 id="offcanvasMenuLabel">Menu</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <a href="#hero" data-bs-dismiss="offcanvas">🏠 Home</a><br>
+      <a href="#about" data-bs-dismiss="offcanvas">ℹ️ About</a><br>
+      <a href="#bikes-for-sale" data-bs-dismiss="offcanvas">🛵 Bikes</a><br>
+      <a href="#faq" data-bs-dismiss="offcanvas">❓ FAQ</a><br>
+      <a href="#reviews" data-bs-dismiss="offcanvas">⭐ Reviews</a><br>
+      <a href="#footer" data-bs-dismiss="offcanvas">📞 Contact</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="hero" class="fade-in" aria-label="Hero">
+  <div class="light-shimmer" aria-hidden="true"></div>
+
+  <div class="hero-inner">
+    <div class="hero-card" id="heroCard" role="region" aria-label="Main hero">
+      <h1 class="hero-title glow">Hanoi Motorbike For Sale & Rent</h1>
+      <p class="hero-sub">Reliable scooters & motorbikes for sale or rent in Hanoi — all with complete papers and ready to ride.</p>
+
+      <div class="hero-actions">
+        <a class="btn-site" href="https://athanoi.github.io/moto/" target="_blank" rel="noopener noreferrer" aria-label="Visit official site">🌐 Visit Official Website</a>
+        <a class="btn-wp" href="https://wa.me/84942467674" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><i class="bi bi-whatsapp"></i> Chat on WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- bike icon animation (emoji) -->
+  <div class="bike-anim" aria-hidden="true">🏍️</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="fade-in">
+  <div class="container-max">
+    <h2 class="text-center mb-3">About Us</h2>
+    <p class="muted text-center" style="max-width:900px;margin:0 auto 12px">We offer reliable scooters & motorbikes for sale or rent across Hanoi. All bikes are well-maintained, include complete paperwork, and can be transferred quickly.</p>
+    <div class="text-center"><a class="btn cta-btn" href="https://zalo.me/0942467674" target="_blank" rel="noopener noreferrer">💬 Chat on Zalo</a></div>
+  </div>
+</section>
+
+<!-- BIKES FOR SALE -->
+<section id="bikes-for-sale" class="fade-in">
+  <div class="container-max">
+    <h2 class="text-center mb-3">🏍️ Bikes for Sale</h2>
+
+    <div class="text-center mb-3">
+      <img src="https://i.postimg.cc/3NwHXGgc/13803262-651-D-43-F4-8-DA2-8-DAED35-FEEA5.png" alt="brand" style="max-width:140px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.25);">
+    </div>
+
+    <div class="bike-grid">
+      <!-- Airblade -->
+      <div class="bike-card">
+        <img src="https://i.postimg.cc/KzJ68YdW/IMG-5258.jpg" alt="Honda Airblade 2012">
+        <h4>Honda Airblade 2012</h4>
+        <p>10 Million VND — Complete papers, ready to ride</p>
+        <a class="btn btn-danger" href="https://zalo.me/0942467674" target="_blank" rel="noopener noreferrer">💬 Chat on WhatsApp</a>
+      </div>
+
+      <!-- Vision 2017 v2 (19M) -->
+      <div class="bike-card">
+        <img src="https://i.postimg.cc/rwx7tjBt/IMG-5259.jpg" alt="Honda Vision 2017 Version 2">
+        <h4>Honda Vision 2017 (Version 2)</h4>
+        <p>19 Million VND — Well-maintained, complete papers</p>
+        <a class="btn btn-danger" href="https://zalo.me/0942467674" target="_blank" rel="noopener noreferrer">💬 Chat on WhatsApp</a>
+      </div>
+
+      <!-- Vision 2017 Black (23M) -->
+      <div class="bike-card">
+        <img src="https://i.postimg.cc/m2F50V2p/IMG-5260.jpg" alt="Honda Vision 2017 Black">
+        <h4>Honda Vision 2017 (Version 2, Black)</h4>
+        <p>23 Million VND — Two-tone, good condition</p>
+        <a class="btn btn-danger" href="https://zalo.me/0942467674" target="_blank" rel="noopener noreferrer">💬 Chat on WhatsApp</a>
+      </div>
+
+      <!-- Vision 2020 Blue (26M) -->
+      <div class="bike-card">
+        <img src="https://i.postimg.cc/hGMy95px/IMG-5261.jpg" alt="Honda Vision 2020 Blue">
+        <h4>Honda Vision 2020 (Version 3, Blue)</h4>
+        <p>26 Million VND — Smart Key, excellent condition</p>
+        <a class="btn btn-danger" href="https://zalo.me/0942467674" target="_blank" rel="noopener noreferrer">💬 Chat on WhatsApp</a>
+      </div>
+
+      <!-- Vision 2020 Cream (26M) -->
+      <div class="bike-card">
+        <img src="https://i.postimg.cc/1z5hh6d9/IMG-5262.jpg" alt="Honda Vision 2020 Cream">
+        <h4>Honda Vision 2020 (Version 3, Cream)</h4>
+        <p>26 Million VND — Smart Key, excellent condition</p>
+        <a class="btn btn-danger" href="https://zalo.me/0942467674" target="_blank" rel="noopener noreferrer">💬 Chat on WhatsApp</a>
+      </div>
+    </div>
+
+    <p class="bike-note">We currently have 4 Honda Vision scooters available. The Honda Vision series has been produced from 2011 to 2025 — used prices vary by condition and mileage. All bikes are registered in Hanoi (prices slightly higher than out-of-province).</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="fade-in">
+  <div class="container-max">
+    <h2 class="text-center mb-3">❓ Frequently Asked Questions</h2>
+    <div class="accordion" id="faqAccordion">
+      <!-- 8 FAQ items (kept from previous) -->
+      <div class="accordion-item">
+        <h3 class="accordion-header" id="faq1">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">
+            <i class="bi bi-question-circle me-2 text-warning"></i> Are all bikes registered in Hanoi?
+          </button>
+        </h3>
+        <div id="collapse1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">Yes, most bikes are registered in Hanoi. Hanoi-registered bikes may cost slightly more due to local registration.</div>
+        </div>
+      </div>
+      <!-- ... other FAQs (2-8) same as before ... -->
+      <div class="accordion-item">
+        <h3 class="accordion-header" id="faq2">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">
+            <i class="bi bi-question-circle me-2 text-warning"></i> Can I test ride before buying?
+          </button>
+        </h3>
+        <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">Of course. You are welcome to test-ride the bike before purchasing to ensure it meets your needs.</div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h3 class="accordion-header" id="faq3">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">
+            <i class="bi bi-question-circle me-2 text-warning"></i> What documents do I need to buy a used motorbike?
+          </button>
+        </h3>
+        <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">Bring your ID card or passport. All bikes come with full registration papers; we assist with ownership transfer.</div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h3 class="accordion-header" id="faq4">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4">
+            <i class="bi bi-question-circle me-2 text-warning"></i> Do you help with ownership transfer?
+          </button>
+        </h3>
+        <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">Yes. We can help with paperwork and guide you through the legal transfer process in Hanoi.</div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h3 class="accordion-header" id="faq5">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5">
+            <i class="bi bi-question-circle me-2 text-warning"></i> Do you offer delivery service in Hanoi?
+          </button>
+        </h3>
+        <div id="collapse5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">Yes — delivery is available. Fees vary by location (typically 50,000 – 150,000 VND).</div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h3 class="accordion-header" id="faq6">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6">
+            <i class="bi bi-question-circle me-2 text-warning"></i> Are the bikes inspected before sale?
+          </button>
+        </h3>
+        <div id="collapse6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">Every bike is checked and serviced by our mechanic before listing to ensure safety and reliability.</div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h3 class="accordion-header" id="faq7">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7">
+            <i class="bi bi-question-circle me-2 text-warning"></i> Can I reserve a bike before visiting?
+          </button>
+        </h3>
+        <div id="collapse7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">Yes. Contact us via WhatsApp or Zalo to reserve a bike before arriving at our shop.</div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h3 class="accordion-header" id="faq8">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8">
+            <i class="bi bi-question-circle me-2 text-warning"></i> What payment methods do you accept?
+          </button>
+        </h3>
+        <div id="collapse8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">We accept cash (VND) and bank transfer. For foreign buyers, international transfer can be arranged if needed.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="fade-in">
+  <div class="container-max">
+    <h2 class="text-center mb-3">Customer Reviews</h2>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <p>“Rented a scooter in Hoan Kiem / Old Quarter — pickup was fast, bike ran smoothly. Highly recommend Nguyen Tu!”</p>
+          <h5 class="mt-2">— James, UK</h5>
+        </div>
+        <div class="swiper-slide">
+          <p>“Living near Tay Ho, needed monthly rental. Bike was excellent and smart key worked perfectly. Great service!”</p>
+          <h5 class="mt-2">— Anna, Germany</h5>
+        </div>
+        <div class="swiper-slide">
+          <p>“Visited Ba Dinh — renting from Nguyen Tu was the easiest experience. Friendly staff, clear prices.”</p>
+          <h5 class="mt-2">— Lucas, France</h5>
+        </div>
+      </div>
+      <div class="swiper-pagination mt-3"></div>
+    </div>
+  </div>
+</section>
+
+<!-- MAP -->
+<section id="map" class="fade-in">
+  <div class="container-max text-center">
+    <h2 class="mb-2">Find Us</h2>
+    <p class="muted mb-2">Open daily 09:00–21:00. Click the button to open the location in Google Maps app.</p>
+    <p><a class="btn btn-outline-primary" href="https://maps.app.goo.gl/c2sxNmnwuxMCo3bz7?g_st=ipc" target="_blank" rel="noopener noreferrer">📍 Open in Google Maps (App)</a></p>
+    <div style="max-width:960px;margin:14px auto 0;">
+      <iframe class="map-embed" src="https://www.google.com/maps?q=21.0409222,105.8692870&z=15&output=embed" allowfullscreen loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER (improved readability) -->
+<footer id="footer" class="fade-in" role="contentinfo">
+  <div class="led-border" aria-hidden="true"></div>
+  <div class="container-max">
+    <div class="footer-grid mb-4">
+      <!-- Column 1 -->
+      <div>
+        <h5 class="fw-bold text-uppercase mb-3">About Nguyen Tu Motorbike</h5>
+        <p style="color:#f5f5f5">We provide quality used motorbikes for sale and long-term rentals in Hanoi. Trusted by both locals and expats for reliability, good service, and fair prices.</p>
+        <p class="mb-1">📍 <span style="color:#f5f5f5">112 Nguyen Van Cu, Long Bien, Hanoi</span></p>
+        <p class="mb-1">📞 <a href="tel:+84942467674" class="fw-bold" style="color:#f5f5f5">+84 942 467 674</a></p>
+        <p class="mb-1">🕘 <span style="color:#f5f5f5">09:00 – 21:00 (Open Daily)</span></p>
+        <p>✉️ <a href="mailto:nguyentuantu8@gmail.com" style="color:#f5f5f5">nguyentuantu8@gmail.com</a></p>
+      </div>
+      <!-- Column 2 -->
+      <div>
+        <h5 class="fw-bold text-uppercase mb-3">Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="#hero" class="footer-link">🏠 Home</a></li>
+          <li><a href="#bikes-for-sale" class="footer-link">💰 Motorbikes for Sale</a></li>
+          <li><a href="#faq" class="footer-link">❓ FAQs</a></li>
+          <li><a href="#reviews" class="footer-link">⭐ Customer Reviews</a></li>
+          <li><a href="https://maps.app.goo.gl/c2sxNmnwuxMCo3bz7?g_st=ipc" class="footer-link" target="_blank" rel="noopener noreferrer">📍 Find Us on Google Map</a></li>
+        </ul>
+      </div>
+      <!-- Column 3 -->
+      <div>
+        <h5 class="fw-bold text-uppercase mb-3">Connect & Support</h5>
+        <div class="d-flex gap-3 mb-3">
+          <a href="https://zalo.me/0942467674" target="_blank" class="social-icon" title="Chat on Zalo" rel="noopener noreferrer"><i class="bi bi-chat-dots"></i></a>
+          <a href="https://wa.me/84942467674" target="_blank" class="social-icon" title="Chat on WhatsApp" rel="noopener noreferrer"><i class="bi bi-whatsapp"></i></a>
+          <a href="https://www.facebook.com/chothuexemaynguyentu/" target="_blank" class="social-icon" title="Visit Facebook" rel="noopener noreferrer"><i class="bi bi-facebook"></i></a>
+          <a href="https://athanoi.github.io/moto/" target="_blank" class="social-icon" title="Official Website" rel="noopener noreferrer"><i class="bi bi-globe"></i></a>
+        </div>
+        <p style="color:#f5f5f5">🌐 Official Website:<br><a href="https://athanoi.github.io/moto/" class="fw-bold" style="color:#FFD700" target="_blank" rel="noopener noreferrer">athanoi.github.io/moto</a></p>
+      </div>
+    </div>
+
+    <hr style="border-color: rgba(255,255,255,0.15);">
+    <div class="text-center small" style="color:#f5f5f5">
+      <p class="mb-0">© 2025 Nguyen Tu Motorbike | Designed with ❤️ in Hanoi</p>
+      <a href="#hero" class="back-to-top d-inline-block mt-2 text-decoration-none" style="color:#FFD700">↑ Back to Top</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating Contact Menu Pro -->
+<div class="contact-floating" aria-hidden="false" aria-label="Quick contact">
+  <div class="contact-options" id="contactOptions" aria-hidden="true">
+    <a href="tel:+84942467674" title="Call" aria-label="Call"><i class="bi bi-telephone-fill"></i></a>
+    <a href="https://zalo.me/0942467674" target="_blank" title="Zalo" aria-label="Zalo" rel="noopener noreferrer"><i class="bi bi-chat-dots-fill"></i></a>
+    <a href="https://wa.me/84942467674" target="_blank" title="WhatsApp" aria-label="WhatsApp" rel="noopener noreferrer"><i class="bi bi-whatsapp"></i></a>
+  </div>
+  <button class="main-btn" id="mainContactBtn" aria-expanded="false" aria-controls="contactOptions" title="Contact menu">
+    <i class="bi bi-person-lines-fill" aria-hidden="true"></i>
+  </button>
+</div>
+
+<!-- Scripts (complete: offcanvas, swiper, fade-in, parallax, floating contact) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+<script>
+/* ===== Offcanvas mobile toggle ===== */
+(function(){
+  const mobileBtn = document.getElementById('mobileMenuBtn');
+  const offcanvasEl = document.getElementById('offcanvasMenu');
+  if (mobileBtn && offcanvasEl && bootstrap?.Offcanvas) {
+    const off = new bootstrap.Offcanvas(offcanvasEl);
+    mobileBtn.addEventListener('click', ()=> off.toggle());
+  }
+})();
+
+/* ===== Smooth internal anchor scrolling ===== */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', function(e){
+    const href = this.getAttribute('href');
+    if (!href || href === '#') return;
+    const target = document.querySelector(href);
+    if (target) {
+      e.preventDefault();
+      window.scrollTo({ top: target.offsetTop - 70, behavior: 'smooth' });
+      const off = document.getElementById('offcanvasMenu');
+      if (off && off.classList.contains('show')) bootstrap.Offcanvas.getInstance(off).hide();
     }
+  });
+});
 
-    // Smooth scroll for internal links
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', function(e){
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if(target){
-          window.scrollTo({ top: target.offsetTop - 70, behavior: 'smooth' });
-        }
-        // hide offcanvas if open
-        const off = document.getElementById('offcanvasMenu');
-        if(off && off.classList.contains('show')) bootstrap.Offcanvas.getInstance(off).hide();
-      });
+/* ===== Swiper init for reviews ===== */
+try {
+  const swiper = new Swiper('.mySwiper', {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+    autoplay: { delay: 4200, disableOnInteraction: false },
+    pagination: { el: '.swiper-pagination', clickable: true },
+    breakpoints: { 700: { slidesPerView: 1.05 }, 1000: { slidesPerView: 1.2 } }
+  });
+  if (swiper.el) {
+    swiper.el.addEventListener('mouseenter', ()=> swiper.autoplay.stop());
+    swiper.el.addEventListener('mouseleave', ()=> swiper.autoplay.start());
+  }
+} catch(e){ console.warn('Swiper init error', e); }
+
+/* ===== Fade-in observer (0.9s) ===== */
+(function(){
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        obs.unobserve(entry.target);
+      }
     });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-in').forEach(s => observer.observe(s));
+})();
 
-    // Initialize Swiper
-    const swiper = new Swiper('.mySwiper', {
-      slidesPerView: 1,
-      spaceBetween: 20,
-      loop: true,
-      autoplay: { delay: 4200, disableOnInteraction: false },
-      pagination: { el: '.swiper-pagination', clickable: true },
-      breakpoints: { 700: { slidesPerView: 1.05 }, 1000: { slidesPerView: 1.2 } }
+/* ===== Hero parallax (mouse & device tilt) - lightweight ===== */
+(function(){
+  const hero = document.getElementById('hero');
+  const heroCard = document.getElementById('heroCard');
+  const layers = document.querySelectorAll('#hero .layer');
+  if (!hero) return;
+
+  function handleMove(xRatio, yRatio){
+    const rx = (yRatio - 0.5) * 8;
+    const ry = (xRatio - 0.5) * -12;
+    if (heroCard) heroCard.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg) translateZ(0)`;
+    layers.forEach((el, i)=>{
+      const depth = (i+1) * 6;
+      const moveX = (xRatio - 0.5) * depth;
+      const moveY = (yRatio - 0.5) * depth * 0.6;
+      el.style.transform = `translate(calc(-50% + ${moveX}px), calc(-50% + ${moveY}px))`;
     });
-    // pause on hover
-    try {
-      swiper.el.addEventListener('mouseenter', ()=> swiper.autoplay.stop());
-      swiper.el.addEventListener('mouseleave', ()=> swiper.autoplay.start());
-    } catch(e){}
+  }
 
-    // Fade-in observer
-    const observer = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting){ entry.target.classList.add('visible'); obs.unobserve(entry.target); }
-      });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('section').forEach(s => observer.observe(s));
-  </script>
+  window.addEventListener('mousemove', e=>{
+    const rect = hero.getBoundingClientRect();
+    const x = Math.max(0, Math.min(e.clientX - rect.left, rect.width));
+    const y = Math.max(0, Math.min(e.clientY - rect.top, rect.height));
+    handleMove(x / rect.width, y / rect.height);
+  });
+
+  window.addEventListener('deviceorientation', e=>{
+    if (e.gamma === null) return;
+    const xRatio = (e.gamma + 90) / 180;
+    const yRatio = (e.beta + 180) / 360;
+    handleMove(xRatio, yRatio);
+  }, true);
+})();
+
+/* ===== Floating Contact Menu Pro toggle ===== */
+(function(){
+  const mainContactBtn = document.getElementById('mainContactBtn');
+  const contactFloating = document.querySelector('.contact-floating');
+  const opts = document.getElementById('contactOptions') || document.querySelector('.contact-options');
+  if (!mainContactBtn || !contactFloating) return;
+
+  mainContactBtn.addEventListener('click', (e)=>{
+    e.stopPropagation();
+    contactFloating.classList.toggle('active');
+    const expanded = contactFloating.classList.contains('active');
+    mainContactBtn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+    if (opts) opts.setAttribute('aria-hidden', expanded ? 'false' : 'true');
+  });
+
+  // close on outside click
+  document.addEventListener('click', (e)=>{
+    if (!contactFloating.contains(e.target) && contactFloating.classList.contains('active')) {
+      contactFloating.classList.remove('active');
+      if (opts) opts.setAttribute('aria-hidden','true');
+      mainContactBtn.setAttribute('aria-expanded','false');
+    }
+  });
+
+  // mobile: handle touchstart for better UX
+  mainContactBtn.addEventListener('touchstart', ev=>{ ev.preventDefault(); mainContactBtn.click(); }, { passive: false });
+})();
+
+</script>
 </body>
 </html>
