@@ -528,7 +528,6 @@
 </head>
 <body>
 
-<!-- HEADER -->
 <header>
   <div class="brand-row">
     <div style="display:flex;align-items:center;gap:12px">
@@ -547,24 +546,27 @@
       <!-- Desktop navigation -->
       <nav class="desktop-nav d-none d-lg-block" aria-label="Main navigation">
         <ul>
-          <li><a href="index.html"><span class="icon">🏠</span> Home</a></li>
-          <li><a href="about.html"><span class="icon">ℹ️</span> About</a></li>
+          <!-- Trang chủ -->
+          <li><a href="index.html"><span class="icon">🏠</span> Trang chủ</a></li>
 
+          <!-- Giới thiệu -->
+          <li><a href="gioithieu.html"><span class="icon">ℹ️</span> Giới thiệu</a></li>
+
+          <!-- Dịch vụ: Sale & Rental -->
           <li class="has-dropdown">
             <button class="dropdown-toggle" type="button">
               <span class="icon">🛵</span> Service
               <i class="bi bi-chevron-down" aria-hidden="true" style="font-size:0.8rem;"></i>
             </button>
             <ul class="dropdown-menu">
-              <li><a href="sale-bikes.html">Sale Bikes</a></li>
-              <li><a href="rent-bikes.html">Rent Bikes</a></li>
+              <li><a href="sale.html">Sale Bikes</a></li>
+              <li><a href="rental.html">Rent Bikes</a></li>
             </ul>
           </li>
 
+          <!-- Các trang còn lại: sửa tên file cho đúng với bạn -->
           <li><a href="faq.html"><span class="icon">❓</span> FAQ</a></li>
-          <li><a href="privacy-policy.html"><span class="icon">🔒</span> Privacy Policy</a></li>
-          <li><a href="terms.html"><span class="icon">📄</span> Terms &amp; Conditions</a></li>
-          <li><a href="contact.html"><span class="icon">📞</span> Contact</a></li>
+          <li><a href="contact.html"><span class="icon">📞</span> Liên hệ</a></li>
         </ul>
       </nav>
     </div>
@@ -586,14 +588,17 @@
               <div class="menu-tile-icon"><i class="bi bi-telephone-fill"></i></div>
               <div>Call now</div>
             </a>
-            <a href="https://maps.app.goo.gl/c2sxNmnwuxMCo3bz7?g_st=ipc" class="menu-tile" target="_blank" rel="noopener noreferrer" data-bs-dismiss="offcanvas">
+            <a href="https://maps.app.goo.gl/c2sxNmnwuxMCo3bz7?g_st=ipc" class="menu-tile"
+               target="_blank" rel="noopener noreferrer" data-bs-dismiss="offcanvas">
               <div class="menu-tile-icon"><i class="bi bi-geo-alt-fill"></i></div>
               <div>Open map</div>
             </a>
-            <a href="sale-bikes.html" class="menu-tile" data-bs-dismiss="offcanvas">
+            <!-- Price list = trang Sale -->
+            <a href="sale.html" class="menu-tile" data-bs-dismiss="offcanvas">
               <div class="menu-tile-icon"><i class="bi bi-tag-fill"></i></div>
               <div>Price list</div>
             </a>
+            <!-- FAQ -->
             <a href="faq.html" class="menu-tile" data-bs-dismiss="offcanvas">
               <div class="menu-tile-icon"><i class="bi bi-question-circle-fill"></i></div>
               <div>FAQ</div>
@@ -607,20 +612,20 @@
 
           <a href="index.html" class="menu-link-row" data-bs-dismiss="offcanvas">
             <div class="menu-link-icon"><i class="bi bi-house-door-fill"></i></div>
-            <span>Home</span>
+            <span>Trang chủ</span>
           </a>
 
-          <a href="about.html" class="menu-link-row" data-bs-dismiss="offcanvas">
+          <a href="gioithieu.html" class="menu-link-row" data-bs-dismiss="offcanvas">
             <div class="menu-link-icon"><i class="bi bi-info-circle-fill"></i></div>
-            <span>About</span>
+            <span>Giới thiệu</span>
           </a>
 
-          <a href="sale-bikes.html" class="menu-link-row" data-bs-dismiss="offcanvas">
+          <a href="sale.html" class="menu-link-row" data-bs-dismiss="offcanvas">
             <div class="menu-link-icon"><i class="bi bi-bicycle"></i></div>
             <span>Sale Bikes</span>
           </a>
 
-          <a href="rent-bikes.html" class="menu-link-row" data-bs-dismiss="offcanvas">
+          <a href="rental.html" class="menu-link-row" data-bs-dismiss="offcanvas">
             <div class="menu-link-icon"><i class="bi bi-scooter"></i></div>
             <span>Rent Bikes</span>
           </a>
@@ -632,7 +637,7 @@
 
           <a href="contact.html" class="menu-link-row" data-bs-dismiss="offcanvas">
             <div class="menu-link-icon"><i class="bi bi-telephone-outbound-fill"></i></div>
-            <span>Contact</span>
+            <span>Liên hệ</span>
           </a>
         </div>
 
