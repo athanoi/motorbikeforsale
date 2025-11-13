@@ -906,31 +906,36 @@
       <!-- Mobile Menu Button -->
       <button class="mobile-menu-btn d-md-none" id="mobileMenuBtn" aria-label="Open menu">☰</button>
 
-      <!-- Desktop Menu with Underline Effect & Active State -->
+      <!-- ============================================= -->
+      <!-- ===== START DESKTOP NAV (STRUCTURE EDITED) ===== -->
+      <!-- ============================================= -->
       <nav class="desktop-nav d-none d-md-block" aria-label="Main navigation">
         <ul>
           <!-- Home is ACTIVE for index.html -->
-          <li><a href="index.html" class="nav-link-item active"><span class="icon">🏠</span> Home</a></li>
+          <li><a href="index.html" class="nav-link-item active">Home</a></li>
 
-          <li><a href="about.html" class="nav-link-item"><span class="icon">ℹ️</span> About</a></li>
+          <li><a href="about.html" class="nav-link-item">About</a></li>
 
           <li class="has-dropdown">
             <button class="dropdown-toggle" type="button">
-              <span class="icon">🛵</span> Service
+              Service
               <i class="bi bi-chevron-down" aria-hidden="true" style="font-size:0.8rem;"></i>
             </button>
             <ul class="dropdown-menu">
-              <li><a href="sale-bikes.html">Sale Bikes</a></li>
-              <li><a href="rent-bikes.html">Rent Bikes</a></li>
+              <li><a href="sale.html">Sale</a></li>
+              <li><a href="rental.html">Rental</a></li>
             </ul>
           </li>
 
-          <li><a href="faq.html" class="nav-link-item"><span class="icon">❓</span> FAQ</a></li>
-          <li><a href="privacy-policy.html" class="nav-link-item"><span class="icon">🔒</span> Privacy</a></li>
-          <li><a href="terms.html" class="nav-link-item"><span class="icon">📜</span> Terms &amp; Conditions</a></li>
-          <li><a href="contact.html" class="nav-link-item"><span class="icon">📞</span> Contact</a></li>
+          <li><a href="faq.html" class="nav-link-item">FAQ</a></li>
+          <li><a href="terms.html" class="nav-link-item">Terms</a></li>
+          <li><a href="privacy.html" class="nav-link-item">Privacy</a></li>
+          <li><a href="contract.html" class="nav-link-item">Contract</a></li>
         </ul>
       </nav>
+      <!-- =========================================== -->
+      <!-- ===== END DESKTOP NAV (STRUCTURE EDITED) ===== -->
+      <!-- =========================================== -->
     </div>
   </div>
 
@@ -970,9 +975,9 @@
               <div class="menu-tile-icon"><i class="bi bi-geo-alt-fill"></i></div>
               <div>Open map</div>
             </a>
-            <a href="sale-bikes.html" class="menu-tile" data-bs-dismiss="offcanvas">
+            <a href="sale.html" class="menu-tile" data-bs-dismiss="offcanvas">
               <div class="menu-tile-icon"><i class="bi bi-tag-fill"></i></div>
-              <div>Price list</div>
+              <div>View Sale</div>
             </a>
             <a href="faq.html" class="menu-tile" data-bs-dismiss="offcanvas">
               <div class="menu-tile-icon"><i class="bi bi-question-circle-fill"></i></div>
@@ -981,7 +986,9 @@
           </div>
         </div>
 
-        <!-- Navigation panel -->
+        <!-- ============================================== -->
+        <!-- ===== START MOBILE NAV (STRUCTURE EDITED) ===== -->
+        <!-- ============================================== -->
         <div class="menu-panel">
           <div class="menu-section-title">Navigation</div>
 
@@ -1001,8 +1008,8 @@
             <i class="bi bi-chevron-right chevron" aria-hidden="true"></i>
           </button>
           <div class="submenu" id="mobileServiceSubmenu">
-            <a href="sale-bikes.html" data-bs-dismiss="offcanvas">Sale Bikes</a>
-            <a href="rent-bikes.html" data-bs-dismiss="offcanvas">Rent Bikes</a>
+            <a href="sale.html" data-bs-dismiss="offcanvas">Sale</a>
+            <a href="rental.html" data-bs-dismiss="offcanvas">Rental</a>
           </div>
 
           <a href="faq.html" class="menu-link-row" data-bs-dismiss="offcanvas">
@@ -1010,21 +1017,24 @@
             <span>FAQ</span>
           </a>
 
-          <a href="privacy-policy.html" class="menu-link-row" data-bs-dismiss="offcanvas">
-            <div class="menu-link-icon"><i class="bi bi-shield-lock-fill"></i></div>
-            <span>Privacy Policy</span>
-          </a>
-
           <a href="terms.html" class="menu-link-row" data-bs-dismiss="offcanvas">
             <div class="menu-link-icon"><i class="bi bi-file-earmark-text-fill"></i></div>
-            <span>Terms &amp; Conditions</span>
+            <span>Terms</span>
           </a>
 
-          <a href="contact.html" class="menu-link-row" data-bs-dismiss="offcanvas">
+          <a href="privacy.html" class="menu-link-row" data-bs-dismiss="offcanvas">
+            <div class="menu-link-icon"><i class="bi bi-shield-lock-fill"></i></div>
+            <span>Privacy</span>
+          </a>
+
+          <a href="contract.html" class="menu-link-row" data-bs-dismiss="offcanvas">
             <div class="menu-link-icon"><i class="bi bi-telephone-outbound-fill"></i></div>
-            <span>Contact</span>
+            <span>Contract</span>
           </a>
         </div>
+        <!-- ============================================ -->
+        <!-- ===== END MOBILE NAV (STRUCTURE EDITED) ===== -->
+        <!-- ============================================ -->
 
         <!-- Theme panel -->
         <div class="menu-panel">
@@ -1208,16 +1218,22 @@
       </div>
       <div>
         <h5 class="fw-bold text-uppercase mb-3">Quick Links</h5>
+        <!-- ============================================= -->
+        <!-- ===== START FOOTER NAV (STRUCTURE EDITED) ===== -->
+        <!-- ============================================= -->
         <ul class="list-unstyled">
-          <li><a href="index.html" class="footer-link">🏠 Home</a></li>
-          <li><a href="about.html" class="footer-link">ℹ️ About</a></li>
-          <li><a href="sale-bikes.html" class="footer-link">💰 Motorbikes for Sale</a></li>
-          <li><a href="rent-bikes.html" class="footer-link">🛵 Motorbikes for Rent</a></li>
-          <li><a href="faq.html" class="footer-link">❓ FAQs</a></li>
-          <li><a href="privacy-policy.html" class="footer-link">🔒 Privacy Policy</a></li>
-          <li><a href="terms.html" class="footer-link">📜 Terms &amp; Conditions</a></li>
-          <li><a href="contact.html" class="footer-link">📞 Contact Us</a></li>
+          <li><a href="index.html" class="footer-link">Home</a></li>
+          <li><a href="about.html" class="footer-link">About</a></li>
+          <li><a href="sale.html" class="footer-link">Sale</a></li>
+          <li><a href="rental.html" class="footer-link">Rental</a></li>
+          <li><a href="faq.html" class="footer-link">FAQ</a></li>
+          <li><a href="terms.html" class="footer-link">Terms</a></li>
+          <li><a href="privacy.html" class="footer-link">Privacy</a></li>
+          <li><a href="contract.html" class="footer-link">Contract</a></li>
         </ul>
+        <!-- =========================================== -->
+        <!-- ===== END FOOTER NAV (STRUCTURE EDITED) ===== -->
+        <!-- =========================================== -->
       </div>
       <div>
         <h5 class="fw-bold text-uppercase mb-3">Connect &amp; Support</h5>
@@ -1528,3 +1544,4 @@ try {
 
 </body>
 </html>
+
