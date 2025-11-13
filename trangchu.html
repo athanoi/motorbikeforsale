@@ -196,33 +196,39 @@
       cursor:pointer;
     }
 
-    /* ===== OFFCANVAS – upgraded Mobile Menu ===== */
+    /* ===== OFFCANVAS – Mobile Menu (full height + scroll) ===== */
     #offcanvasMenu{
-      background:transparent;    /* để thấy backdrop */
+      background:transparent;
       border:0;
     }
     .offcanvas-backdrop.show{
       background-color:rgba(0,0,0,0.7);
     }
-    .offcanvas-sheet{
+    #offcanvasMenu .offcanvas-sheet{
       background:rgba(10,10,15,0.98);
       border-radius:22px;
       margin:8px;
       padding:16px 14px 18px;
       box-shadow:0 22px 60px rgba(0,0,0,0.8);
       color:#f5f5f5;
+
+      height:calc(100vh - 16px); /* full height minus margins */
+      display:flex;
+      flex-direction:column;
     }
-    .offcanvas-header{
+    #offcanvasMenu .offcanvas-header{
       border-bottom:1px solid rgba(255,255,255,0.08);
       padding:0 0 10px 0;
       margin-bottom:10px;
+      flex-shrink:0;
     }
-    .offcanvas-header h5{
+    #offcanvasMenu .offcanvas-header h5{
       margin:0;
       font-weight:700;
     }
-    .offcanvas-body{
+    #offcanvasMenu .offcanvas-body{
       padding:0;
+      overflow-y:auto; /* scrollable body */
     }
 
     .menu-panel{
@@ -528,6 +534,7 @@
 </head>
 <body>
 
+<!-- HEADER -->
 <header>
   <div class="brand-row">
     <div style="display:flex;align-items:center;gap:12px">
@@ -564,7 +571,7 @@
             </ul>
           </li>
 
-          <!-- Các trang còn lại: sửa tên file cho đúng với bạn -->
+          <!-- Các trang còn lại -->
           <li><a href="faq.html"><span class="icon">❓</span> FAQ</a></li>
           <li><a href="contact.html"><span class="icon">📞</span> Liên hệ</a></li>
         </ul>
@@ -743,8 +750,7 @@
   <div class="container-max">
     <h2 class="text-center mb-3">❓ Frequently Asked Questions</h2>
     <div class="accordion" id="faqAccordion">
-      <!-- FAQs (giữ nguyên) -->
-      <!-- ... (nguyên block FAQ bạn gửi, mình không cắt bớt để tránh trả lời quá dài, bạn giữ như cũ ở đây) ... -->
+      <!-- TODO: đặt nội dung FAQ thật của bạn vào đây -->
     </div>
   </div>
 </section>
@@ -802,8 +808,8 @@
         <h5 class="fw-bold text-uppercase mb-3">Quick Links</h5>
         <ul class="list-unstyled">
           <li><a href="index.html" class="footer-link">🏠 Home</a></li>
-          <li><a href="sale-bikes.html" class="footer-link">💰 Motorbikes for Sale</a></li>
-          <li><a href="rent-bikes.html" class="footer-link">🛵 Motorbikes for Rent</a></li>
+          <li><a href="sale.html" class="footer-link">💰 Motorbikes for Sale</a></li>
+          <li><a href="rental.html" class="footer-link">🛵 Motorbikes for Rent</a></li>
           <li><a href="faq.html" class="footer-link">❓ FAQs</a></li>
           <li><a href="contact.html" class="footer-link">📞 Contact Us</a></li>
           <li><a href="https://maps.app.goo.gl/c2sxNmnwuxMCo3bz7?g_st=ipc" class="footer-link" target="_blank" rel="noopener noreferrer">📍 Find Us on Google Map</a></li>
@@ -909,7 +915,7 @@ try {
 
   function handleMove(xRatio, yRatio){
     const rx = (yRatio - 0.5) * 8;
-    const ry = (xRatio - 0.5) * -12;
+       const ry = (xRatio - 0.5) * -12;
     if (heroCard) heroCard.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg) translateZ(0)`;
     layers.forEach((el, i)=>{
       const depth = (i+1) * 6;
