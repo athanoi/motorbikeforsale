@@ -2,23 +2,19 @@
 <html lang="en">
 <head>
   <meta name="google-site-verification" content="aPKX4OVJZhZ-s0KFoDEyLJRA8zWnPkZn6LymE8OBODQ" />
-  <!-- Basic -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-  <!-- Title / Primary SEO -->
   <title>Hanoi Motorbike For Sale & Rent - Nguyen Tu</title>
   <meta name="description" content="Hanoi Motorbike For Sale & Rent - Nguyen Tu. Reliable scooters and motorbikes for sale or rent in Hanoi. Well-maintained, full paperwork and friendly service." />
   <meta name="keywords" content="Hanoi motorbike rental, motorbike for sale Hanoi, rent motorbike Hanoi, scooter sale Hanoi, Nguyen Tu motorbike" />
   <meta name="author" content="Nguyen Tu Motorbike" />
   <meta name="robots" content="index, follow" />
 
-  <!-- Canonical & Favicon -->
   <link rel="canonical" href="https://athanoi.github.io/motorbikeforsale/" />
   <link rel="icon" href="https://athanoi.github.io/motorbikeforsale/images/favicon.png" type="image/png" />
 
-  <!-- Social / Open Graph -->
   <meta property="og:locale" content="en_US" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Hanoi Motorbike For Sale & Rent - Nguyen Tu" />
@@ -29,21 +25,17 @@
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
 
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Hanoi Motorbike For Sale & Rent - Nguyen Tu" />
   <meta name="twitter:description" content="Reliable motorbikes and scooters for rent or sale in Hanoi. Affordable, high-quality service from Nguyen Tu Motorbike." />
   <meta name="twitter:image" content="https://i.postimg.cc/34z67dfX/13803262-651-D-43-F4-8-DA2-8-DAED35-FEEA5.jpg" />
 
-  <!-- Preconnects & fonts (performance) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
 
-  <!-- Icon library (Font Awesome) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <!-- CSS & libs -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
@@ -86,9 +78,22 @@
     a{color:inherit;text-decoration:none}
     img{max-width:100%;display:block}
 
-    /* Fade-in (0.9s) for sections */
-    .fade-in { opacity:0; transform: translateY(10px); transition: opacity var(--fade-duration) ease, transform var(--fade-duration) ease; }
-    .fade-in.visible { opacity:1; transform: translateY(0); }
+    /* Fade-in (0.9s) for sections – ULTRA */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(18px) scale(0.98);
+      filter: blur(4px);
+      transition:
+        opacity var(--fade-duration) ease-out,
+        transform var(--fade-duration) ease-out,
+        filter var(--fade-duration) ease-out;
+      transition-delay: var(--fade-delay, 0s);
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      filter: blur(0);
+    }
 
     /* ===== HEADER ===== */
     header{
@@ -458,10 +463,18 @@
       margin:0;
       font-weight:700;
     }
+    
+    /* === EDITED: SAFARI iOS BOTTOM FIX === */
     #offcanvasMenu .offcanvas-body{
-      padding:0;
-      overflow-y:auto; /* scrollable body */
+      padding: 0 0 80px 0;
+      overflow-y:auto;
     }
+    @supports (padding: max(0px)) {
+      #offcanvasMenu .offcanvas-body{
+        padding-bottom: max(80px, env(safe-area-inset-bottom) + 24px);
+      }
+    }
+    /* === END EDIT === */
 
     .menu-panel{
       background:rgba(22,22,30,0.98);
@@ -515,6 +528,22 @@
       font-weight:600;
       font-size:0.95rem;
     }
+
+    /* START FIX: iOS Button Reset */
+    /* Fix button Service trong offcanvas bị nền trắng trên iOS */
+    button.menu-link-row,
+    .menu-link-row.service-toggle {
+      background: transparent;
+      border: 0;
+      color: #f5f5f5;
+      width: 100%;
+      text-align: left;
+      cursor: pointer;
+      -webkit-appearance: none; /* Important for iOS Safari */
+      appearance: none;
+    }
+    /* END FIX */
+
     .menu-link-row + .menu-link-row{
       margin-top:4px;
     }
@@ -628,35 +657,325 @@
       transform:translateX(22px);
     }
 
-    /* ===== HERO ===== */
+    /* ===== HERO – Apple mini ultra style ===== */
     #hero{
       min-height:78vh;
-      display:flex;align-items:center;justify-content:center;text-align:center;position:relative;padding:48px 16px;color:var(--accent);overflow:hidden;
-      background: linear-gradient(135deg,#0b0b0b 0%, #2a0000 50%, #120000 100%);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      position:relative;
+      padding:72px 16px 48px;
+      color:var(--accent);
+      overflow:hidden;
+      background: linear-gradient(135deg,#050509 0%, #2a0000 50%, #120000 100%);
     }
-    #hero .light-shimmer{position:absolute;left:-20%;top:-30%;width:180%;height:180%;background:radial-gradient(circle at 40% 20%, rgba(255,255,255,0.04), transparent 15%);mix-blend-mode:overlay;pointer-events:none;animation:shimmer 12s linear infinite;}
-    @keyframes shimmer{0%{transform:translateX(-10%) translateY(0)}50%{transform:translateX(10%) translateY(4%)}100%{transform:translateX(-10%) translateY(0)}}
 
-    .hero-inner{position:relative;z-index:4;max-width:1100px;margin:auto;perspective:1000px;}
-    .hero-card{display:inline-block;padding:22px 28px;border-radius:14px;background:rgba(255,255,255,0.02);backdrop-filter:blur(6px);box-shadow:0 12px 36px rgba(0,0,0,0.45);transform-style:preserve-3d;transition:transform 0.15s ease;}
+    #hero .light-shimmer{
+      position:absolute;
+      left:-20%;
+      top:-30%;
+      width:180%;
+      height:180%;
+      background:
+        radial-gradient(circle at 20% 0%, rgba(255,255,255,0.08), transparent 40%),
+        radial-gradient(circle at 80% 20%, rgba(255,0,0,0.12), transparent 55%);
+      mix-blend-mode:screen;
+      pointer-events:none;
+      animation:shimmer 14s linear infinite;
+    }
+    @keyframes shimmer{
+      0%{transform:translateX(-10%) translateY(0)}
+      50%{transform:translateX(12%) translateY(4%)}
+      100%{transform:translateX(-10%) translateY(0)}
+    }
 
-    .hero-title{font-size:2.25rem;font-weight:800;margin-bottom:12px;line-height:1.05;color:#fff}
+    .hero-inner{
+      position:relative;
+      z-index:4;
+      max-width:1100px;
+      margin:auto;
+      perspective:1000px;
+    }
+
+    /* card tổng – vẫn dùng cho parallax */
+    .hero-card{
+      display:block;
+      border-radius:26px;
+      background:linear-gradient(135deg,rgba(255,255,255,0.06),rgba(0,0,0,0.7));
+      border:1px solid rgba(255,255,255,0.10);
+      box-shadow:
+        0 24px 70px rgba(0,0,0,0.65),
+        0 0 0 1px rgba(255,255,255,0.05) inset;
+      padding:26px 26px 24px;
+      backdrop-filter:blur(22px);
+      -webkit-backdrop-filter:blur(22px);
+      transform-style:preserve-3d;
+      transition:transform 0.15s ease, box-shadow .25s ease;
+    }
+
+    /* layout 2 cột kiểu Apple */
+    .hero-layout{
+      display:grid;
+      grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);
+      gap:30px;
+      align-items:center;
+    }
+
+    /* bên trái: text, pills */
+    .hero-main{
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+    }
+
+    .hero-badge-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      align-items:center;
+      font-size:0.85rem;
+    }
+    .hero-pill{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:4px 10px;
+      border-radius:999px;
+      background:rgba(0,0,0,0.65);
+      border:1px solid rgba(255,255,255,0.18);
+      text-transform:uppercase;
+      letter-spacing:0.12em;
+      font-size:0.7rem;
+      color:#FFD700;
+    }
+    .hero-pill-dot{
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:#22c55e;
+      box-shadow:0 0 0 6px rgba(34,197,94,0.4);
+    }
+
+    .hero-badge-note{
+      opacity:0.85;
+      color:rgba(255,255,255,0.9);
+    }
+
+    /* title kiểu Apple */
+    .hero-title{
+      font-size:2.6rem;
+      font-weight:800;
+      margin:4px 0 4px;
+      line-height:1.02;
+      color:#fff;
+    }
+    @media (min-width: 992px){
+      .hero-title{ font-size:3rem; }
+    }
     .hero-title.glow{
       text-shadow:
-        0 0 6px #fff,
-        0 0 12px #ff0000,
-        0 0 20px #ff4500,
-        0 0 36px #ff0000;
-      animation: glowPulse 3s infinite alternate;
+        0 0 16px rgba(255,0,0,0.7),
+        0 0 40px rgba(255,255,255,0.6);
+      animation:glowPulse 3s ease-in-out infinite alternate;
     }
-    @keyframes glowPulse {
-      from { text-shadow: 0 0 8px #ff0000, 0 0 16px #ff6600, 0 0 26px #ff0000; }
-      to { text-shadow: 0 0 18px #fff, 0 0 36px #ff0000, 0 0 56px #ff6600; }
+    @keyframes glowPulse{
+      from { text-shadow:0 0 10px rgba(255,0,0,0.7),0 0 30px rgba(255,96,0,0.8); }
+      to   { text-shadow:0 0 18px rgba(255,255,255,0.9),0 0 60px rgba(255,0,0,0.9); }
     }
 
-    .hero-sub{font-size:1.05rem;margin-bottom:14px;color:rgba(255,255,255,0.95);max-width:860px;margin-left:auto;margin-right:auto}
+    .hero-sub{
+      font-size:1.05rem;
+      margin-bottom:4px;
+      color:rgba(255,255,255,0.92);
+      max-width:520px;
+    }
 
-    .hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+    /* hàng specs kiểu mini-card */
+    .hero-specs-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:6px;
+    }
+
+    .hero-spec-card{
+      min-width:130px;
+      padding:8px 10px;
+      border-radius:16px;
+      background:rgba(0,0,0,0.6);
+      border:1px solid rgba(255,255,255,0.16);
+      box-shadow:0 12px 30px rgba(0,0,0,0.6);
+      font-size:0.8rem;
+    }
+    .hero-spec-label{
+      text-transform:uppercase;
+      letter-spacing:0.14em;
+      font-size:0.68rem;
+      opacity:0.75;
+    }
+    .hero-spec-main{
+      font-size:0.95rem;
+      font-weight:700;
+    }
+    .hero-spec-sub{
+      font-size:0.78rem;
+      opacity:0.82;
+    }
+
+    /* actions + mini note */
+    .hero-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:14px;
+    }
+    .hero-mini-note{
+      margin-top:8px;
+      font-size:0.86rem;
+      opacity:0.9;
+      color:rgba(255,255,255,0.86);
+    }
+
+    /* bên phải: “device frame” */
+    .hero-media{
+      position:relative;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .hero-device-frame{
+      width:100%;
+      max-width:320px;
+      aspect-ratio:3/4;
+      border-radius:28px;
+      padding:10px;
+      background:radial-gradient(circle at 20% 0%,rgba(255,255,255,0.4),transparent 55%),
+                 radial-gradient(circle at 80% 110%,rgba(255,0,0,0.6),transparent 55%);
+      box-shadow:
+        0 26px 70px rgba(0,0,0,0.9),
+        0 0 0 1px rgba(255,255,255,0.12);
+    }
+
+    .hero-device-inner{
+      width:100%;
+      height:100%;
+      border-radius:22px;
+      overflow:hidden;
+      background:radial-gradient(circle at 30% 0%,#2b0404,#050509 60%,#000000 100%);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .hero-device-inner img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transform:scale(1.02);
+    }
+
+    /* floating badge bên phải */
+    .hero-floating-badge{
+      position:absolute;
+      bottom:8%;
+      right:-6%;
+      padding:10px 12px;
+      border-radius:18px;
+      background:rgba(0,0,0,0.82);
+      border:1px solid rgba(255,255,255,0.2);
+      box-shadow:0 16px 40px rgba(0,0,0,0.9);
+      font-size:0.75rem;
+      min-width:170px;
+      animation:floatBadge 6s ease-in-out infinite;
+    }
+    @keyframes floatBadge{
+      0%,100%{ transform:translateY(0); }
+      50%{ transform:translateY(-6px); }
+    }
+    .hero-floating-title{
+      font-weight:700;
+      margin-bottom:2px;
+    }
+    .hero-floating-text{
+      opacity:0.85;
+    }
+
+    /* icon + rating */
+    .hero-rating-row{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      margin-top:4px;
+    }
+    .hero-rating-row span{
+      font-size:0.75rem;
+    }
+
+    /* bike emoji chạy ngang – giữ nguyên nhưng tinh chỉnh nhẹ */
+    .bike-anim{
+      position:absolute;
+      bottom:4%;
+      left:-18%;
+      font-size:48px;
+      transform-origin:center;
+      z-index:5;
+      will-change:transform,left,opacity;
+      animation:bikeRun 8s linear infinite;
+      filter: drop-shadow(0 16px 18px rgba(0,0,0,0.6));
+      user-select:none;
+      pointer-events:none;
+    }
+    @keyframes bikeRun{
+      0% { left:-20%; transform: translateY(0) scale(0.9); opacity:0; }
+      8% { opacity:1; }
+      45% { left:50%; transform: translateY(-8px) scale(1.05); }
+      90% { left:115%; opacity:1; transform: translateY(0) scale(0.98); }
+      100% { left:125%; opacity:0; transform: translateY(0) scale(1); }
+    }
+
+    /* responsive hero */
+    @media (max-width: 991.98px){
+      .hero-card{
+        padding:20px 18px 18px;
+        border-radius:22px;
+      }
+      .hero-layout{
+        grid-template-columns:1fr;
+        gap:22px;
+      }
+      .hero-media{
+        order:-1;
+      }
+      .hero-title{
+        font-size:2.2rem;
+      }
+    }
+    @media (max-width: 575.98px){
+      #hero{
+        padding-top:64px;
+      }
+      .hero-card{
+        padding:18px 14px 16px;
+      }
+      .hero-specs-row{
+        gap:8px;
+      }
+      .hero-spec-card{
+        min-width:0;
+        flex:1;
+      }
+      .hero-actions{
+        flex-direction:column;
+      }
+      .hero-floating-badge{
+        position:static;
+        margin-top:10px;
+        animation:none;
+      }
+    }
+
+    /* Nút bấm hero (copy từ file cũ, vì file mới ko có) */
     .btn-site{
       background: linear-gradient(90deg,#FFD700,#FFB200);
       color:#111;font-weight:800;padding:10px 18px;border-radius:999px;border:none;box-shadow:0 8px 26px rgba(255,182,0,0.18);
@@ -685,30 +1004,6 @@
       95%{transform:translateX(-1px)}
       96%{transform:translateX(1px)}
     }
-
-    .bike-anim {
-      position:absolute;
-      bottom:8%;
-      left:-18%;
-      font-size:48px;
-      transform-origin:center;
-      z-index:5;
-      will-change:transform,left,opacity;
-      animation: bikeRun 8s linear infinite;
-      filter: drop-shadow(0 16px 18px rgba(0,0,0,0.6));
-      user-select:none;
-      pointer-events:none;
-    }
-    @keyframes bikeRun {
-      0% { left:-18%; transform: translateY(0) rotateY(0) scale(0.95) ; opacity:0; }
-      6% { opacity:1; }
-      40% { left:48%; transform: translateY(-8px) rotateY(0) scale(1.05); }
-      50% { transform: translateY(-10px) rotateY(0) scale(1.06); }
-      92% { left:110%; opacity:1; transform: translateY(0) rotateY(0) scale(0.98); }
-      100% { left:120%; opacity:0; transform: translateY(0) rotateY(0) scale(1); }
-    }
-
-    #hero:hover .hero-card{ transform: translateZ(10px) rotateX(2deg) rotateY(-2deg); }
 
     /* ===== SECTIONS & CARDS ===== */
     section{padding:48px 16px}
@@ -750,37 +1045,220 @@
     .map-embed{width:100%;height:320px;border-radius:10px;border:0;box-shadow:0 8px 28px rgba(0,0,0,0.08)}
     :root[data-theme="dark"] .map-embed { filter: invert(0.9) hue-rotate(180deg); }
 
-    /* ===== FOOTER ===== */
+    /* ===== FOOTER (NEW) ===== */
     footer{
       background: var(--footer-bg);
       color: #f5f5f5;
-      padding:40px 16px;
+      padding:40px 16px 26px;
       position:relative;
       overflow:hidden;
     }
-    .led-border{position:absolute;inset:0;pointer-events:none;border-radius:10px}
+
+    .led-border{
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      border-radius:18px;
+    }
     .led-border::before{
       content:"";
       position:absolute;
       top:-2px;left:-2px;right:-2px;bottom:-2px;
       background:linear-gradient(90deg,#FFD700,#FF0000,#FFD700,#FF0000);
       background-size:400% 400%;
-      z-index:1;animation:moveLights 10s linear infinite;border-radius:10px;filter:blur(4px);opacity:0.6;
+      z-index:1;
+      animation:moveLights 10s linear infinite;
+      border-radius:18px;
+      filter:blur(4px);
+      opacity:0.55;
     }
-    @keyframes moveLights{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+    @keyframes moveLights{
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+    }
 
-    .footer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1100px;margin:0 auto;position:relative;z-index:2}
-    @media(max-width:768px){.footer-grid{grid-template-columns:1fr}}
-    footer h5{color:#FFD700;text-shadow:0 0 6px rgba(255,215,0,0.25);letter-spacing:1px}
-    .footer-link{color:#f5f5f5;display:inline-block;margin:6px 0;font-weight:600;transition:color .25s,transform .25s}
-    .footer-link:hover{color:#FFD7700;transform:translateX(6px)}
-    .social-icon{font-size:1.7rem;color:#f5f5f5;transition:transform .3s,color .3s,text-shadow .3s}
-    .social-icon:hover{color:#FFD700;transform:scale(1.25) rotate(-8deg);text-shadow:0 0 12px #FFD700}
-    .back-to-top{font-weight:700;transition:all .3s}
-    .back-to-top:hover{color:#FFD700;text-shadow:0 0 10px #FFD700}
+    .footer-inner{
+      max-width:1100px;
+      margin:0 auto;
+      position:relative;
+      z-index:2;
+    }
+
+    /* layout 3 cột desktop */
+    .footer-grid{
+      display:grid;
+      grid-template-columns:minmax(0,2fr) minmax(0,1.2fr) minmax(0,1.6fr);
+      gap:26px;
+      align-items:flex-start;
+    }
+
+    /* CARD cho từng cột */
+    .footer-box{
+      background: rgba(0,0,0,0.22);
+      border-radius: 16px;
+      padding: 14px 16px;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.55);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    /* cột chung */
+    .footer-col-title{
+      color:#FFD700;
+      text-shadow:0 0 6px rgba(255,215,0,0.25);
+      letter-spacing:0.08em;
+      text-transform:uppercase;
+      font-size:0.9rem;
+      margin-bottom:10px;
+    }
+
+    .footer-about-text{
+      color:#f5f5f5;
+      margin-bottom:10px;
+    }
+
+    .footer-contact-list{
+      list-style:none;
+      padding:0;
+      margin:0;
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+    }
+    .footer-contact-list li{
+      display:flex;
+      gap:7px;
+      align-items:flex-start;
+      font-size:0.95rem;
+    }
+    .footer-contact-list span.icon{
+      width:18px;
+    }
+
+    /* Quick links */
+    .footer-link-list{
+      list-style:none;
+      padding:0;
+      margin:0;
+      column-count:1;          /* mobile 1 cột, desktop sẽ set lại ở dưới */
+      column-gap:18px;
+    }
+
+    .footer-link{
+      color:#f5f5f5;
+      display:block;
+      margin:6px 0;
+      text-decoration:none;
+    }
+
+    /* pill + icon cho mỗi link */
+    .footer-link-pill{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(0,0,0,0.25);
+      box-shadow:0 6px 18px rgba(0,0,0,0.4);
+      transition:transform .25s, background .25s, color .25s;
+    }
+
+    .footer-link-pill i{
+      font-size:1rem;
+    }
+
+    .footer-link:hover .footer-link-pill{
+      transform:translateX(4px);
+      background:rgba(255,215,0,0.18);
+      color:#FFD700;
+    }
+
+    /* social */
+    .footer-social-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-bottom:10px;
+    }
+    .social-icon{
+      font-size:1.6rem;
+      color:#f5f5f5;
+      transition:transform .3s,color .3s,text-shadow .3s;
+    }
+    .social-icon:hover{
+      color:#FFD700;
+      transform:scale(1.15) rotate(-6deg);
+      text-shadow:0 0 10px #FFD700;
+    }
+
+    /* đáy footer */
+    .footer-divider{
+      border-color:rgba(255,255,255,0.18);
+      margin-top:26px;
+      margin-bottom:14px;
+    }
+
+    .footer-bottom{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      font-size:0.85rem;
+    }
+    .back-to-top{
+      font-weight:700;
+      text-decoration:none;
+      color:#FFD700;
+      transition:all .3s;
+    }
+    .back-to-top:hover{
+      text-shadow:0 0 10px #FFD700;
+    }
+
+    /* ===== RESPONSIVE FOOTER ===== */
+
+    /* Tablet: 2 cột, About chiếm full width trên cùng */
+    @media (max-width: 992px){
+      .footer-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+      }
+      .footer-col-about{
+        grid-column:1 / -1;
+      }
+    }
+
+    /* Desktop: Quick links 2 cột */
+    @media (min-width: 768px){
+      .footer-link-list{
+        column-count:2;
+      }
+    }
+
+    /* Mobile: 1 cột, căn giữa, mọi thứ thoáng hơn */
+    @media (max-width: 575.98px){
+      .footer-grid{
+        grid-template-columns:1fr;
+        text-align:center;
+      }
+      .footer-contact-list li{
+        justify-content:center;
+      }
+      .footer-social-row{
+        justify-content:center;
+      }
+      .footer-bottom{
+        flex-direction:column;
+        text-align:center;
+      }
+      .footer-inner{
+        padding-inline:4px;
+      }
+    }
 
     /* ===== Floating Contact Menu Pro ===== */
-    .contact-floating{position:fixed;bottom:22px;right:18px;z-index:1400}
+    /* Đã sửa z-index từ 1400 xuống 1000 để nằm dưới offcanvas (có z-index 1050) */
+    .contact-floating{position:fixed;bottom:22px;right:18px;z-index:1000}
     .main-btn{width:60px;height:60px;background:linear-gradient(135deg,#D6001C,#ff3c3c);border-radius:50%;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.6rem;cursor:pointer;box-shadow:0 0 15px rgba(255,60,60,0.6);animation:pulse 2s infinite;transition:transform .2s}
     .main-btn:hover{transform:scale(1.06)}
     .contact-options{display:flex;flex-direction:column;align-items:center;gap:10px;margin-bottom:10px;opacity:0;pointer-events:none;transform:translateY(20px);transition:all .4s ease}
@@ -788,6 +1266,17 @@
     .contact-options a:hover{transform:scale(1.12)}
     .contact-floating.active .contact-options{opacity:1;pointer-events:auto;transform:translateY(0)}
     @keyframes pulse{0%{box-shadow:0 0 10px rgba(255,60,60,0.35),0 0 20px rgba(255,60,60,0.15)}50%{box-shadow:0 0 25px rgba(255,60,60,0.6),0 0 40px rgba(255,60,60,0.25)}100%{box-shadow:0 0 10px rgba(255,60,60,0.35),0 0 20px rgba(255,60,60,0.15)}}
+
+    /* ===== START: CSS MỚI ĐỂ ẨN NÚT CONTACT KHI OFFCANVAS MỞ ===== */
+    /* Ẩn nút contact khi offcanvas mở */
+    body.offcanvas-open-custom .contact-floating{
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(20px);
+      /* Thêm transition để hiệu ứng mượt mà */
+      transition: opacity .3s ease, transform .3s ease; 
+    }
+    /* ===== END: CSS MỚI ===== */
 
     .muted{color:var(--muted)}
     .text-center { text-align:center }
@@ -873,10 +1362,8 @@
 </head>
 <body>
 
-<!-- HEADER (UPDATED MINI-APP) -->
 <header>
   <div class="brand-row">
-    <!-- LEFT: LOGO + TEXT (New Design) -->
     <a href="index.html" class="brand-left">
       <div class="logo-wrap">
         <img src="https://i.postimg.cc/3NwHXGgc/13803262-651-D-43-F4-8-DA2-8-DAED35-FEEA5.png"
@@ -884,14 +1371,12 @@
         <span class="logo-tag">NT</span>
       </div>
       <div class="brand-text">
-        <div class="site-title">Hanoi Motorbike For Sale &amp; Rent</div>
-        <div class="site-sub">Scooters &amp; Motorbikes in Hanoi</div>
+        <div class="site-title">Hanoi Motorbike For Sale & Rent</div>
+        <div class="site-sub">Scooters & Motorbikes in Hanoi</div>
       </div>
     </a>
 
-    <!-- RIGHT: STATUS MINI APP + THEME + MENU -->
     <div class="brand-right">
-      <!-- MINI APP OPEN STATUS (UPDATED HTML) -->
       <div class="status-pill" id="statusPill" aria-label="Opening hours (tap to view schedule)" role="button" tabindex="0">
         <span class="status-dot" aria-hidden="true"></span>
         <div>
@@ -900,41 +1385,36 @@
         </div>
       </div>
 
-      <!-- Theme toggle (hidden on mobile via CSS) -->
       <button class="theme-toggle" id="themeToggle" type="button">🌙 Dark</button>
 
-      <!-- Mobile Menu Button -->
       <button class="mobile-menu-btn d-md-none" id="mobileMenuBtn" aria-label="Open menu">☰</button>
 
-      <!-- Desktop Menu with Underline Effect & Active State -->
       <nav class="desktop-nav d-none d-md-block" aria-label="Main navigation">
         <ul>
-          <!-- Home is ACTIVE for index.html -->
-          <li><a href="index.html" class="nav-link-item active"><span class="icon">🏠</span> Home</a></li>
+          <li><a href="index.html" class="nav-link-item active">Home</a></li>
 
-          <li><a href="about.html" class="nav-link-item"><span class="icon">ℹ️</span> About</a></li>
+          <li><a href="about.html" class="nav-link-item">About</a></li>
 
           <li class="has-dropdown">
             <button class="dropdown-toggle" type="button">
-              <span class="icon">🛵</span> Service
+              Service
               <i class="bi bi-chevron-down" aria-hidden="true" style="font-size:0.8rem;"></i>
             </button>
             <ul class="dropdown-menu">
-              <li><a href="sale-bikes.html">Sale Bikes</a></li>
-              <li><a href="rent-bikes.html">Rent Bikes</a></li>
+              <li><a href="sale.html">Sale</a></li>
+              <li><a href="rental.html">Rental</a></li>
             </ul>
           </li>
 
-          <li><a href="faq.html" class="nav-link-item"><span class="icon">❓</span> FAQ</a></li>
-          <li><a href="privacy-policy.html" class="nav-link-item"><span class="icon">🔒</span> Privacy</a></li>
-          <li><a href="terms.html" class="nav-link-item"><span class="icon">📜</span> Terms &amp; Conditions</a></li>
-          <li><a href="contact.html" class="nav-link-item"><span class="icon">📞</span> Contact</a></li>
+          <li><a href="faq.html" class="nav-link-item">FAQ</a></li>
+          <li><a href="terms.html" class="nav-link-item">Terms</a></li>
+          <li><a href="privacy.html" class="nav-link-item">Privacy</a></li>
+          <li><a href="contract.html" class="nav-link-item">Contract</a></li>
         </ul>
       </nav>
-    </div>
+      </div>
   </div>
 
-  <!-- Opening hours popover (NEW HTML) -->
   <div class="status-popover" id="statusPopover" aria-hidden="true">
     <div class="status-popover-header">
       <span class="status-popover-title">Opening hours</span>
@@ -949,7 +1429,6 @@
     </div>
   </div>
 
-  <!-- Offcanvas for mobile (unchanged) -->
   <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
     <div class="offcanvas-sheet">
       <div class="offcanvas-header">
@@ -957,40 +1436,38 @@
         <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
-        <!-- Quick actions panel -->
         <div class="menu-panel">
           <div class="menu-section-title">Quick actions</div>
           <div class="menu-grid">
-            <a href="tel:+84942467674" class="menu-tile" data-bs-dismiss="offcanvas">
+            <a href="tel:+84942467674" class="menu-tile">
               <div class="menu-tile-icon"><i class="bi bi-telephone-fill"></i></div>
               <div>Call now</div>
             </a>
             <a href="https://maps.app.goo.gl/c2sxNmnwuxMCo3bz7?g_st=ipc" class="menu-tile"
-               target="_blank" rel="noopener noreferrer" data-bs-dismiss="offcanvas">
+               target="_blank" rel="noopener noreferrer">
               <div class="menu-tile-icon"><i class="bi bi-geo-alt-fill"></i></div>
               <div>Open map</div>
             </a>
-            <a href="sale-bikes.html" class="menu-tile" data-bs-dismiss="offcanvas">
+            <a href="sale.html" class="menu-tile">
               <div class="menu-tile-icon"><i class="bi bi-tag-fill"></i></div>
-              <div>Price list</div>
+              <div>View Sale</div>
             </a>
-            <a href="faq.html" class="menu-tile" data-bs-dismiss="offcanvas">
+            <a href="faq.html" class="menu-tile">
               <div class="menu-tile-icon"><i class="bi bi-question-circle-fill"></i></div>
               <div>FAQ</div>
             </a>
           </div>
         </div>
 
-        <!-- Navigation panel -->
         <div class="menu-panel">
           <div class="menu-section-title">Navigation</div>
 
-          <a href="index.html" class="menu-link-row" data-bs-dismiss="offcanvas">
+          <a href="index.html" class="menu-link-row">
             <div class="menu-link-icon"><i class="bi bi-house-door-fill"></i></div>
             <span>Home</span>
           </a>
 
-          <a href="about.html" class="menu-link-row" data-bs-dismiss="offcanvas">
+          <a href="about.html" class="menu-link-row">
             <div class="menu-link-icon"><i class="bi bi-info-circle-fill"></i></div>
             <span>About</span>
           </a>
@@ -1001,32 +1478,30 @@
             <i class="bi bi-chevron-right chevron" aria-hidden="true"></i>
           </button>
           <div class="submenu" id="mobileServiceSubmenu">
-            <a href="sale-bikes.html" data-bs-dismiss="offcanvas">Sale Bikes</a>
-            <a href="rent-bikes.html" data-bs-dismiss="offcanvas">Rent Bikes</a>
+            <a href="sale.html">Sale</a>
+            <a href="rental.html">Rental</a>
           </div>
 
-          <a href="faq.html" class="menu-link-row" data-bs-dismiss="offcanvas">
+          <a href="faq.html" class="menu-link-row">
             <div class="menu-link-icon"><i class="bi bi-patch-question-fill"></i></div>
             <span>FAQ</span>
           </a>
 
-          <a href="privacy-policy.html" class="menu-link-row" data-bs-dismiss="offcanvas">
-            <div class="menu-link-icon"><i class="bi bi-shield-lock-fill"></i></div>
-            <span>Privacy Policy</span>
-          </a>
-
-          <a href="terms.html" class="menu-link-row" data-bs-dismiss="offcanvas">
+          <a href="terms.html" class="menu-link-row">
             <div class="menu-link-icon"><i class="bi bi-file-earmark-text-fill"></i></div>
-            <span>Terms &amp; Conditions</span>
+            <span>Terms</span>
           </a>
 
-          <a href="contact.html" class="menu-link-row" data-bs-dismiss="offcanvas">
+          <a href="privacy.html" class="menu-link-row">
+            <div class="menu-link-icon"><i class="bi bi-shield-lock-fill"></i></div>
+            <span>Privacy</span>
+          </a>
+
+          <a href="contract.html" class="menu-link-row">
             <div class="menu-link-icon"><i class="bi bi-telephone-outbound-fill"></i></div>
-            <span>Contact</span>
+            <span>Contract</span>
           </a>
         </div>
-
-        <!-- Theme panel -->
         <div class="menu-panel">
           <div class="menu-section-title">Display</div>
           <div class="offcanvas-theme-row">
@@ -1043,20 +1518,88 @@
       </div>
     </div>
   </div>
-</header>
+  </header>
 
-<!-- HERO -->
 <section id="hero" class="fade-in" aria-label="Hero">
   <div class="light-shimmer" aria-hidden="true"></div>
 
   <div class="hero-inner">
     <div class="hero-card" id="heroCard" role="region" aria-label="Main hero">
-      <h1 class="hero-title glow">Hanoi Motorbike For Sale &amp; Rent</h1>
-      <p class="hero-sub">Reliable scooters &amp; motorbikes for sale or rent in Hanoi — all with complete papers and ready to ride.</p>
+      <div class="hero-layout">
+        <div class="hero-media">
+          <div class="hero-device-frame">
+            <div class="hero-device-inner">
+              <img src="https://i.postimg.cc/3NwHXGgc/13803262-651-D-43-F4-8-DA2-8-DAED35-FEEA5.png"
+                   alt="Nguyen Tu Motorbike lineup">
+            </div>
+          </div>
 
-      <div class="hero-actions">
-        <a class="btn-site" href="https://athanoi.github.io/moto/" target="_blank" rel="noopener noreferrer" aria-label="Visit official site">🌐 Visit Official Website</a>
-        <a class="btn-wp" href="https://wa.me/84942467674" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><i class="bi bi-whatsapp"></i> Chat on WhatsApp</a>
+          <div class="hero-floating-badge">
+            <div class="hero-floating-title">2025 Honda Vision Lineup</div>
+            <div class="hero-floating-text">4 scooters in stock • Full papers</div>
+            <div class="hero-rating-row">
+              <i class="bi bi-star-fill" style="font-size:0.9rem;color:#FFD700;"></i>
+              <span>Rated 4.9/5 by expats in Hanoi</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-main">
+          <div class="hero-badge-row">
+            <div class="hero-pill">
+              <span class="hero-pill-dot"></span>
+              <span>New • For sale & rent</span>
+            </div>
+            <div class="hero-badge-note">
+              Hanoi’s friendly motorbike shop – English support
+            </div>
+          </div>
+
+          <h1 class="hero-title glow">Hanoi Motorbike For Sale & Rent</h1>
+          <p class="hero-sub">
+            Reliable scooters & motorbikes with full paperwork – ready to ride the same day.
+            Pickup in Long Bien, close to Old Quarter & Tay Ho.
+          </p>
+
+          <div class="hero-specs-row">
+            <div class="hero-spec-card">
+              <div class="hero-spec-label">From</div>
+              <div class="hero-spec-main">10M VND</div>
+              <div class="hero-spec-sub">Used Honda scooters</div>
+            </div>
+            <div class="hero-spec-card">
+              <div class="hero-spec-label">Documents</div>
+              <div class="hero-spec-main">Full papers</div>
+              <div class="hero-spec-sub">Easy transfer in Hanoi</div>
+            </div>
+            <div class="hero-spec-card">
+              <div class="hero-spec-label">Support</div>
+              <div class="hero-spec-main">EN / VI</div>
+              <div class="hero-spec-sub">Tourists & expats welcome</div>
+            </div>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn-site"
+               href="https://athanoi.github.io/moto/"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Visit official site">
+              🌐 Visit Official Website
+            </a>
+            <a class="btn-wp"
+               href="https://wa.me/84942467674"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Chat on WhatsApp">
+               <i class="bi bi-whatsapp"></i> Chat on WhatsApp
+            </a>
+          </div>
+
+          <div class="hero-mini-note">
+            No hidden deposit • Free helmets • Flexible long-term rental & buy-back options
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -1064,16 +1607,14 @@
   <div class="bike-anim" aria-hidden="true">🏍️</div>
 </section>
 
-<!-- ABOUT -->
 <section id="about" class="fade-in">
   <div class="container-max">
     <h2 class="text-center mb-3">About Us</h2>
-    <p class="muted text-center" style="max-width:900px;margin:0 auto 12px">We offer reliable scooters &amp; motorbikes for sale or rent across Hanoi. All bikes are well-maintained, include complete paperwork, and can be transferred quickly.</p>
+    <p class="muted text-center" style="max-width:900px;margin:0 auto 12px">We offer reliable scooters & motorbikes for sale or rent across Hanoi. All bikes are well-maintained, include complete paperwork, and can be transferred quickly.</p>
     <div class="text-center"><a class="btn cta-btn btn-danger" href="https://zalo.me/0942467674" target="_blank" rel="noopener noreferrer">💬 Chat on Zalo</a></div>
   </div>
 </section>
 
-<!-- BIKES FOR SALE -->
 <section id="bikes-for-sale" class="fade-in">
   <div class="container-max">
     <h2 class="text-center mb-3">🏍️ Bikes for Sale</h2>
@@ -1123,12 +1664,10 @@
   </div>
 </section>
 
-<!-- FAQ -->
 <section id="faq" class="fade-in">
   <div class="container-max">
     <h2 class="text-center mb-3">❓ Frequently Asked Questions</h2>
     <div class="accordion" id="faqAccordion">
-      <!-- Example FAQ Items -->
       <div class="accordion-item">
         <h2 class="accordion-header" id="headingOne">
           <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -1157,7 +1696,6 @@
   </div>
 </section>
 
-<!-- REVIEWS -->
 <section id="reviews" class="fade-in">
   <div class="container-max">
     <h2 class="text-center mb-3">Customer Reviews</h2>
@@ -1181,7 +1719,6 @@
   </div>
 </section>
 
-<!-- MAP -->
 <section id="map" class="fade-in">
   <div class="container-max text-center">
     <h2 class="mb-2">Find Us</h2>
@@ -1193,58 +1730,158 @@
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer id="footer" class="fade-in" role="contentinfo">
   <div class="led-border" aria-hidden="true"></div>
-  <div class="container-max">
-    <div class="footer-grid mb-4">
-      <div>
-        <h5 class="fw-bold text-uppercase mb-3">About Nguyen Tu Motorbike</h5>
-        <p style="color:#f5f5f5">We provide quality used motorbikes for sale and long-term rentals in Hanoi. Trusted by both locals and expats for reliability, good service, and fair prices.</p>
-        <p class="mb-1">📍 <span style="color:#f5f5f5">112 Nguyen Van Cu, Long Bien, Hanoi</span></p>
-        <p class="mb-1">📞 <a href="tel:+84942467674" class="fw-bold" style="color:#f5f5f5">+84 942 467 674</a></p>
-        <p class="mb-1">🕘 <span style="color:#f5f5f5">09:00 – 21:00 (Open Daily)</span></p>
-        <p>✉️ <a href="mailto:nguyentuantu8@gmail.com" style="color:#f5f5f5">nguyentuantu8@gmail.com</a></p>
-      </div>
-      <div>
-        <h5 class="fw-bold text-uppercase mb-3">Quick Links</h5>
-        <ul class="list-unstyled">
-          <li><a href="index.html" class="footer-link">🏠 Home</a></li>
-          <li><a href="about.html" class="footer-link">ℹ️ About</a></li>
-          <li><a href="sale-bikes.html" class="footer-link">💰 Motorbikes for Sale</a></li>
-          <li><a href="rent-bikes.html" class="footer-link">🛵 Motorbikes for Rent</a></li>
-          <li><a href="faq.html" class="footer-link">❓ FAQs</a></li>
-          <li><a href="privacy-policy.html" class="footer-link">🔒 Privacy Policy</a></li>
-          <li><a href="terms.html" class="footer-link">📜 Terms &amp; Conditions</a></li>
-          <li><a href="contact.html" class="footer-link">📞 Contact Us</a></li>
+
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-col footer-col-about footer-box">
+        <h5 class="footer-col-title">About Nguyen Tu Motorbike</h5>
+        <p class="footer-about-text">
+          We provide quality used motorbikes for sale and long-term rentals in Hanoi. Trusted by both
+          locals and expats for reliability, good service, and fair prices.
+        </p>
+        <ul class="footer-contact-list">
+          <li>
+            <span class="icon">📍</span>
+            <span>112 Nguyen Van Cu, Long Bien, Hanoi</span>
+          </li>
+          <li>
+            <span class="icon">📞</span>
+            <span>
+              <a href="tel:+84942467674" class="fw-bold" style="color:#f5f5f5">
+                +84 942 467 674
+              </a>
+            </span>
+          </li>
+          <li>
+            <span class="icon">🕘</span>
+            <span>09:00 – 21:00 (Open Daily)</span>
+          </li>
+          <li>
+            <span class="icon">✉️</span>
+            <span>
+              <a href="mailto:nguyentuantu8@gmail.com" style="color:#f5f5f5">
+                nguyentuantu8@gmail.com
+              </a>
+            </span>
+          </li>
         </ul>
       </div>
-      <div>
-        <h5 class="fw-bold text-uppercase mb-3">Connect &amp; Support</h5>
-        <div class="d-flex gap-3 mb-3">
-          <a href="https://zalo.me/0942467674" target="_blank" class="social-icon" title="Chat on Zalo" rel="noopener noreferrer"><i class="bi bi-chat-dots"></i></a>
-          <a href="https://wa.me/84942467674" target="_blank" class="social-icon" title="Chat on WhatsApp" rel="noopener noreferrer"><i class="bi bi-whatsapp"></i></a>
-          <a href="https://www.facebook.com/chothuexemaynguyentu/" target="_blank" class="social-icon" title="Visit Facebook" rel="noopener noreferrer"><i class="bi bi-facebook"></i></a>
-          <a href="https://athanoi.github.io/moto/" target="_blank" class="social-icon" title="Official Website" rel="noopener noreferrer"><i class="bi bi-globe"></i></a>
+
+      <div class="footer-col footer-box">
+        <h5 class="footer-col-title">Quick Links</h5>
+        <ul class="footer-link-list">
+          <li>
+            <a href="index.html" class="footer-link">
+              <span class="footer-link-pill">
+                <i class="bi bi-house-door-fill"></i>
+                <span>Home</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="about.html" class="footer-link">
+              <span class="footer-link-pill">
+                <i class="bi bi-info-circle-fill"></i>
+                <span>About</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="sale.html" class="footer-link">
+              <span class="footer-link-pill">
+                <i class="bi bi-tag-fill"></i>
+                <span>Sale</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="rental.html" class="footer-link">
+              <span class="footer-link-pill">
+                <i class="bi bi-bicycle"></i>
+                <span>Rental</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="faq.html" class="footer-link">
+              <span class="footer-link-pill">
+                <i class="bi bi-question-circle-fill"></i>
+                <span>FAQ</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="terms.html" class="footer-link">
+              <span class="footer-link-pill">
+                <i class="bi bi-file-earmark-text-fill"></i>
+                <span>Terms</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="privacy.html" class="footer-link">
+              <span class="footer-link-pill">
+                <i class="bi bi-shield-lock-fill"></i>
+                <span>Privacy</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="contract.html" class="footer-link">
+              <span class="footer-link-pill">
+                <i class="bi bi-telephone-outbound-fill"></i>
+                <span>Contract</span>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-box">
+        <h5 class="footer-col-title">Connect & Support</h5>
+        <div class="footer-social-row">
+          <a href="https://zalo.me/0942467674" target="_blank" class="social-icon" title="Chat on Zalo" rel="noopener noreferrer">
+            <i class="bi bi-chat-dots"></i>
+          </a>
+          <a href="https://wa.me/84942467674" target="_blank" class="social-icon" title="Chat on WhatsApp" rel="noopener noreferrer">
+            <i class="bi bi-whatsapp"></i>
+          </a>
+          <a href="https://www.facebook.com/chothuexemaynguyentu/" target="_blank" class="social-icon" title="Visit Facebook" rel="noopener noreferrer">
+            <i class="bi bi-facebook"></i>
+          </a>
+          <a href="https://athanoi.github.io/moto/" target="_blank" class="social-icon" title="Official Website" rel="noopener noreferrer">
+            <i class="bi bi-globe"></i>
+          </a>
         </div>
-        <p style="color:#f5f5f5">🌐 Official Website:<br><a href="https://athanoi.github.io/moto/" class="fw-bold" style="color:#FFD700" target="_blank" rel="noopener noreferrer">athanoi.github.io/moto</a></p>
-        <p class="mt-2" style="color:#f5f5f5">📍 <a href="https://maps.app.goo.gl/c2sxNmnwuxMCo3bz7?g_st=ipc" style="color:#f5f5f5" target="_blank" rel="noopener noreferrer">Find us on Google Maps</a></p>
+        <p class="mb-1" style="color:#f5f5f5">
+          🌐 Official Website:<br>
+          <a href="https://athanoi.github.io/moto/" class="fw-bold" style="color:#FFD700" target="_blank" rel="noopener noreferrer">
+            athanoi.github.io/moto
+          </a>
+        </p>
+        <p class="mt-2" style="color:#f5f5f5">
+          📍
+          <a href="https://maps.app.goo.gl/c2sxNmnwuxMCo3bz7?g_st=ipc" style="color:#f5f5f5" target="_blank" rel="noopener noreferrer">
+            Find us on Google Maps
+          </a>
+        </p>
       </div>
     </div>
 
-    <hr style="border-color: rgba(255,255,255,0.15);">
-    <div class="text-center small" style="color:#f5f5f5">
+    <hr class="footer-divider">
+    <div class="footer-bottom">
       <p class="mb-0">© 2025 Nguyen Tu Motorbike | Designed with ❤️ in Hanoi</p>
-      <a href="#hero" class="back-to-top d-inline-block mt-2 text-decoration-none" style="color:#FFD700">↑ Back to Top</a>
+      <a href="#hero" class="back-to-top">↑ Back to Top</a>
     </div>
   </div>
 </footer>
 
-<!-- Floating Contact Menu Pro -->
 <div class="contact-floating" aria-hidden="false" aria-label="Quick contact">
   <div class="contact-options" id="contactOptions" aria-hidden="true">
     <a href="tel:+84942467674" title="Call" aria-label="Call"><i class="bi bi-telephone-fill"></i></a>
-    <a href="https://zalo.me/0942467674" target="_blank" title="Zalo" aria-label="Zalo" rel="noopener noreferrer"><i class="bi bi-chat-dots-fill"></i></a>
+    <a href="httpsZalo" aria-label="Zalo" rel="noopener noreferrer"><i class="bi bi-chat-dots-fill"></i></a>
     <a href="https://wa.me/84942467674" target="_blank" title="WhatsApp" aria-label="WhatsApp" rel="noopener noreferrer"><i class="bi bi-whatsapp"></i></a>
   </div>
   <button class="main-btn" id="mainContactBtn" aria-expanded="false" aria-controls="contactOptions" title="Contact menu">
@@ -1252,7 +1889,6 @@
   </button>
 </div>
 
-<!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
@@ -1312,8 +1948,9 @@ try {
   }
 } catch(e){ console.warn('Swiper init error', e); }
 
-/* ===== Fade-in observer (0.9s) ===== */
+/* ===== Fade-in observer ULTRA (0.9s + stagger) ===== */
 (function(){
+  const sections = document.querySelectorAll('.fade-in');
   const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -1322,7 +1959,13 @@ try {
       }
     });
   }, { threshold: 0.12 });
-  document.querySelectorAll('.fade-in').forEach(s => observer.observe(s));
+
+  sections.forEach((el, index) => {
+    // stagger nhẹ giữa các section
+    const delay = index * 90; // ms
+    el.style.setProperty('--fade-delay', delay + 'ms');
+    observer.observe(el);
+  });
 })();
 
 /* ===== Hero parallax (mouse & device tilt) ===== */
@@ -1371,7 +2014,7 @@ try {
     contactFloating.classList.toggle('active');
     const expanded = contactFloating.classList.contains('active');
     mainContactBtn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
-    if (opts) opts.setAttribute('aria-hidden', expanded ? 'false' : 'true');
+    if (opts) opts.setAttribute('aria-hidden', expanded ? 'true' : 'false');
   });
 
   document.addEventListener('click', (e)=>{
@@ -1524,8 +2167,46 @@ try {
   updateStatus();
   setInterval(updateStatus, 5 * 60 * 1000);
 })();
+
+/* ===== YÊU CẦU 5: Thêm JS để đóng offcanvas khi nhấp link ===== */
+(function(){
+  const offcanvasEl = document.getElementById('offcanvasMenu');
+  if (!offcanvasEl || !bootstrap?.Offcanvas) return;
+
+  // Lấy tất cả các link <a> có href bên trong offcanvas body
+  const links = offcanvasEl.querySelectorAll('.offcanvas-body a[href]');
+  
+  links.forEach(link => {
+    link.addEventListener('click', function() {
+      // Lấy instance của offcanvas một cách an toàn
+      const offcanvasInstance = bootstrap.Offcanvas.getOrCreateInstance(offcanvasEl);
+      
+      // Kiểm tra xem offcanvas có đang hiển thị không
+      if (offcanvasInstance && offcanvasEl.classList.contains('show')) {
+        // Ẩn offcanvas đi.
+        // Trình duyệt sẽ tự động điều hướng đến link
+        // mà không cần e.preventDefault().
+        offcanvasInstance.hide();
+      }
+    });
+  });
+})();
+
+/* ===== START: JS MỚI - Ẩn / hiện nút contact khi mở / đóng offcanvas ===== */
+(function(){
+  const offcanvasEl = document.getElementById('offcanvasMenu');
+  if (!offcanvasEl || !bootstrap?.Offcanvas) return;
+
+  offcanvasEl.addEventListener('show.bs.offcanvas', function(){
+    document.body.classList.add('offcanvas-open-custom');
+  });
+
+  offcanvasEl.addEventListener('hidden.bs.offcanvas', function(){
+    document.body.classList.remove('offcanvas-open-custom');
+  });
+})();
+/* ===== END: JS MỚI ===== */
 </script>
 
 </body>
 </html>
-
