@@ -657,7 +657,7 @@
       transform:translateX(22px);
     }
 
-    /* ===== HERO – Apple mini ultra style ===== */
+    /* ===== HERO – Mini App Ultra 2025 (text only, no image) ===== */
     #hero{
       min-height:78vh;
       display:flex;
@@ -694,10 +694,9 @@
       z-index:4;
       max-width:1100px;
       margin:auto;
-      perspective:1000px;
     }
 
-    /* card tổng – vẫn dùng cho parallax */
+    /* Card hero tổng – vẫn dùng cho parallax */
     .hero-card{
       display:block;
       border-radius:26px;
@@ -706,49 +705,43 @@
       box-shadow:
         0 24px 70px rgba(0,0,0,0.65),
         0 0 0 1px rgba(255,255,255,0.05) inset;
-      padding:26px 26px 24px;
+      padding:24px 22px 22px;
       backdrop-filter:blur(22px);
       -webkit-backdrop-filter:blur(22px);
       transform-style:preserve-3d;
       transition:transform 0.15s ease, box-shadow .25s ease;
     }
 
-    /* layout 2 cột kiểu Apple */
-    .hero-layout{
-      display:grid;
-      grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);
-      gap:30px;
-      align-items:center;
-    }
-
-    /* bên trái: text, pills */
+    /* layout 100% text */
     .hero-main{
       display:flex;
       flex-direction:column;
-      gap:14px;
+      gap:16px;
     }
 
-    .hero-badge-row{
+    /* hàng trên cùng kiểu mini-app */
+    .hero-top-row{
       display:flex;
-      flex-wrap:wrap;
-      gap:8px;
       align-items:center;
-      font-size:0.85rem;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
     }
-    .hero-pill{
+
+    .hero-chip-main{
       display:inline-flex;
       align-items:center;
       gap:6px;
       padding:4px 10px;
       border-radius:999px;
-      background:rgba(0,0,0,0.65);
+      background:rgba(0,0,0,0.7);
       border:1px solid rgba(255,255,255,0.18);
       text-transform:uppercase;
       letter-spacing:0.12em;
       font-size:0.7rem;
       color:#FFD700;
     }
-    .hero-pill-dot{
+    .hero-chip-dot{
       width:8px;
       height:8px;
       border-radius:50%;
@@ -756,21 +749,25 @@
       box-shadow:0 0 0 6px rgba(34,197,94,0.4);
     }
 
-    .hero-badge-note{
-      opacity:0.85;
+    .hero-chip-side{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:4px 10px;
+      border-radius:999px;
+      background:rgba(0,0,0,0.45);
+      border:1px solid rgba(255,255,255,0.12);
+      font-size:0.75rem;
       color:rgba(255,255,255,0.9);
     }
 
-    /* title kiểu Apple */
+    /* title */
     .hero-title{
       font-size:2.6rem;
       font-weight:800;
-      margin:4px 0 4px;
+      margin:2px 0 2px;
       line-height:1.02;
       color:#fff;
-    }
-    @media (min-width: 992px){
-      .hero-title{ font-size:3rem; }
     }
     .hero-title.glow{
       text-shadow:
@@ -785,21 +782,21 @@
 
     .hero-sub{
       font-size:1.05rem;
-      margin-bottom:4px;
+      margin-bottom:0;
       color:rgba(255,255,255,0.92);
-      max-width:520px;
+      max-width:620px;
     }
 
-    /* hàng specs kiểu mini-card */
+    /* metrics mini-app */
     .hero-specs-row{
       display:flex;
       flex-wrap:wrap;
       gap:10px;
-      margin-top:6px;
+      margin-top:8px;
     }
 
     .hero-spec-card{
-      min-width:130px;
+      min-width:150px;
       padding:8px 10px;
       border-radius:16px;
       background:rgba(0,0,0,0.6);
@@ -814,7 +811,7 @@
       opacity:0.75;
     }
     .hero-spec-main{
-      font-size:0.95rem;
+      font-size:0.98rem;
       font-weight:700;
     }
     .hero-spec-sub{
@@ -822,7 +819,22 @@
       opacity:0.82;
     }
 
-    /* actions + mini note */
+    /* dãy tag dưới cùng */
+    .hero-tags-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:10px;
+    }
+    .hero-tag{
+      font-size:0.75rem;
+      padding:4px 9px;
+      border-radius:999px;
+      background:rgba(0,0,0,0.55);
+      border:1px solid rgba(255,255,255,0.14);
+    }
+
+    /* actions + mini note – tái dùng style nút cũ */
     .hero-actions{
       display:flex;
       gap:12px;
@@ -830,89 +842,13 @@
       margin-top:14px;
     }
     .hero-mini-note{
-      margin-top:8px;
+      margin-top:6px;
       font-size:0.86rem;
       opacity:0.9;
       color:rgba(255,255,255,0.86);
     }
 
-    /* bên phải: “device frame” */
-    .hero-media{
-      position:relative;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-    }
-
-    .hero-device-frame{
-      width:100%;
-      max-width:320px;
-      aspect-ratio:3/4;
-      border-radius:28px;
-      padding:10px;
-      background:radial-gradient(circle at 20% 0%,rgba(255,255,255,0.4),transparent 55%),
-                 radial-gradient(circle at 80% 110%,rgba(255,0,0,0.6),transparent 55%);
-      box-shadow:
-        0 26px 70px rgba(0,0,0,0.9),
-        0 0 0 1px rgba(255,255,255,0.12);
-    }
-
-    .hero-device-inner{
-      width:100%;
-      height:100%;
-      border-radius:22px;
-      overflow:hidden;
-      background:radial-gradient(circle at 30% 0%,#2b0404,#050509 60%,#000000 100%);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-    }
-
-    .hero-device-inner img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      transform:scale(1.02);
-    }
-
-    /* floating badge bên phải */
-    .hero-floating-badge{
-      position:absolute;
-      bottom:8%;
-      right:-6%;
-      padding:10px 12px;
-      border-radius:18px;
-      background:rgba(0,0,0,0.82);
-      border:1px solid rgba(255,255,255,0.2);
-      box-shadow:0 16px 40px rgba(0,0,0,0.9);
-      font-size:0.75rem;
-      min-width:170px;
-      animation:floatBadge 6s ease-in-out infinite;
-    }
-    @keyframes floatBadge{
-      0%,100%{ transform:translateY(0); }
-      50%{ transform:translateY(-6px); }
-    }
-    .hero-floating-title{
-      font-weight:700;
-      margin-bottom:2px;
-    }
-    .hero-floating-text{
-      opacity:0.85;
-    }
-
-    /* icon + rating */
-    .hero-rating-row{
-      display:flex;
-      align-items:center;
-      gap:8px;
-      margin-top:4px;
-    }
-    .hero-rating-row span{
-      font-size:0.75rem;
-    }
-
-    /* bike emoji chạy ngang – giữ nguyên nhưng tinh chỉnh nhẹ */
+    /* emoji xe chạy – giữ nguyên */
     .bike-anim{
       position:absolute;
       bottom:4%;
@@ -935,22 +871,17 @@
     }
 
     /* responsive hero */
+    @media (min-width: 992px){
+      .hero-title{ font-size:3rem; }
+    }
+
     @media (max-width: 991.98px){
       .hero-card{
         padding:20px 18px 18px;
         border-radius:22px;
       }
-      .hero-layout{
-        grid-template-columns:1fr;
-        gap:22px;
-      }
-      .hero-media{
-        order:-1;
-      }
-      .hero-title{
-        font-size:2.2rem;
-      }
     }
+
     @media (max-width: 575.98px){
       #hero{
         padding-top:64px;
@@ -965,13 +896,12 @@
         min-width:0;
         flex:1;
       }
-      .hero-actions{
-        flex-direction:column;
+      .hero-main{
+        align-items:flex-start;
       }
-      .hero-floating-badge{
-        position:static;
-        margin-top:10px;
-        animation:none;
+      .hero-top-row{
+        flex-direction:column;
+        align-items:flex-start;
       }
     }
 
@@ -1525,80 +1455,73 @@
 
   <div class="hero-inner">
     <div class="hero-card" id="heroCard" role="region" aria-label="Main hero">
-      <div class="hero-layout">
-        <div class="hero-media">
-          <div class="hero-device-frame">
-            <div class="hero-device-inner">
-              <img src="https://i.postimg.cc/3NwHXGgc/13803262-651-D-43-F4-8-DA2-8-DAED35-FEEA5.png"
-                   alt="Nguyen Tu Motorbike lineup">
-            </div>
+      <div class="hero-main">
+        <!-- Hàng mini-app trên cùng -->
+        <div class="hero-top-row">
+          <div class="hero-chip-main">
+            <span class="hero-chip-dot"></span>
+            <span>2025 • Mini app</span>
           </div>
-
-          <div class="hero-floating-badge">
-            <div class="hero-floating-title">2025 Honda Vision Lineup</div>
-            <div class="hero-floating-text">4 scooters in stock • Full papers</div>
-            <div class="hero-rating-row">
-              <i class="bi bi-star-fill" style="font-size:0.9rem;color:#FFD700;"></i>
-              <span>Rated 4.9/5 by expats in Hanoi</span>
-            </div>
+          <div class="hero-chip-side">
+            <i class="bi bi-geo-alt-fill"></i>
+            <span>Long Bien · Hanoi</span>
           </div>
         </div>
 
-        <div class="hero-main">
-          <div class="hero-badge-row">
-            <div class="hero-pill">
-              <span class="hero-pill-dot"></span>
-              <span>New • For sale & rent</span>
-            </div>
-            <div class="hero-badge-note">
-              Hanoi’s friendly motorbike shop – English support
-            </div>
-          </div>
+        <!-- Title + sub -->
+        <h1 class="hero-title glow">Hanoi Motorbike For Sale &amp; Rent</h1>
+        <p class="hero-sub">
+          Reliable scooters &amp; motorbikes with full paperwork – ready to ride the same day.
+          Pickup in Long Bien, close to Old Quarter &amp; Tay Ho.
+        </p>
 
-          <h1 class="hero-title glow">Hanoi Motorbike For Sale & Rent</h1>
-          <p class="hero-sub">
-            Reliable scooters & motorbikes with full paperwork – ready to ride the same day.
-            Pickup in Long Bien, close to Old Quarter & Tay Ho.
-          </p>
-
-          <div class="hero-specs-row">
-            <div class="hero-spec-card">
-              <div class="hero-spec-label">From</div>
-              <div class="hero-spec-main">10M VND</div>
-              <div class="hero-spec-sub">Used Honda scooters</div>
-            </div>
-            <div class="hero-spec-card">
-              <div class="hero-spec-label">Documents</div>
-              <div class="hero-spec-main">Full papers</div>
-              <div class="hero-spec-sub">Easy transfer in Hanoi</div>
-            </div>
-            <div class="hero-spec-card">
-              <div class="hero-spec-label">Support</div>
-              <div class="hero-spec-main">EN / VI</div>
-              <div class="hero-spec-sub">Tourists & expats welcome</div>
-            </div>
+        <!-- Metrics mini-app -->
+        <div class="hero-specs-row">
+          <div class="hero-spec-card">
+            <div class="hero-spec-label">Stock</div>
+            <div class="hero-spec-main">4 Honda Vision</div>
+            <div class="hero-spec-sub">Smart key • Full papers</div>
           </div>
-
-          <div class="hero-actions">
-            <a class="btn-site"
-               href="https://athanoi.github.io/moto/"
-               target="_blank"
-               rel="noopener noreferrer"
-               aria-label="Visit official site">
-              🌐 Visit Official Website
-            </a>
-            <a class="btn-wp"
-               href="https://wa.me/84942467674"
-               target="_blank"
-               rel="noopener noreferrer"
-               aria-label="Chat on WhatsApp">
-               <i class="bi bi-whatsapp"></i> Chat on WhatsApp
-            </a>
+          <div class="hero-spec-card">
+            <div class="hero-spec-label">From</div>
+            <div class="hero-spec-main">10M VND</div>
+            <div class="hero-spec-sub">Used Honda scooters</div>
           </div>
-
-          <div class="hero-mini-note">
-            No hidden deposit • Free helmets • Flexible long-term rental & buy-back options
+          <div class="hero-spec-card">
+            <div class="hero-spec-label">Support</div>
+            <div class="hero-spec-main">EN / VI</div>
+            <div class="hero-spec-sub">Tourists &amp; expats welcome</div>
           </div>
+        </div>
+
+        <!-- Nút gọi hành động -->
+        <div class="hero-actions">
+          <a class="btn-site"
+             href="https://athanoi.github.io/moto/"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="Visit official site">
+            🌐 Visit Official Website
+          </a>
+          <a class="btn-wp"
+             href="https://wa.me/84942467674"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="Chat on WhatsApp">
+             <i class="bi bi-whatsapp"></i> Chat on WhatsApp
+          </a>
+        </div>
+
+        <!-- Tag strip dưới cùng -->
+        <div class="hero-tags-row">
+          <span class="hero-tag">For sale &amp; rent</span>
+          <span class="hero-tag">Long-term rental</span>
+          <span class="hero-tag">Buy-back options</span>
+          <span class="hero-tag">Free helmets</span>
+        </div>
+
+        <div class="hero-mini-note">
+          No hidden deposit • Flexible long-term rental &amp; buy-back options • Easy pickup near Old Quarter.
         </div>
       </div>
     </div>
@@ -2210,3 +2133,4 @@ try {
 
 </body>
 </html>
+
