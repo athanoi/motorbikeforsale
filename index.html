@@ -774,34 +774,186 @@
     .map-embed{width:100%;height:320px;border-radius:10px;border:0;box-shadow:0 8px 28px rgba(0,0,0,0.08)}
     :root[data-theme="dark"] .map-embed { filter: invert(0.9) hue-rotate(180deg); }
 
-    /* ===== FOOTER ===== */
+    /* ===== FOOTER (NEW) ===== */
     footer{
       background: var(--footer-bg);
       color: #f5f5f5;
-      padding:40px 16px;
+      padding:40px 16px 26px;
       position:relative;
       overflow:hidden;
     }
-    .led-border{position:absolute;inset:0;pointer-events:none;border-radius:10px}
+
+    .led-border{
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      border-radius:18px;
+    }
     .led-border::before{
       content:"";
       position:absolute;
       top:-2px;left:-2px;right:-2px;bottom:-2px;
       background:linear-gradient(90deg,#FFD700,#FF0000,#FFD700,#FF0000);
       background-size:400% 400%;
-      z-index:1;animation:moveLights 10s linear infinite;border-radius:10px;filter:blur(4px);opacity:0.6;
+      z-index:1;
+      animation:moveLights 10s linear infinite;
+      border-radius:18px;
+      filter:blur(4px);
+      opacity:0.55;
     }
-    @keyframes moveLights{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+    @keyframes moveLights{
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+    }
 
-    .footer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1100px;margin:0 auto;position:relative;z-index:2}
-    @media(max-width:768px){.footer-grid{grid-template-columns:1fr}}
-    footer h5{color:#FFD700;text-shadow:0 0 6px rgba(255,215,0,0.25);letter-spacing:1px}
-    .footer-link{color:#f5f5f5;display:inline-block;margin:6px 0;font-weight:600;transition:color .25s,transform .25s}
-    .footer-link:hover{color:#FFD7700;transform:translateX(6px)}
-    .social-icon{font-size:1.7rem;color:#f5f5f5;transition:transform .3s,color .3s,text-shadow .3s}
-    .social-icon:hover{color:#FFD700;transform:scale(1.25) rotate(-8deg);text-shadow:0 0 12px #FFD700}
-    .back-to-top{font-weight:700;transition:all .3s}
-    .back-to-top:hover{color:#FFD700;text-shadow:0 0 10px #FFD700}
+    .footer-inner{
+      max-width:1100px;
+      margin:0 auto;
+      position:relative;
+      z-index:2;
+    }
+
+    /* layout 3 cột desktop */
+    .footer-grid{
+      display:grid;
+      grid-template-columns:minmax(0,2fr) minmax(0,1.2fr) minmax(0,1.6fr);
+      gap:26px;
+      align-items:flex-start;
+    }
+
+    /* cột chung */
+    .footer-col-title{
+      color:#FFD700;
+      text-shadow:0 0 6px rgba(255,215,0,0.25);
+      letter-spacing:0.08em;
+      text-transform:uppercase;
+      font-size:0.9rem;
+      margin-bottom:10px;
+    }
+
+    .footer-about-text{
+      color:#f5f5f5;
+      margin-bottom:10px;
+    }
+
+    .footer-contact-list{
+      list-style:none;
+      padding:0;
+      margin:0;
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+    }
+    .footer-contact-list li{
+      display:flex;
+      gap:7px;
+      align-items:flex-start;
+      font-size:0.95rem;
+    }
+    .footer-contact-list span.icon{
+      width:18px;
+    }
+
+    /* Quick links: 2 cột trên desktop cho đỡ dài */
+    .footer-link-list{
+      list-style:none;
+      padding:0;
+      margin:0;
+      column-count:2;
+      column-gap:18px;
+    }
+    .footer-link{
+      color:#f5f5f5;
+      display:inline-block;
+      margin:4px 0;
+      font-weight:600;
+      font-size:0.95rem;
+      break-inside:avoid;
+      transition:color .25s,transform .25s;
+    }
+    .footer-link:hover{
+      color:#FFD700;
+      transform:translateX(4px);
+    }
+
+    /* social */
+    .footer-social-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-bottom:10px;
+    }
+    .social-icon{
+      font-size:1.6rem;
+      color:#f5f5f5;
+      transition:transform .3s,color .3s,text-shadow .3s;
+    }
+    .social-icon:hover{
+      color:#FFD700;
+      transform:scale(1.15) rotate(-6deg);
+      text-shadow:0 0 10px #FFD700;
+    }
+
+    /* đáy footer */
+    .footer-divider{
+      border-color:rgba(255,255,255,0.18);
+      margin-top:26px;
+      margin-bottom:14px;
+    }
+
+    .footer-bottom{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      font-size:0.85rem;
+    }
+    .back-to-top{
+      font-weight:700;
+      text-decoration:none;
+      color:#FFD700;
+      transition:all .3s;
+    }
+    .back-to-top:hover{
+      text-shadow:0 0 10px #FFD700;
+    }
+
+    /* ===== RESPONSIVE FOOTER ===== */
+
+    /* Tablet: 2 cột, About chiếm full width trên cùng */
+    @media (max-width: 992px){
+      .footer-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+      }
+      .footer-col-about{
+        grid-column:1 / -1;
+      }
+      .footer-link-list{
+        column-count:1;
+      }
+    }
+
+    /* Mobile: 1 cột, căn giữa, mọi thứ thoáng hơn */
+    @media (max-width: 575.98px){
+      .footer-grid{
+        grid-template-columns:1fr;
+        text-align:center;
+      }
+      .footer-contact-list li{
+        justify-content:center;
+      }
+      .footer-social-row{
+        justify-content:center;
+      }
+      .footer-bottom{
+        flex-direction:column;
+        text-align:center;
+      }
+      .footer-inner{
+        padding-inline:4px;
+      }
+    }
 
     /* ===== Floating Contact Menu Pro ===== */
     /* Đã sửa z-index từ 1400 xuống 1000 để nằm dưới offcanvas (có z-index 1050) */
@@ -1260,22 +1412,40 @@
 <!-- FOOTER -->
 <footer id="footer" class="fade-in" role="contentinfo">
   <div class="led-border" aria-hidden="true"></div>
-  <div class="container-max">
-    <div class="footer-grid mb-4">
-      <div>
-        <h5 class="fw-bold text-uppercase mb-3">About Nguyen Tu Motorbike</h5>
-        <p style="color:#f5f5f5">We provide quality used motorbikes for sale and long-term rentals in Hanoi. Trusted by both locals and expats for reliability, good service, and fair prices.</p>
-        <p class="mb-1">📍 <span style="color:#f5f5f5">112 Nguyen Van Cu, Long Bien, Hanoi</span></p>
-        <p class="mb-1">📞 <a href="tel:+84942467674" class="fw-bold" style="color:#f5f5f5">+84 942 467 674</a></p>
-        <p class="mb-1">🕘 <span style="color:#f5f5f5">09:00 – 21:00 (Open Daily)</span></p>
-        <p>✉️ <a href="mailto:nguyentuantu8@gmail.com" style="color:#f5f5f5">nguyentuantu8@gmail.com</a></p>
+
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <!-- ABOUT / CONTACT -->
+      <div class="footer-col footer-col-about">
+        <h5 class="footer-col-title">About Nguyen Tu Motorbike</h5>
+        <p class="footer-about-text">
+          We provide quality used motorbikes for sale and long-term rentals in Hanoi. Trusted by both
+          locals and expats for reliability, good service, and fair prices.
+        </p>
+        <ul class="footer-contact-list">
+          <li>
+            <span class="icon">📍</span>
+            <span>112 Nguyen Van Cu, Long Bien, Hanoi</span>
+          </li>
+          <li>
+            <span class="icon">📞</span>
+            <span><a href="tel:+84942467674" class="fw-bold" style="color:#f5f5f5">+84 942 467 674</a></span>
+          </li>
+          <li>
+            <span class="icon">🕘</span>
+            <span>09:00 – 21:00 (Open Daily)</span>
+          </li>
+          <li>
+            <span class="icon">✉️</span>
+            <span><a href="mailto:nguyentuantu8@gmail.com" style="color:#f5f5f5">nguyentuantu8@gmail.com</a></span>
+          </li>
+        </ul>
       </div>
-      <div>
-        <h5 class="fw-bold text-uppercase mb-3">Quick Links</h5>
-        <!-- ============================================= -->
-        <!-- ===== START FOOTER NAV (STRUCTURE EDITED) ===== -->
-        <!-- ============================================= -->
-        <ul class="list-unstyled">
+
+      <!-- QUICK LINKS -->
+      <div class="footer-col">
+        <h5 class="footer-col-title">Quick Links</h5>
+        <ul class="footer-link-list">
           <li><a href="index.html" class="footer-link">Home</a></li>
           <li><a href="about.html" class="footer-link">About</a></li>
           <li><a href="sale.html" class="footer-link">Sale</a></li>
@@ -1285,27 +1455,35 @@
           <li><a href="privacy.html" class="footer-link">Privacy</a></li>
           <li><a href="contract.html" class="footer-link">Contract</a></li>
         </ul>
-        <!-- =========================================== -->
-        <!-- ===== END FOOTER NAV (STRUCTURE EDITED) ===== -->
-        <!-- =========================================== -->
       </div>
-      <div>
-        <h5 class="fw-bold text-uppercase mb-3">Connect &amp; Support</h5>
-        <div class="d-flex gap-3 mb-3">
+
+      <!-- CONNECT & SUPPORT -->
+      <div class="footer-col">
+        <h5 class="footer-col-title">Connect &amp; Support</h5>
+        <div class="footer-social-row">
           <a href="https://zalo.me/0942467674" target="_blank" class="social-icon" title="Chat on Zalo" rel="noopener noreferrer"><i class="bi bi-chat-dots"></i></a>
           <a href="https://wa.me/84942467674" target="_blank" class="social-icon" title="Chat on WhatsApp" rel="noopener noreferrer"><i class="bi bi-whatsapp"></i></a>
           <a href="https://www.facebook.com/chothuexemaynguyentu/" target="_blank" class="social-icon" title="Visit Facebook" rel="noopener noreferrer"><i class="bi bi-facebook"></i></a>
           <a href="https://athanoi.github.io/moto/" target="_blank" class="social-icon" title="Official Website" rel="noopener noreferrer"><i class="bi bi-globe"></i></a>
         </div>
-        <p style="color:#f5f5f5">🌐 Official Website:<br><a href="https://athanoi.github.io/moto/" class="fw-bold" style="color:#FFD700" target="_blank" rel="noopener noreferrer">athanoi.github.io/moto</a></p>
-        <p class="mt-2" style="color:#f5f5f5">📍 <a href="https://maps.app.goo.gl/c2sxNmnwuxMCo3bz7?g_st=ipc" style="color:#f5f5f5" target="_blank" rel="noopener noreferrer">Find us on Google Maps</a></p>
+        <p class="mb-1" style="color:#f5f5f5">
+          🌐 Official Website:<br>
+          <a href="https://athanoi.github.io/moto/" class="fw-bold" style="color:#FFD700" target="_blank" rel="noopener noreferrer">
+            athanoi.github.io/moto
+          </a>
+        </p>
+        <p class="mt-2" style="color:#f5f5f5">
+          📍 <a href="https://maps.app.goo.gl/c2sxNmnwuxMCo3bz7?g_st=ipc" style="color:#f5f5f5" target="_blank" rel="noopener noreferrer">
+            Find us on Google Maps
+          </a>
+        </p>
       </div>
     </div>
 
-    <hr style="border-color: rgba(255,255,255,0.15);">
-    <div class="text-center small" style="color:#f5f5f5">
+    <hr class="footer-divider">
+    <div class="footer-bottom">
       <p class="mb-0">© 2025 Nguyen Tu Motorbike | Designed with ❤️ in Hanoi</p>
-      <a href="#hero" class="back-to-top d-inline-block mt-2 text-decoration-none" style="color:#FFD700">↑ Back to Top</a>
+      <a href="#hero" class="back-to-top">↑ Back to Top</a>
     </div>
   </div>
 </footer>
