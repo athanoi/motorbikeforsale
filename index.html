@@ -954,7 +954,9 @@
     </div>
   </div>
 
-  <!-- Offcanvas for mobile (unchanged) -->
+  <!-- ========================================================== -->
+  <!-- ===== OFFCANVAS MENU (START) - ĐÃ SỬA THEO YÊU CẦU ===== -->
+  <!-- ========================================================== -->
   <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
     <div class="offcanvas-sheet">
       <div class="offcanvas-header">
@@ -966,20 +968,24 @@
         <div class="menu-panel">
           <div class="menu-section-title">Quick actions</div>
           <div class="menu-grid">
-            <a href="tel:+84942467674" class="menu-tile" data-bs-dismiss="offcanvas">
+            <!-- YÊU CẦU 1: Đã xóa data-bs-dismiss="offcanvas" -->
+            <a href="tel:+84942467674" class="menu-tile">
               <div class="menu-tile-icon"><i class="bi bi-telephone-fill"></i></div>
               <div>Call now</div>
             </a>
+            <!-- YÊU CẦU 1: Đã xóa data-bs-dismiss="offcanvas" -->
             <a href="https://maps.app.goo.gl/c2sxNmnwuxMCo3bz7?g_st=ipc" class="menu-tile"
-               target="_blank" rel="noopener noreferrer" data-bs-dismiss="offcanvas">
+               target="_blank" rel="noopener noreferrer">
               <div class="menu-tile-icon"><i class="bi bi-geo-alt-fill"></i></div>
               <div>Open map</div>
             </a>
-            <a href="sale.html" class="menu-tile" data-bs-dismiss="offcanvas">
+            <!-- YÊU CẦU 1: Đã xóa data-bs-dismiss="offcanvas" -->
+            <a href="sale.html" class="menu-tile">
               <div class="menu-tile-icon"><i class="bi bi-tag-fill"></i></div>
               <div>View Sale</div>
             </a>
-            <a href="faq.html" class="menu-tile" data-bs-dismiss="offcanvas">
+            <!-- YÊU CẦU 1: Đã xóa data-bs-dismiss="offcanvas" -->
+            <a href="faq.html" class="menu-tile">
               <div class="menu-tile-icon"><i class="bi bi-question-circle-fill"></i></div>
               <div>FAQ</div>
             </a>
@@ -992,42 +998,51 @@
         <div class="menu-panel">
           <div class="menu-section-title">Navigation</div>
 
-          <a href="index.html" class="menu-link-row" data-bs-dismiss="offcanvas">
+          <!-- YÊU CẦU 1: Đã xóa data-bs-dismiss="offcanvas" -->
+          <a href="index.html" class="menu-link-row">
             <div class="menu-link-icon"><i class="bi bi-house-door-fill"></i></div>
             <span>Home</span>
           </a>
 
-          <a href="about.html" class="menu-link-row" data-bs-dismiss="offcanvas">
+          <!-- YÊU CẦU 1: Đã xóa data-bs-dismiss="offcanvas" -->
+          <a href="about.html" class="menu-link-row">
             <div class="menu-link-icon"><i class="bi bi-info-circle-fill"></i></div>
             <span>About</span>
           </a>
 
+          <!-- Nút này là <button>, không phải <a>, nên không bị ảnh hưởng -->
           <button type="button" class="menu-link-row service-toggle" id="mobileServiceToggle">
             <div class="menu-link-icon"><i class="bi bi-bicycle"></i></div>
             <span>Service</span>
             <i class="bi bi-chevron-right chevron" aria-hidden="true"></i>
           </button>
           <div class="submenu" id="mobileServiceSubmenu">
-            <a href="sale.html" data-bs-dismiss="offcanvas">Sale</a>
-            <a href="rental.html" data-bs-dismiss="offcanvas">Rental</a>
+            <!-- YÊU CẦU 1: Đã xóa data-bs-dismiss="offcanvas" -->
+            <a href="sale.html">Sale</a>
+            <!-- YÊU CẦU 1: Đã xóa data-bs-dismiss="offcanvas" -->
+            <a href="rental.html">Rental</a>
           </div>
 
-          <a href="faq.html" class="menu-link-row" data-bs-dismiss="offcanvas">
+          <!-- YÊU CẦU 1: Đã xóa data-bs-dismiss="offcanvas" -->
+          <a href="faq.html" class="menu-link-row">
             <div class="menu-link-icon"><i class="bi bi-patch-question-fill"></i></div>
             <span>FAQ</span>
           </a>
 
-          <a href="terms.html" class="menu-link-row" data-bs-dismiss="offcanvas">
+          <!-- YÊU CẦU 1: Đã xóa data-bs-dismiss="offcanvas" -->
+          <a href="terms.html" class="menu-link-row">
             <div class="menu-link-icon"><i class="bi bi-file-earmark-text-fill"></i></div>
             <span>Terms</span>
           </a>
 
-          <a href="privacy.html" class="menu-link-row" data-bs-dismiss="offcanvas">
+          <!-- YÊU CẦU 1: Đã xóa data-bs-dismiss="offcanvas" -->
+          <a href="privacy.html" class="menu-link-row">
             <div class="menu-link-icon"><i class="bi bi-shield-lock-fill"></i></div>
             <span>Privacy</span>
           </a>
 
-          <a href="contract.html" class="menu-link-row" data-bs-dismiss="offcanvas">
+          <!-- YÊU CẦU 1: Đã xóa data-bs-dismiss="offcanvas" -->
+          <a href="contract.html" class="menu-link-row">
             <div class="menu-link-icon"><i class="bi bi-telephone-outbound-fill"></i></div>
             <span>Contract</span>
           </a>
@@ -1053,6 +1068,9 @@
       </div>
     </div>
   </div>
+  <!-- ======================================================== -->
+  <!-- ===== OFFCANVAS MENU (END) - KẾT THÚC PHẦN ĐÃ SỬA ===== -->
+  <!-- ======================================================== -->
 </header>
 
 <!-- HERO -->
@@ -1539,6 +1557,30 @@ try {
   // Init + auto cập nhật mỗi 5 phút
   updateStatus();
   setInterval(updateStatus, 5 * 60 * 1000);
+})();
+
+/* ===== YÊU CẦU 5: Thêm JS để đóng offcanvas khi nhấp link ===== */
+(function(){
+  const offcanvasEl = document.getElementById('offcanvasMenu');
+  if (!offcanvasEl || !bootstrap?.Offcanvas) return;
+
+  // Lấy tất cả các link <a> có href bên trong offcanvas body
+  const links = offcanvasEl.querySelectorAll('.offcanvas-body a[href]');
+  
+  links.forEach(link => {
+    link.addEventListener('click', function() {
+      // Lấy instance của offcanvas một cách an toàn
+      const offcanvasInstance = bootstrap.Offcanvas.getOrCreateInstance(offcanvasEl);
+      
+      // Kiểm tra xem offcanvas có đang hiển thị không
+      if (offcanvasInstance && offcanvasEl.classList.contains('show')) {
+        // Ẩn offcanvas đi.
+        // Trình duyệt sẽ tự động điều hướng đến link
+        // mà không cần e.preventDefault().
+        offcanvasInstance.hide();
+      }
+    });
+  });
 })();
 </script>
 
