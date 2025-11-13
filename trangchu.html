@@ -1,3 +1,5 @@
+Dưới đây là file index.html đã chỉnh lại menu + footer đúng yêu cầu (đúng tên file: index.html, about.html, sale-bikes.html, rent-bikes.html, faq.html, privacy-policy.html, terms.html, contact.html) và thêm dropdown Service trên desktop + Service có 2 mục con trong mobile offcanvas.
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -307,6 +309,34 @@
       margin-bottom:6px;
     }
 
+    /* Mobile Service submenu */
+    .submenu {
+      margin-left: 46px;
+      margin-top: 4px;
+      display: none;
+      flex-direction: column;
+    }
+    .submenu a {
+      padding: 7px 6px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    .submenu a::before {
+      content: "• ";
+      opacity: 0.85;
+    }
+    .submenu.show {
+      display: flex;
+    }
+    .service-toggle .chevron {
+      margin-left:auto;
+      transition: transform .25s;
+    }
+    .service-toggle.open .chevron {
+      transform: rotate(90deg);
+    }
+
     /* Theme row inside panel (reuse switch styles) */
     .offcanvas-theme-row{
       display:flex;
@@ -553,27 +583,29 @@
       <!-- Desktop navigation -->
       <nav class="desktop-nav d-none d-lg-block" aria-label="Main navigation">
         <ul>
-          <!-- Trang chủ -->
-          <li><a href="index.html"><span class="icon">🏠</span> Trang chủ</a></li>
+          <!-- Home -->
+          <li><a href="index.html"><span class="icon">🏠</span> Home</a></li>
 
-          <!-- Giới thiệu -->
-          <li><a href="gioithieu.html"><span class="icon">ℹ️</span> Giới thiệu</a></li>
+          <!-- About -->
+          <li><a href="about.html"><span class="icon">ℹ️</span> About</a></li>
 
-          <!-- Dịch vụ: Sale & Rental -->
+          <!-- Service: Sale & Rent (parent only, no link) -->
           <li class="has-dropdown">
             <button class="dropdown-toggle" type="button">
               <span class="icon">🛵</span> Service
               <i class="bi bi-chevron-down" aria-hidden="true" style="font-size:0.8rem;"></i>
             </button>
             <ul class="dropdown-menu">
-              <li><a href="sale.html">Sale Bikes</a></li>
-              <li><a href="rental.html">Rent Bikes</a></li>
+              <li><a href="sale-bikes.html">Sale Bikes</a></li>
+              <li><a href="rent-bikes.html">Rent Bikes</a></li>
             </ul>
           </li>
 
-          <!-- Các trang còn lại -->
+          <!-- Others -->
           <li><a href="faq.html"><span class="icon">❓</span> FAQ</a></li>
-          <li><a href="contact.html"><span class="icon">📞</span> Liên hệ</a></li>
+          <li><a href="privacy-policy.html"><span class="icon">🔒</span> Privacy Policy</a></li>
+          <li><a href="terms.html"><span class="icon">📜</span> Terms &amp; Conditions</a></li>
+          <li><a href="contact.html"><span class="icon">📞</span> Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -600,8 +632,8 @@
               <div class="menu-tile-icon"><i class="bi bi-geo-alt-fill"></i></div>
               <div>Open map</div>
             </a>
-            <!-- Price list = trang Sale -->
-            <a href="sale.html" class="menu-tile" data-bs-dismiss="offcanvas">
+            <!-- Price list = sale-bikes -->
+            <a href="sale-bikes.html" class="menu-tile" data-bs-dismiss="offcanvas">
               <div class="menu-tile-icon"><i class="bi bi-tag-fill"></i></div>
               <div>Price list</div>
             </a>
@@ -619,32 +651,43 @@
 
           <a href="index.html" class="menu-link-row" data-bs-dismiss="offcanvas">
             <div class="menu-link-icon"><i class="bi bi-house-door-fill"></i></div>
-            <span>Trang chủ</span>
+            <span>Home</span>
           </a>
 
-          <a href="gioithieu.html" class="menu-link-row" data-bs-dismiss="offcanvas">
+          <a href="about.html" class="menu-link-row" data-bs-dismiss="offcanvas">
             <div class="menu-link-icon"><i class="bi bi-info-circle-fill"></i></div>
-            <span>Giới thiệu</span>
+            <span>About</span>
           </a>
 
-          <a href="sale.html" class="menu-link-row" data-bs-dismiss="offcanvas">
+          <!-- Service parent (no link, toggle dropdown) -->
+          <button type="button" class="menu-link-row service-toggle" id="mobileServiceToggle">
             <div class="menu-link-icon"><i class="bi bi-bicycle"></i></div>
-            <span>Sale Bikes</span>
-          </a>
-
-          <a href="rental.html" class="menu-link-row" data-bs-dismiss="offcanvas">
-            <div class="menu-link-icon"><i class="bi bi-scooter"></i></div>
-            <span>Rent Bikes</span>
-          </a>
+            <span>Service</span>
+            <i class="bi bi-chevron-right chevron" aria-hidden="true"></i>
+          </button>
+          <div class="submenu" id="mobileServiceSubmenu">
+            <a href="sale-bikes.html" data-bs-dismiss="offcanvas">Sale Bikes</a>
+            <a href="rent-bikes.html" data-bs-dismiss="offcanvas">Rent Bikes</a>
+          </div>
 
           <a href="faq.html" class="menu-link-row" data-bs-dismiss="offcanvas">
             <div class="menu-link-icon"><i class="bi bi-patch-question-fill"></i></div>
             <span>FAQ</span>
           </a>
 
+          <a href="privacy-policy.html" class="menu-link-row" data-bs-dismiss="offcanvas">
+            <div class="menu-link-icon"><i class="bi bi-shield-lock-fill"></i></div>
+            <span>Privacy Policy</span>
+          </a>
+
+          <a href="terms.html" class="menu-link-row" data-bs-dismiss="offcanvas">
+            <div class="menu-link-icon"><i class="bi bi-file-earmark-text-fill"></i></div>
+            <span>Terms &amp; Conditions</span>
+          </a>
+
           <a href="contact.html" class="menu-link-row" data-bs-dismiss="offcanvas">
             <div class="menu-link-icon"><i class="bi bi-telephone-outbound-fill"></i></div>
-            <span>Liên hệ</span>
+            <span>Contact</span>
           </a>
         </div>
 
@@ -808,11 +851,13 @@
         <h5 class="fw-bold text-uppercase mb-3">Quick Links</h5>
         <ul class="list-unstyled">
           <li><a href="index.html" class="footer-link">🏠 Home</a></li>
-          <li><a href="sale.html" class="footer-link">💰 Motorbikes for Sale</a></li>
-          <li><a href="rental.html" class="footer-link">🛵 Motorbikes for Rent</a></li>
+          <li><a href="about.html" class="footer-link">ℹ️ About</a></li>
+          <li><a href="sale-bikes.html" class="footer-link">💰 Motorbikes for Sale</a></li>
+          <li><a href="rent-bikes.html" class="footer-link">🛵 Motorbikes for Rent</a></li>
           <li><a href="faq.html" class="footer-link">❓ FAQs</a></li>
+          <li><a href="privacy-policy.html" class="footer-link">🔒 Privacy Policy</a></li>
+          <li><a href="terms.html" class="footer-link">📜 Terms &amp; Conditions</a></li>
           <li><a href="contact.html" class="footer-link">📞 Contact Us</a></li>
-          <li><a href="https://maps.app.goo.gl/c2sxNmnwuxMCo3bz7?g_st=ipc" class="footer-link" target="_blank" rel="noopener noreferrer">📍 Find Us on Google Map</a></li>
         </ul>
       </div>
       <div>
@@ -824,6 +869,7 @@
           <a href="https://athanoi.github.io/moto/" target="_blank" class="social-icon" title="Official Website" rel="noopener noreferrer"><i class="bi bi-globe"></i></a>
         </div>
         <p style="color:#f5f5f5">🌐 Official Website:<br><a href="https://athanoi.github.io/moto/" class="fw-bold" style="color:#FFD700" target="_blank" rel="noopener noreferrer">athanoi.github.io/moto</a></p>
+        <p class="mt-2" style="color:#f5f5f5">📍 <a href="https://maps.app.goo.gl/c2sxNmnwuxMCo3bz7?g_st=ipc" style="color:#f5f5f5" target="_blank" rel="noopener noreferrer">Find us on Google Maps</a></p>
       </div>
     </div>
 
@@ -915,7 +961,7 @@ try {
 
   function handleMove(xRatio, yRatio){
     const rx = (yRatio - 0.5) * 8;
-       const ry = (xRatio - 0.5) * -12;
+    const ry = (xRatio - 0.5) * -12;
     if (heroCard) heroCard.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg) translateZ(0)`;
     layers.forEach((el, i)=>{
       const depth = (i+1) * 6;
@@ -966,6 +1012,17 @@ try {
   mainContactBtn.addEventListener('touchstart', ev=>{ ev.preventDefault(); mainContactBtn.click(); }, { passive: false });
 })();
 
+/* ===== Mobile Service submenu toggle ===== */
+(function(){
+  const toggleBtn = document.getElementById('mobileServiceToggle');
+  const submenu = document.getElementById('mobileServiceSubmenu');
+  if (!toggleBtn || !submenu) return;
+  toggleBtn.addEventListener('click', () => {
+    submenu.classList.toggle('show');
+    toggleBtn.classList.toggle('open');
+  });
+})();
+
 /* ===== Theme Logic (Sync Button & Switch) ===== */
 (function(){
   const html = document.documentElement;
@@ -1014,3 +1071,5 @@ try {
 
 </body>
 </html>
+
+Nếu bạn muốn mình clone y chang header/footer này sang các file about.html, sale-bikes.html, v.v. mình có thể viết sẵn skeleton cho từng file luôn.
