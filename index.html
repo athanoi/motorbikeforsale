@@ -822,6 +822,16 @@
       align-items:flex-start;
     }
 
+    /* CARD cho từng cột */
+    .footer-box{
+      background: rgba(0,0,0,0.22);
+      border-radius: 16px;
+      padding: 14px 16px;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.55);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
     /* cột chung */
     .footer-col-title{
       color:#FFD700;
@@ -855,26 +865,42 @@
       width:18px;
     }
 
-    /* Quick links: 2 cột trên desktop cho đỡ dài */
+    /* Quick links */
     .footer-link-list{
       list-style:none;
       padding:0;
       margin:0;
-      column-count:2;
+      column-count:1;          /* mobile 1 cột, desktop sẽ set lại ở dưới */
       column-gap:18px;
     }
+
     .footer-link{
       color:#f5f5f5;
-      display:inline-block;
-      margin:4px 0;
-      font-weight:600;
-      font-size:0.95rem;
-      break-inside:avoid;
-      transition:color .25s,transform .25s;
+      display:block;
+      margin:6px 0;
+      text-decoration:none;
     }
-    .footer-link:hover{
-      color:#FFD700;
+
+    /* pill + icon cho mỗi link */
+    .footer-link-pill{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(0,0,0,0.25);
+      box-shadow:0 6px 18px rgba(0,0,0,0.4);
+      transition:transform .25s, background .25s, color .25s;
+    }
+
+    .footer-link-pill i{
+      font-size:1rem;
+    }
+
+    .footer-link:hover .footer-link-pill{
       transform:translateX(4px);
+      background:rgba(255,215,0,0.18);
+      color:#FFD700;
     }
 
     /* social */
@@ -929,8 +955,12 @@
       .footer-col-about{
         grid-column:1 / -1;
       }
+    }
+
+    /* Desktop: Quick links 2 cột */
+    @media (min-width: 768px){
       .footer-link-list{
-        column-count:1;
+        column-count:2;
       }
     }
 
@@ -1416,7 +1446,7 @@
   <div class="footer-inner">
     <div class="footer-grid">
       <!-- ABOUT / CONTACT -->
-      <div class="footer-col footer-col-about">
+      <div class="footer-col footer-col-about footer-box">
         <h5 class="footer-col-title">About Nguyen Tu Motorbike</h5>
         <p class="footer-about-text">
           We provide quality used motorbikes for sale and long-term rentals in Hanoi. Trusted by both
@@ -1429,7 +1459,11 @@
           </li>
           <li>
             <span class="icon">📞</span>
-            <span><a href="tel:+84942467674" class="fw-bold" style="color:#f5f5f5">+84 942 467 674</a></span>
+            <span>
+              <a href="tel:+84942467674" class="fw-bold" style="color:#f5f5f5">
+                +84 942 467 674
+              </a>
+            </span>
           </li>
           <li>
             <span class="icon">🕘</span>
@@ -1437,34 +1471,102 @@
           </li>
           <li>
             <span class="icon">✉️</span>
-            <span><a href="mailto:nguyentuantu8@gmail.com" style="color:#f5f5f5">nguyentuantu8@gmail.com</a></span>
+            <span>
+              <a href="mailto:nguyentuantu8@gmail.com" style="color:#f5f5f5">
+                nguyentuantu8@gmail.com
+              </a>
+            </span>
           </li>
         </ul>
       </div>
 
       <!-- QUICK LINKS -->
-      <div class="footer-col">
+      <div class="footer-col footer-box">
         <h5 class="footer-col-title">Quick Links</h5>
         <ul class="footer-link-list">
-          <li><a href="index.html" class="footer-link">Home</a></li>
-          <li><a href="about.html" class="footer-link">About</a></li>
-          <li><a href="sale.html" class="footer-link">Sale</a></li>
-          <li><a href="rental.html" class="footer-link">Rental</a></li>
-          <li><a href="faq.html" class="footer-link">FAQ</a></li>
-          <li><a href="terms.html" class="footer-link">Terms</a></li>
-          <li><a href="privacy.html" class="footer-link">Privacy</a></li>
-          <li><a href="contract.html" class="footer-link">Contract</a></li>
+          <li>
+            <a href="index.html" class="footer-link">
+              <span class="footer-link-pill">
+                <i class="bi bi-house-door-fill"></i>
+                <span>Home</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="about.html" class="footer-link">
+              <span class="footer-link-pill">
+                <i class="bi bi-info-circle-fill"></i>
+                <span>About</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="sale.html" class="footer-link">
+              <span class="footer-link-pill">
+                <i class="bi bi-tag-fill"></i>
+                <span>Sale</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="rental.html" class="footer-link">
+              <span class="footer-link-pill">
+                <i class="bi bi-bicycle"></i>
+                <span>Rental</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="faq.html" class="footer-link">
+              <span class="footer-link-pill">
+                <i class="bi bi-question-circle-fill"></i>
+                <span>FAQ</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="terms.html" class="footer-link">
+              <span class="footer-link-pill">
+                <i class="bi bi-file-earmark-text-fill"></i>
+                <span>Terms</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="privacy.html" class="footer-link">
+              <span class="footer-link-pill">
+                <i class="bi bi-shield-lock-fill"></i>
+                <span>Privacy</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="contract.html" class="footer-link">
+              <span class="footer-link-pill">
+                <i class="bi bi-telephone-outbound-fill"></i>
+                <span>Contract</span>
+              </span>
+            </a>
+          </li>
         </ul>
       </div>
 
       <!-- CONNECT & SUPPORT -->
-      <div class="footer-col">
+      <div class="footer-col footer-box">
         <h5 class="footer-col-title">Connect &amp; Support</h5>
         <div class="footer-social-row">
-          <a href="https://zalo.me/0942467674" target="_blank" class="social-icon" title="Chat on Zalo" rel="noopener noreferrer"><i class="bi bi-chat-dots"></i></a>
-          <a href="https://wa.me/84942467674" target="_blank" class="social-icon" title="Chat on WhatsApp" rel="noopener noreferrer"><i class="bi bi-whatsapp"></i></a>
-          <a href="https://www.facebook.com/chothuexemaynguyentu/" target="_blank" class="social-icon" title="Visit Facebook" rel="noopener noreferrer"><i class="bi bi-facebook"></i></a>
-          <a href="https://athanoi.github.io/moto/" target="_blank" class="social-icon" title="Official Website" rel="noopener noreferrer"><i class="bi bi-globe"></i></a>
+          <a href="https://zalo.me/0942467674" target="_blank" class="social-icon" title="Chat on Zalo" rel="noopener noreferrer">
+            <i class="bi bi-chat-dots"></i>
+          </a>
+          <a href="https://wa.me/84942467674" target="_blank" class="social-icon" title="Chat on WhatsApp" rel="noopener noreferrer">
+            <i class="bi bi-whatsapp"></i>
+          </a>
+          <a href="https://www.facebook.com/chothuexemaynguyentu/" target="_blank" class="social-icon" title="Visit Facebook" rel="noopener noreferrer">
+            <i class="bi bi-facebook"></i>
+          </a>
+          <a href="https://athanoi.github.io/moto/" target="_blank" class="social-icon" title="Official Website" rel="noopener noreferrer">
+            <i class="bi bi-globe"></i>
+          </a>
         </div>
         <p class="mb-1" style="color:#f5f5f5">
           🌐 Official Website:<br>
@@ -1473,7 +1575,8 @@
           </a>
         </p>
         <p class="mt-2" style="color:#f5f5f5">
-          📍 <a href="https://maps.app.goo.gl/c2sxNmnwuxMCo3bz7?g_st=ipc" style="color:#f5f5f5" target="_blank" rel="noopener noreferrer">
+          📍
+          <a href="https://maps.app.goo.gl/c2sxNmnwuxMCo3bz7?g_st=ipc" style="color:#f5f5f5" target="_blank" rel="noopener noreferrer">
             Find us on Google Maps
           </a>
         </p>
@@ -1815,4 +1918,5 @@ try {
 
 </body>
 </html>
+
 
