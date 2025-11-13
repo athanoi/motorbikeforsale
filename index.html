@@ -458,10 +458,18 @@
       margin:0;
       font-weight:700;
     }
+    
+    /* === EDITED: SAFARI iOS BOTTOM FIX === */
     #offcanvasMenu .offcanvas-body{
-      padding:0;
-      overflow-y:auto; /* scrollable body */
+      padding: 0 0 80px 0;
+      overflow-y:auto;
     }
+    @supports (padding: max(0px)) {
+      #offcanvasMenu .offcanvas-body{
+        padding-bottom: max(80px, env(safe-area-inset-bottom) + 24px);
+      }
+    }
+    /* === END EDIT === */
 
     .menu-panel{
       background:rgba(22,22,30,0.98);
