@@ -8,8 +8,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
   <!-- Title / Primary SEO -->
-  <title>Hanoi Motorbike For Sale &amp; Rent - Nguyen Tu</title>
-  <meta name="description" content="Hanoi Motorbike For Sale &amp; Rent - Nguyen Tu. Reliable scooters and motorbikes for sale or rent in Hanoi. Well-maintained, full paperwork and friendly service." />
+  <title>Hanoi Motorbike For Sale & Rent - Nguyen Tu</title>
+  <meta name="description" content="Hanoi Motorbike For Sale & Rent - Nguyen Tu. Reliable scooters and motorbikes for sale or rent in Hanoi. Well-maintained, full paperwork and friendly service." />
   <meta name="keywords" content="Hanoi motorbike rental, motorbike for sale Hanoi, rent motorbike Hanoi, scooter sale Hanoi, Nguyen Tu motorbike" />
   <meta name="author" content="Nguyen Tu Motorbike" />
   <meta name="robots" content="index, follow" />
@@ -21,7 +21,7 @@
   <!-- Social / Open Graph -->
   <meta property="og:locale" content="en_US" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Hanoi Motorbike For Sale &amp; Rent - Nguyen Tu" />
+  <meta property="og:title" content="Hanoi Motorbike For Sale & Rent - Nguyen Tu" />
   <meta property="og:description" content="Reliable motorbikes and scooters for rent or sale in Hanoi. Affordable, high-quality service from Nguyen Tu Motorbike." />
   <meta property="og:url" content="https://athanoi.github.io/motorbikeforsale/" />
   <meta property="og:site_name" content="Nguyen Tu Motorbike" />
@@ -31,7 +31,7 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Hanoi Motorbike For Sale &amp; Rent - Nguyen Tu" />
+  <meta name="twitter:title" content="Hanoi Motorbike For Sale & Rent - Nguyen Tu" />
   <meta name="twitter:description" content="Reliable motorbikes and scooters for rent or sale in Hanoi. Affordable, high-quality service from Nguyen Tu Motorbike." />
   <meta name="twitter:image" content="https://i.postimg.cc/34z67dfX/13803262-651-D-43-F4-8-DA2-8-DAED35-FEEA5.jpg" />
 
@@ -41,7 +41,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
 
   <!-- Icon library (Font Awesome) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-XlVYzIULYDLXCSk7hZ4GkaFv4Gg8dFjCYe7PvWZ6G5p3W1jzv16PBQig0n0qZ0tJYxP5F+U7Z5RpYg7KJx2v3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- CSS & libs -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -49,16 +49,39 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
 
   <style>
+    /* === Variables & Theme === */
     :root{
       --primary:#D6001C;
       --accent:#fff;
       --muted:#7a7a7a;
-      --bg:#fff;
+
+      --bg:#ffffff;
+      --text:#111111;
+      --card-bg:#ffffff;
+      --header-bg:rgba(0,0,0,0.55);
+      --footer-bg:linear-gradient(135deg, #0f0f0f 10%, #1c1c1c 50%, #330000 100%);
+
       --fade-duration: 0.9s;
     }
+
+    /* Dark mode overrides */
+    :root[data-theme="dark"]{
+      --bg:#050509;
+      --text:#f5f5f5;
+      --card-bg:#11111a;
+      --header-bg:rgba(0,0,0,0.9);
+      --footer-bg:linear-gradient(135deg,#000000 10%, #141414 50%, #330000 100%);
+    }
+
     *{box-sizing:border-box}
     html,body{height:100%}
-    body{font-family:Inter, "Be Vietnam Pro", Arial, sans-serif;margin:0;color:#111;background:var(--bg);-webkit-font-smoothing:antialiased;}
+    body{
+      font-family:Inter, "Be Vietnam Pro", Arial, sans-serif;
+      margin:0;
+      color:var(--text);
+      background:var(--bg);
+      -webkit-font-smoothing:antialiased;
+    }
 
     a{color:inherit;text-decoration:none}
     img{max-width:100%;display:block}
@@ -69,25 +92,548 @@
 
     /* ===== HEADER ===== */
     header{
-      position:sticky;top:0;z-index:1200;background:rgba(0,0,0,0.55);backdrop-filter:blur(6px);color:#fff;box-shadow:0 4px 14px rgba(0,0,0,0.12);
+      position:sticky;
+      top:0;
+      z-index:1200;
+      background:var(--header-bg);
+      backdrop-filter:blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      color:#fff;
+      box-shadow:0 4px 14px rgba(0,0,0,0.12);
+      transition: padding 0.3s ease;
     }
-    .brand-row{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;gap:12px;max-width:1200px;margin:auto;}
-    .logo-badge{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--primary),#FF3C3C);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:18px;}
-    .site-title{font-weight:800;color:#fff;margin:0;font-size:16px}
-    .site-sub{font-size:12px;color:rgba(255,255,255,0.9)}
-    .phone-cta{background:var(--primary);color:#fff;padding:8px 12px;border-radius:10px;font-weight:800;border:none}
-    nav.desktop-nav ul{display:flex;gap:14px;list-style:none;margin:0;padding:0;align-items:center}
-    nav.desktop-nav a{color:#fff;font-weight:700;display:inline-flex;align-items:center;gap:8px;padding:8px 6px;border-radius:8px;transition:transform .18s, color .18s}
-    nav.desktop-nav a:hover{transform:translateY(-4px) scale(1.03); color: #fff;}
+    
+    .brand-row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:10px 16px;
+      gap:12px;
+      max-width:1200px;
+      margin:auto;
+      transition: padding 0.3s ease;
+    }
+
+    /* Shrink Effect Styles */
+    header.header-compact .brand-row{
+      padding-top:6px;
+      padding-bottom:6px;
+    }
+    header.header-compact .logo-wrap{
+      transform:scale(0.88);
+    }
+
+    /* NEW LOGO STYLES */
+    .brand-left{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      text-decoration:none;
+      color:#fff;
+    }
+
+    .logo-wrap{
+      position:relative;
+      width:52px;
+      height:52px;
+      border-radius:16px;
+      overflow:hidden;
+      background:linear-gradient(135deg,var(--primary),#FF3C3C);
+      box-shadow:0 6px 18px rgba(0,0,0,0.45);
+      flex-shrink:0;
+      transition: transform .2s ease;
+    }
+    .logo-wrap img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+    .logo-tag{
+      position:absolute;
+      bottom:2px;
+      right:4px;
+      font-size:11px;
+      font-weight:800;
+      padding:2px 6px;
+      border-radius:999px;
+      background:rgba(0,0,0,0.7);
+      color:#FFD700;
+      letter-spacing:0.06em;
+      text-transform:uppercase;
+    }
+
+    .brand-text .site-title{
+      font-weight:800;
+      color:#fff;
+      margin:0;
+      font-size:16px;
+      line-height: 1.2;
+    }
+    .brand-text .site-sub{
+      font-size:12px;
+      color:rgba(255,255,255,0.9);
+      line-height: 1.2;
+    }
+
+    /* Right Group (Nav + Actions) */
+    .brand-right{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    /* === Mini-app OPEN status pill (NEW) === */
+    .status-pill{
+      display:flex;
+      align-items:center;
+      gap:6px;
+      padding:6px 11px;
+      border-radius:999px;
+      background:rgba(0,0,0,0.55);
+      box-shadow:0 6px 18px rgba(0,0,0,0.15);
+      font-size:12px;
+      font-weight:600;
+      white-space:nowrap;
+      border:1px solid rgba(255,255,255,0.16);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      cursor:pointer; /* NEW */
+    }
+    .status-dot{
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:#22c55e;
+      box-shadow:0 0 0 6px rgba(34,197,94,0.25);
+      animation:pulseStatus 1.7s ease-out infinite;
+    }
+    .status-label-main{
+      text-transform:uppercase;
+      letter-spacing:0.08em;
+      font-size:10px;
+      opacity:0.9;
+      line-height: 1;
+      margin-bottom: 2px;
+    }
+    .status-label-hours{
+      font-weight:700;
+      font-size:12px;
+      line-height: 1;
+    }
+    @keyframes pulseStatus{
+      0%{ transform:scale(1); box-shadow:0 0 0 0px rgba(34,197,94,0.6); }
+      70%{ transform:scale(1); box-shadow:0 0 0 6px rgba(34,197,94,0); }
+      100%{ transform:scale(1); box-shadow:0 0 0 0px rgba(34,197,94,0); }
+    }
+
+    /* Closed mode styles */
+    .status-pill.closed{
+      background:rgba(0,0,0,0.7);
+      border-color:rgba(248,113,113,0.7);
+    }
+    .status-pill.closed .status-dot{
+      background:#ef4444;
+      box-shadow:0 0 0 4px rgba(248,113,113,0.55);
+      animation:none;
+    }
+
+    /* Mini app opening-hours popover */
+    .status-popover{
+      position:fixed;
+      top:64px;
+      right:16px;
+      background:rgba(10,10,15,0.97);
+      color:#f5f5f5;
+      padding:10px 12px;
+      border-radius:14px;
+      box-shadow:0 18px 40px rgba(0,0,0,0.6);
+      font-size:12px;
+      width:230px;
+      max-width:calc(100% - 32px);
+      z-index:1300;
+      opacity:0;
+      transform:translateY(-10px);
+      pointer-events:none;
+      transition:opacity .2s ease, transform .2s ease;
+      border:1px solid rgba(255,255,255,0.12);
+    }
+    .status-popover.show{
+      opacity:1;
+      transform:translateY(0);
+      pointer-events:auto;
+    }
+    .status-popover-header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:6px;
+    }
+    .status-popover-title{
+      font-weight:700;
+      font-size:12px;
+    }
+    .status-popover-tz{
+      font-size:10px;
+      opacity:0.7;
+    }
+    .status-popover-row{
+      display:flex;
+      justify-content:space-between;
+      font-size:12px;
+      margin-bottom:4px;
+    }
+    .status-popover-note{
+      margin-top:6px;
+      font-size:11px;
+      opacity:0.8;
+    }
+
+    /* Mobile tweak: popover full width top */
+    @media (max-width: 575.98px) {
+      .status-popover{
+        left:8px;
+        right:8px;
+        width:auto;
+        top:70px;
+      }
+    }
+
+    /* Mobile Menu Btn */
     .mobile-menu-btn{background:transparent;border:2px solid rgba(255,255,255,0.08);color:#fff;padding:6px 10px;border-radius:8px;}
 
-    /* ===== HERO (gradient + bike icon animation) ===== */
+    /* ===== Desktop Navigation & Dropdowns (UPDATED) ===== */
+    nav.desktop-nav ul{
+      display:flex;
+      gap:14px;
+      list-style:none;
+      margin:0;
+      padding:0;
+      align-items:center;
+    }
+    
+    /* Link base style */
+    nav.desktop-nav a.nav-link-item{
+      position:relative;
+      color:#fff;
+      font-weight:700;
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:8px 6px;
+      border-radius:8px;
+      text-decoration:none;
+      transition:transform .18s, color .18s;
+    }
+
+    /* Underline effect */
+    nav.desktop-nav a.nav-link-item::after{
+      content:"";
+      position:absolute;
+      left:10px;
+      right:10px;
+      bottom:3px;
+      height:2px;
+      border-radius:999px;
+      background:linear-gradient(90deg,#FFD700,#FF3C3C);
+      transform:scaleX(0);
+      transform-origin:center;
+      transition:transform .2s ease-out, opacity .2s;
+      opacity:0;
+    }
+
+    nav.desktop-nav a.nav-link-item:hover{
+      transform:translateY(-3px);
+    }
+    nav.desktop-nav a.nav-link-item:hover::after{
+      transform:scaleX(1);
+      opacity:1;
+    }
+
+    /* Active state */
+    nav.desktop-nav a.nav-link-item.active{
+      color:#FFD700;
+    }
+    nav.desktop-nav a.nav-link-item.active::after{
+      transform:scaleX(1);
+      opacity:1;
+    }
+
+    /* Dropdown specific */
+    .has-dropdown{ position:relative; }
+    .has-dropdown .dropdown-toggle{
+      background:transparent;
+      border:none;
+      color:#fff;
+      font-weight:700;
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:8px 6px;
+      border-radius:8px;
+      cursor:pointer;
+      font-family: inherit;
+      font-size: inherit;
+    }
+    .has-dropdown .dropdown-toggle:hover{
+      transform:translateY(-3px);
+    }
+    .has-dropdown .dropdown-menu{
+      position:absolute;
+      top:110%;
+      left:0;
+      min-width:180px;
+      padding:8px 0;
+      margin:0;
+      list-style:none;
+      background:rgba(0,0,0,0.9);
+      border-radius:10px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.5);
+      opacity:0;
+      visibility:hidden;
+      transform:translateY(8px);
+      transition:opacity .2s ease, transform .2s ease, visibility .2s;
+      z-index:1500;
+    }
+    .has-dropdown .dropdown-menu li a{
+      display:block;
+      width:100%;
+      padding:8px 14px;
+      border-radius:0;
+      justify-content:flex-start;
+      color: #fff;
+      font-weight: 600;
+    }
+    .has-dropdown .dropdown-menu li a:hover{
+      background:rgba(255,255,255,0.06);
+      color: #FFD700;
+    }
+    .has-dropdown:hover .dropdown-menu{
+      opacity:1;
+      visibility:visible;
+      transform:translateY(0);
+    }
+
+    /* ===== Header Theme Toggle Button ===== */
+    .theme-toggle{
+      background:transparent;
+      border:1px solid rgba(255,255,255,0.35);
+      color:#fff;
+      border-radius:999px;
+      padding:6px 10px;
+      font-size:0.9rem;
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      cursor:pointer;
+    }
+
+    /* ===== OFFCANVAS – Mobile Menu (full height + scroll) ===== */
+    #offcanvasMenu{
+      background:transparent;
+      border:0;
+    }
+    .offcanvas-backdrop.show{
+      background-color:rgba(0,0,0,0.7);
+    }
+    #offcanvasMenu .offcanvas-sheet{
+      background:rgba(10,10,15,0.98);
+      border-radius:22px;
+      margin:8px;
+      padding:16px 14px 18px;
+      box-shadow:0 22px 60px rgba(0,0,0,0.8);
+      color:#f5f5f5;
+
+      height:calc(100vh - 16px); /* full height minus margins */
+      display:flex;
+      flex-direction:column;
+    }
+    #offcanvasMenu .offcanvas-header{
+      border-bottom:1px solid rgba(255,255,255,0.08);
+      padding:0 0 10px 0;
+      margin-bottom:10px;
+      flex-shrink:0;
+    }
+    #offcanvasMenu .offcanvas-header h5{
+      margin:0;
+      font-weight:700;
+    }
+    #offcanvasMenu .offcanvas-body{
+      padding:0;
+      overflow-y:auto; /* scrollable body */
+    }
+
+    .menu-panel{
+      background:rgba(22,22,30,0.98);
+      border-radius:18px;
+      padding:14px;
+      margin-bottom:14px;
+      box-shadow:0 10px 26px rgba(0,0,0,0.6);
+    }
+
+    /* Quick actions grid */
+    .menu-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:10px;
+    }
+    .menu-tile{
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+      justify-content:flex-start;
+      gap:4px;
+      padding:10px 9px;
+      border-radius:14px;
+      background:rgba(0,0,0,0.45);
+      color:#f5f5f5;
+      text-decoration:none;
+      font-size:0.87rem;
+      font-weight:600;
+    }
+    .menu-tile-icon{
+      width:30px;
+      height:30px;
+      border-radius:999px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:rgba(255,255,255,0.1);
+      margin-bottom:2px;
+      font-size:1.1rem;
+    }
+
+    /* Link list panel */
+    .menu-link-row{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:9px 6px;
+      border-radius:12px;
+      text-decoration:none;
+      color:#f5f5f5;
+      font-weight:600;
+      font-size:0.95rem;
+    }
+    .menu-link-row + .menu-link-row{
+      margin-top:4px;
+    }
+    .menu-link-row:hover{
+      background:rgba(255,255,255,0.06);
+    }
+    .menu-link-icon{
+      width:30px;
+      height:30px;
+      border-radius:999px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:rgba(255,255,255,0.06);
+      font-size:1.1rem;
+    }
+    .menu-section-title{
+      font-size:0.85rem;
+      text-transform:uppercase;
+      letter-spacing:0.08em;
+      opacity:0.7;
+      margin-bottom:6px;
+    }
+
+    /* Mobile Service submenu */
+    .submenu {
+      margin-left: 46px;
+      margin-top: 4px;
+      display: none;
+      flex-direction: column;
+    }
+    .submenu a {
+      padding: 7px 6px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      opacity: 0.9;
+      color: #fff;
+      text-decoration: none;
+    }
+    .submenu a::before {
+      content: "• ";
+      opacity: 0.85;
+    }
+    .submenu.show {
+      display: flex;
+    }
+    .service-toggle .chevron {
+      margin-left:auto;
+      transition: transform .25s;
+    }
+    .service-toggle.open .chevron {
+      transform: rotate(90deg);
+    }
+
+    /* Theme row inside panel (reuse switch styles) */
+    .offcanvas-theme-row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      margin-top:6px;
+      padding-top:8px;
+      border-top:1px solid rgba(255,255,255,0.08);
+    }
+    .offcanvas-theme-label{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      font-weight:600;
+      color:#f5f5f5;
+    }
+
+    /* Switch */
+    .switch{
+      position:relative;
+      display:inline-block;
+      width:46px;
+      height:24px;
+      margin-bottom:0;
+    }
+    .switch input{
+      opacity:0;
+      width:0;
+      height:0;
+    }
+    .slider{
+      position:absolute;
+      cursor:pointer;
+      top:0;
+      left:0;
+      right:0;
+      bottom:0;
+      background-color:#666;
+      transition:.3s;
+      border-radius:34px;
+    }
+    .slider:before{
+      position:absolute;
+      content:"";
+      height:18px;
+      width:18px;
+      left:3px;
+      bottom:3px;
+      background-color:#fff;
+      transition:.3s;
+      border-radius:50%;
+    }
+    .switch input:checked + .slider{
+      background-color:#22c55e;
+    }
+    .switch input:checked + .slider:before{
+      transform:translateX(22px);
+    }
+
+    /* ===== HERO ===== */
     #hero{
       min-height:78vh;
       display:flex;align-items:center;justify-content:center;text-align:center;position:relative;padding:48px 16px;color:var(--accent);overflow:hidden;
       background: linear-gradient(135deg,#0b0b0b 0%, #2a0000 50%, #120000 100%);
     }
-    /* shimmer light layer */
     #hero .light-shimmer{position:absolute;left:-20%;top:-30%;width:180%;height:180%;background:radial-gradient(circle at 40% 20%, rgba(255,255,255,0.04), transparent 15%);mix-blend-mode:overlay;pointer-events:none;animation:shimmer 12s linear infinite;}
     @keyframes shimmer{0%{transform:translateX(-10%) translateY(0)}50%{transform:translateX(10%) translateY(4%)}100%{transform:translateX(-10%) translateY(0)}}
 
@@ -110,7 +656,6 @@
 
     .hero-sub{font-size:1.05rem;margin-bottom:14px;color:rgba(255,255,255,0.95);max-width:860px;margin-left:auto;margin-right:auto}
 
-    /* Visit site + whatsapp buttons */
     .hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:12px}
     .btn-site{
       background: linear-gradient(90deg,#FFD700,#FFB200);
@@ -141,7 +686,6 @@
       96%{transform:translateX(1px)}
     }
 
-    /* ===== Bike icon animation (emoji-based, lightweight) ===== */
     .bike-anim {
       position:absolute;
       bottom:8%;
@@ -164,35 +708,51 @@
       100% { left:120%; opacity:0; transform: translateY(0) rotateY(0) scale(1); }
     }
 
-    /* subtle 3D tilt when hovering the hero area */
     #hero:hover .hero-card{ transform: translateZ(10px) rotateX(2deg) rotateY(-2deg); }
 
-    /* ===== CONTENT (BIKES GRID) ===== */
+    /* ===== SECTIONS & CARDS ===== */
     section{padding:48px 16px}
     .container-max{max-width:1100px;margin:0 auto}
     .bike-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     @media(max-width:992px){.bike-grid{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:576px){.bike-grid{grid-template-columns:1fr}}
-    .bike-card{background:#fff;border-radius:12px;padding:14px;text-align:center;box-shadow:0 12px 30px rgba(0,0,0,0.06);transition:transform .28s;overflow:hidden}
+
+    .bike-card{
+      background:var(--card-bg);
+      border-radius:12px;
+      padding:14px;
+      text-align:center;
+      box-shadow:0 12px 30px rgba(0,0,0,0.06);
+      transition:transform .28s;
+      overflow:hidden;
+    }
     .bike-card:hover{transform:translateY(-8px)}
     .bike-card img{width:100%;height:180px;object-fit:cover;border-radius:8px;margin-bottom:10px}
     .bike-card h4{font-weight:700;margin-bottom:6px}
     .bike-note{color:var(--muted);font-size:0.95rem;margin-top:12px;text-align:center}
 
-    /* ===== FAQ / Accordion tweaks ===== */
+    /* ===== FAQ ===== */
     .accordion-button { transition: all 0.25s ease; }
     .accordion-button:hover { transform: scale(1.01); background: #fff7f5; }
+    :root[data-theme="dark"] .accordion-item { background-color: var(--card-bg); border-color: rgba(255,255,255,0.1); }
+    :root[data-theme="dark"] .accordion-button { background-color: var(--card-bg); color: var(--text); }
+    :root[data-theme="dark"] .accordion-button:not(.collapsed) { background-color: #1a1a22; color: #fff; }
+    :root[data-theme="dark"] .accordion-button:focus { box-shadow: 0 0 0 0.25rem rgba(214, 0, 28, 0.25); }
+    :root[data-theme="dark"] .accordion-body { color: var(--text); }
+    :root[data-theme="dark"] .accordion-button:hover { background: #1a1a22; }
 
     /* ===== Reviews (Swiper) ===== */
-    .swiper-slide{background:#fff;border-radius:12px;padding:18px;box-shadow:0 8px 30px rgba(0,0,0,0.06)}
+    .swiper-slide{background:var(--card-bg); border-radius:12px;padding:18px;box-shadow:0 8px 30px rgba(0,0,0,0.06)}
     .swiper-pagination-bullet{background:var(--primary) !important}
+    :root[data-theme="dark"] .swiper-slide { box-shadow:0 8px 30px rgba(255,255,255,0.03); }
 
-    /* ===== Map embed ===== */
+    /* ===== Map ===== */
     .map-embed{width:100%;height:320px;border-radius:10px;border:0;box-shadow:0 8px 28px rgba(0,0,0,0.08)}
+    :root[data-theme="dark"] .map-embed { filter: invert(0.9) hue-rotate(180deg); }
 
-    /* ===== FOOTER (improved readability) ===== */
+    /* ===== FOOTER ===== */
     footer{
-      background: linear-gradient(135deg, #0f0f0f 10%, #1c1c1c 50%, #330000 100%);
+      background: var(--footer-bg);
       color: #f5f5f5;
       padding:40px 16px;
       position:relative;
@@ -213,7 +773,7 @@
     @media(max-width:768px){.footer-grid{grid-template-columns:1fr}}
     footer h5{color:#FFD700;text-shadow:0 0 6px rgba(255,215,0,0.25);letter-spacing:1px}
     .footer-link{color:#f5f5f5;display:inline-block;margin:6px 0;font-weight:600;transition:color .25s,transform .25s}
-    .footer-link:hover{color:#FFD700;transform:translateX(6px)}
+    .footer-link:hover{color:#FFD7700;transform:translateX(6px)}
     .social-icon{font-size:1.7rem;color:#f5f5f5;transition:transform .3s,color .3s,text-shadow .3s}
     .social-icon:hover{color:#FFD700;transform:scale(1.25) rotate(-8deg);text-shadow:0 0 12px #FFD700}
     .back-to-top{font-weight:700;transition:all .3s}
@@ -229,54 +789,258 @@
     .contact-floating.active .contact-options{opacity:1;pointer-events:auto;transform:translateY(0)}
     @keyframes pulse{0%{box-shadow:0 0 10px rgba(255,60,60,0.35),0 0 20px rgba(255,60,60,0.15)}50%{box-shadow:0 0 25px rgba(255,60,60,0.6),0 0 40px rgba(255,60,60,0.25)}100%{box-shadow:0 0 10px rgba(255,60,60,0.35),0 0 20px rgba(255,60,60,0.15)}}
 
-    /* small helpers */
     .muted{color:var(--muted)}
     .text-center { text-align:center }
     .mb-2 { margin-bottom: .5rem; }
+
+    /* ========== RESPONSIVE HEADER FIXES (Optimized) ========== */
+    
+    /* MOBILE (< 576px) */
+    @media (max-width: 575.98px) {
+      .brand-row {
+        flex-wrap: wrap;
+        row-gap: 8px;
+      }
+
+      /* Right group wrap behavior */
+      .brand-right {
+        width: 100%;
+        justify-content: flex-end;
+        gap: 8px;
+      }
+
+      .brand-left {
+        flex: 1;
+      }
+
+      /* Status pill compact on mobile */
+      .status-pill{
+        padding:4px 9px;
+        font-size:11px;
+      }
+      .status-label-main{
+        font-size:9px;
+      }
+      .status-label-hours{
+        font-size:11px;
+      }
+
+      .theme-toggle {
+        display: none !important;
+      }
+
+      .mobile-menu-btn {
+        padding: 6px 10px;
+        font-size: 18px;
+      }
+    }
+
+    /* Separate media query for offcanvas full height on very small screens */
+    @media (max-width: 400px) {
+      #offcanvasMenu .offcanvas-sheet {
+        margin: 0;
+        border-radius: 0;
+        height: 100vh;
+      }
+    }
+
+    /* TABLET (576px – 991.98px) */
+    @media (min-width: 576px) and (max-width: 991.98px) {
+      .brand-row {
+        padding-inline: 20px;
+      }
+
+      .desktop-nav ul {
+        gap: 10px;
+      }
+
+      .desktop-nav a {
+        font-size: 14px;
+        padding: 6px 4px;
+      }
+    }
+
+    /* DESKTOP (>= 992px) */
+    @media (min-width: 992px) {
+      .brand-row {
+        padding-inline: 24px;
+      }
+      .desktop-nav a {
+        font-size: 15px;
+      }
+    }
   </style>
 </head>
 <body>
 
-<!-- Header -->
+<!-- HEADER (UPDATED MINI-APP) -->
 <header>
   <div class="brand-row">
-    <div style="display:flex;align-items:center;gap:12px">
-      <div class="logo-badge">NT</div>
-      <div>
-        <div class="site-title">Hanoi Motorbike For Sale & Rent</div>
-        <div class="site-sub">Scooters & Motorbikes in Hanoi</div>
+    <!-- LEFT: LOGO + TEXT (New Design) -->
+    <a href="index.html" class="brand-left">
+      <div class="logo-wrap">
+        <img src="https://i.postimg.cc/3NwHXGgc/13803262-651-D-43-F4-8-DA2-8-DAED35-FEEA5.png"
+             alt="Nguyen Tu Motorbike logo">
+        <span class="logo-tag">NT</span>
       </div>
-    </div>
+      <div class="brand-text">
+        <div class="site-title">Hanoi Motorbike For Sale &amp; Rent</div>
+        <div class="site-sub">Scooters &amp; Motorbikes in Hanoi</div>
+      </div>
+    </a>
 
-    <div style="display:flex;align-items:center;gap:12px">
-      <a class="phone-cta" href="tel:+84942467674">📞 +84 942 467 674</a>
-      <button class="mobile-menu-btn d-lg-none" id="mobileMenuBtn" aria-label="Open menu">☰</button>
-      <nav class="desktop-nav d-none d-lg-block" aria-label="Main navigation">
+    <!-- RIGHT: STATUS MINI APP + THEME + MENU -->
+    <div class="brand-right">
+      <!-- MINI APP OPEN STATUS (UPDATED HTML) -->
+      <div class="status-pill" id="statusPill" aria-label="Opening hours (tap to view schedule)" role="button" tabindex="0">
+        <span class="status-dot" aria-hidden="true"></span>
+        <div>
+          <div class="status-label-main" id="statusLabelMain">Open today</div>
+          <div class="status-label-hours" id="statusLabelHours">09:00 – 21:00</div>
+        </div>
+      </div>
+
+      <!-- Theme toggle (hidden on mobile via CSS) -->
+      <button class="theme-toggle" id="themeToggle" type="button">🌙 Dark</button>
+
+      <!-- Mobile Menu Button -->
+      <button class="mobile-menu-btn d-md-none" id="mobileMenuBtn" aria-label="Open menu">☰</button>
+
+      <!-- Desktop Menu with Underline Effect & Active State -->
+      <nav class="desktop-nav d-none d-md-block" aria-label="Main navigation">
         <ul>
-          <li><a href="#hero"><span class="icon">🏠</span> Home</a></li>
-          <li><a href="#about"><span class="icon">ℹ️</span> About</a></li>
-          <li><a href="#bikes-for-sale"><span class="icon">🛵</span> Bikes</a></li>
-          <li><a href="#faq"><span class="icon">❓</span> FAQ</a></li>
-          <li><a href="#reviews"><span class="icon">⭐</span> Reviews</a></li>
-          <li><a href="#footer"><span class="icon">📞</span> Contact</a></li>
+          <!-- Home is ACTIVE for index.html -->
+          <li><a href="index.html" class="nav-link-item active"><span class="icon">🏠</span> Home</a></li>
+
+          <li><a href="about.html" class="nav-link-item"><span class="icon">ℹ️</span> About</a></li>
+
+          <li class="has-dropdown">
+            <button class="dropdown-toggle" type="button">
+              <span class="icon">🛵</span> Service
+              <i class="bi bi-chevron-down" aria-hidden="true" style="font-size:0.8rem;"></i>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a href="sale-bikes.html">Sale Bikes</a></li>
+              <li><a href="rent-bikes.html">Rent Bikes</a></li>
+            </ul>
+          </li>
+
+          <li><a href="faq.html" class="nav-link-item"><span class="icon">❓</span> FAQ</a></li>
+          <li><a href="privacy-policy.html" class="nav-link-item"><span class="icon">🔒</span> Privacy</a></li>
+          <li><a href="terms.html" class="nav-link-item"><span class="icon">📜</span> Terms &amp; Conditions</a></li>
+          <li><a href="contact.html" class="nav-link-item"><span class="icon">📞</span> Contact</a></li>
         </ul>
       </nav>
     </div>
   </div>
 
-  <!-- Offcanvas for mobile -->
-  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
-    <div class="offcanvas-header">
-      <h5 id="offcanvasMenuLabel">Menu</h5>
-      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  <!-- Opening hours popover (NEW HTML) -->
+  <div class="status-popover" id="statusPopover" aria-hidden="true">
+    <div class="status-popover-header">
+      <span class="status-popover-title">Opening hours</span>
+      <span class="status-popover-tz">Asia/Bangkok (GMT+7)</span>
     </div>
-    <div class="offcanvas-body">
-      <a href="#hero" data-bs-dismiss="offcanvas">🏠 Home</a><br>
-      <a href="#about" data-bs-dismiss="offcanvas">ℹ️ About</a><br>
-      <a href="#bikes-for-sale" data-bs-dismiss="offcanvas">🛵 Bikes</a><br>
-      <a href="#faq" data-bs-dismiss="offcanvas">❓ FAQ</a><br>
-      <a href="#reviews" data-bs-dismiss="offcanvas">⭐ Reviews</a><br>
-      <a href="#footer" data-bs-dismiss="offcanvas">📞 Contact</a>
+    <div class="status-popover-row">
+      <span>Mon – Sun</span>
+      <span>09:00 – 21:00</span>
+    </div>
+    <div class="status-popover-note">
+      * Holiday hours may vary — message us via Zalo / WhatsApp.
+    </div>
+  </div>
+
+  <!-- Offcanvas for mobile (unchanged) -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
+    <div class="offcanvas-sheet">
+      <div class="offcanvas-header">
+        <h5 id="offcanvasMenuLabel">Menu</h5>
+        <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <!-- Quick actions panel -->
+        <div class="menu-panel">
+          <div class="menu-section-title">Quick actions</div>
+          <div class="menu-grid">
+            <a href="tel:+84942467674" class="menu-tile" data-bs-dismiss="offcanvas">
+              <div class="menu-tile-icon"><i class="bi bi-telephone-fill"></i></div>
+              <div>Call now</div>
+            </a>
+            <a href="https://maps.app.goo.gl/c2sxNmnwuxMCo3bz7?g_st=ipc" class="menu-tile"
+               target="_blank" rel="noopener noreferrer" data-bs-dismiss="offcanvas">
+              <div class="menu-tile-icon"><i class="bi bi-geo-alt-fill"></i></div>
+              <div>Open map</div>
+            </a>
+            <a href="sale-bikes.html" class="menu-tile" data-bs-dismiss="offcanvas">
+              <div class="menu-tile-icon"><i class="bi bi-tag-fill"></i></div>
+              <div>Price list</div>
+            </a>
+            <a href="faq.html" class="menu-tile" data-bs-dismiss="offcanvas">
+              <div class="menu-tile-icon"><i class="bi bi-question-circle-fill"></i></div>
+              <div>FAQ</div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Navigation panel -->
+        <div class="menu-panel">
+          <div class="menu-section-title">Navigation</div>
+
+          <a href="index.html" class="menu-link-row" data-bs-dismiss="offcanvas">
+            <div class="menu-link-icon"><i class="bi bi-house-door-fill"></i></div>
+            <span>Home</span>
+          </a>
+
+          <a href="about.html" class="menu-link-row" data-bs-dismiss="offcanvas">
+            <div class="menu-link-icon"><i class="bi bi-info-circle-fill"></i></div>
+            <span>About</span>
+          </a>
+
+          <button type="button" class="menu-link-row service-toggle" id="mobileServiceToggle">
+            <div class="menu-link-icon"><i class="bi bi-bicycle"></i></div>
+            <span>Service</span>
+            <i class="bi bi-chevron-right chevron" aria-hidden="true"></i>
+          </button>
+          <div class="submenu" id="mobileServiceSubmenu">
+            <a href="sale-bikes.html" data-bs-dismiss="offcanvas">Sale Bikes</a>
+            <a href="rent-bikes.html" data-bs-dismiss="offcanvas">Rent Bikes</a>
+          </div>
+
+          <a href="faq.html" class="menu-link-row" data-bs-dismiss="offcanvas">
+            <div class="menu-link-icon"><i class="bi bi-patch-question-fill"></i></div>
+            <span>FAQ</span>
+          </a>
+
+          <a href="privacy-policy.html" class="menu-link-row" data-bs-dismiss="offcanvas">
+            <div class="menu-link-icon"><i class="bi bi-shield-lock-fill"></i></div>
+            <span>Privacy Policy</span>
+          </a>
+
+          <a href="terms.html" class="menu-link-row" data-bs-dismiss="offcanvas">
+            <div class="menu-link-icon"><i class="bi bi-file-earmark-text-fill"></i></div>
+            <span>Terms &amp; Conditions</span>
+          </a>
+
+          <a href="contact.html" class="menu-link-row" data-bs-dismiss="offcanvas">
+            <div class="menu-link-icon"><i class="bi bi-telephone-outbound-fill"></i></div>
+            <span>Contact</span>
+          </a>
+        </div>
+
+        <!-- Theme panel -->
+        <div class="menu-panel">
+          <div class="menu-section-title">Display</div>
+          <div class="offcanvas-theme-row">
+            <div class="offcanvas-theme-label">
+              <i class="bi bi-brightness-high-fill"></i>
+              <span>Theme</span>
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="themeSwitch">
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </header>
@@ -287,8 +1051,8 @@
 
   <div class="hero-inner">
     <div class="hero-card" id="heroCard" role="region" aria-label="Main hero">
-      <h1 class="hero-title glow">Hanoi Motorbike For Sale & Rent</h1>
-      <p class="hero-sub">Reliable scooters & motorbikes for sale or rent in Hanoi — all with complete papers and ready to ride.</p>
+      <h1 class="hero-title glow">Hanoi Motorbike For Sale &amp; Rent</h1>
+      <p class="hero-sub">Reliable scooters &amp; motorbikes for sale or rent in Hanoi — all with complete papers and ready to ride.</p>
 
       <div class="hero-actions">
         <a class="btn-site" href="https://athanoi.github.io/moto/" target="_blank" rel="noopener noreferrer" aria-label="Visit official site">🌐 Visit Official Website</a>
@@ -297,7 +1061,6 @@
     </div>
   </div>
 
-  <!-- bike icon animation (emoji) -->
   <div class="bike-anim" aria-hidden="true">🏍️</div>
 </section>
 
@@ -305,8 +1068,8 @@
 <section id="about" class="fade-in">
   <div class="container-max">
     <h2 class="text-center mb-3">About Us</h2>
-    <p class="muted text-center" style="max-width:900px;margin:0 auto 12px">We offer reliable scooters & motorbikes for sale or rent across Hanoi. All bikes are well-maintained, include complete paperwork, and can be transferred quickly.</p>
-    <div class="text-center"><a class="btn cta-btn" href="https://zalo.me/0942467674" target="_blank" rel="noopener noreferrer">💬 Chat on Zalo</a></div>
+    <p class="muted text-center" style="max-width:900px;margin:0 auto 12px">We offer reliable scooters &amp; motorbikes for sale or rent across Hanoi. All bikes are well-maintained, include complete paperwork, and can be transferred quickly.</p>
+    <div class="text-center"><a class="btn cta-btn btn-danger" href="https://zalo.me/0942467674" target="_blank" rel="noopener noreferrer">💬 Chat on Zalo</a></div>
   </div>
 </section>
 
@@ -320,15 +1083,13 @@
     </div>
 
     <div class="bike-grid">
-      <!-- Airblade -->
       <div class="bike-card">
-        <img src="https://i.postimg.cc/KzJ68YdW/IMG-5258.jpg" alt="Honda Airblade 2012">
+        <img src="https://i.postimg.cc/KzJ68YdW/IMG-5259.jpg" alt="Honda Airblade 2012">
         <h4>Honda Airblade 2012</h4>
         <p>10 Million VND — Complete papers, ready to ride</p>
         <a class="btn btn-danger" href="https://zalo.me/0942467674" target="_blank" rel="noopener noreferrer">💬 Chat on WhatsApp</a>
       </div>
 
-      <!-- Vision 2017 v2 (19M) -->
       <div class="bike-card">
         <img src="https://i.postimg.cc/rwx7tjBt/IMG-5259.jpg" alt="Honda Vision 2017 Version 2">
         <h4>Honda Vision 2017 (Version 2)</h4>
@@ -336,7 +1097,6 @@
         <a class="btn btn-danger" href="https://zalo.me/0942467674" target="_blank" rel="noopener noreferrer">💬 Chat on WhatsApp</a>
       </div>
 
-      <!-- Vision 2017 Black (23M) -->
       <div class="bike-card">
         <img src="https://i.postimg.cc/m2F50V2p/IMG-5260.jpg" alt="Honda Vision 2017 Black">
         <h4>Honda Vision 2017 (Version 2, Black)</h4>
@@ -344,7 +1104,6 @@
         <a class="btn btn-danger" href="https://zalo.me/0942467674" target="_blank" rel="noopener noreferrer">💬 Chat on WhatsApp</a>
       </div>
 
-      <!-- Vision 2020 Blue (26M) -->
       <div class="bike-card">
         <img src="https://i.postimg.cc/hGMy95px/IMG-5261.jpg" alt="Honda Vision 2020 Blue">
         <h4>Honda Vision 2020 (Version 3, Blue)</h4>
@@ -352,7 +1111,6 @@
         <a class="btn btn-danger" href="https://zalo.me/0942467674" target="_blank" rel="noopener noreferrer">💬 Chat on WhatsApp</a>
       </div>
 
-      <!-- Vision 2020 Cream (26M) -->
       <div class="bike-card">
         <img src="https://i.postimg.cc/1z5hh6d9/IMG-5262.jpg" alt="Honda Vision 2020 Cream">
         <h4>Honda Vision 2020 (Version 3, Cream)</h4>
@@ -370,150 +1128,31 @@
   <div class="container-max">
     <h2 class="text-center mb-3">❓ Frequently Asked Questions</h2>
     <div class="accordion" id="faqAccordion">
-      <!-- 8 FAQ items (kept from previous) -->
+      <!-- Example FAQ Items -->
       <div class="accordion-item">
-        <h3 class="accordion-header" id="faq1">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">
-            <i class="bi bi-question-circle me-2 text-warning"></i> Are all bikes registered in Hanoi?
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            What documents are needed to rent a motorbike?
           </button>
-        </h3>
-        <div id="collapse1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">Yes, most bikes are registered in Hanoi. Hanoi-registered bikes may cost slightly more due to local registration.</div>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            You generally need your original passport or a valid ID card, plus a small deposit depending on the bike model.
+          </div>
         </div>
       </div>
-      <!-- ... other FAQs (2-8) same as before ... -->
       <div class="accordion-item">
-        <h3 class="accordion-header" id="faq2">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">
-            <i class="bi bi-question-circle me-2 text-warning"></i> Can I test ride before buying?
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Do the bikes come with helmets?
           </button>
-        </h3>
-        <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">Of course. You are welcome to test-ride the bike before purchasing to ensure it meets your needs.</div>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Yes, we provide high-quality helmets with every rental for your safety.
+          </div>
         </div>
       </div>
-
-      <div class="accordion-item">
-        <h3 class="accordion-header" id="faq3">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">
-            <i class="bi bi-question-circle me-2 text-warning"></i> What documents do I need to buy a used motorbike?
-          </button>
-        </h3>
-        <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">Bring your ID card or passport. All bikes come with full registration papers; we assist with ownership transfer.</div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <h3 class="accordion-header" id="faq4">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4">
-            <i class="bi bi-question-circle me-2 text-warning"></i> Do you help with ownership transfer?
-          </button>
-        </h3>
-        <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">Yes. We can help with paperwork and guide you through the legal transfer process in Hanoi.</div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <h3 class="accordion-header" id="faq5">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5">
-            <i class="bi bi-question-circle me-2 text-warning"></i> Do you offer delivery service in Hanoi?
-          </button>
-        </h3>
-        <div id="collapse5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">Yes — delivery is available. Fees vary by location (typically 50,000 – 150,000 VND).</div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <h3 class="accordion-header" id="faq6">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6">
-            <i class="bi bi-question-circle me-2 text-warning"></i> Are the bikes inspected before sale?
-          </button>
-        </h3>
-        <div id="collapse6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">Every bike is checked and serviced by our mechanic before listing to ensure safety and reliability.</div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <h3 class="accordion-header" id="faq7">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7">
-            <i class="bi bi-question-circle me-2 text-warning"></i> Can I reserve a bike before visiting?
-          </button>
-        </h3>
-        <div id="collapse7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">Yes. Contact us via WhatsApp or Zalo to reserve a bike before arriving at our shop.</div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <h3 class="accordion-header" id="faq8">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8">
-            <i class="bi bi-question-circle me-2 text-warning"></i> What payment methods do you accept?
-          </button>
-        </h3>
-        <div id="collapse8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">We accept cash (VND) and bank transfer. For foreign buyers, international transfer can be arranged if needed.</div>
-        </div>
-      </div>
-        <!-- NEW FAQs 9-13 (English) -->
-      <div class="accordion-item">
-        <h3 class="accordion-header" id="faq9">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9">
-            How much does it cost to rent a motorbike in Hanoi for 1 day?
-          </button>
-        </h3>
-        <div id="collapse9" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">Daily rental rates range from 150,000 VND to 200,000 VND per day.</div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <h3 class="accordion-header" id="faq10">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10">
-            How much does it cost to rent a motorbike for 3 days?
-          </button>
-        </h3>
-        <div id="collapse10" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">A 3-day rental typically costs between 400,000 VND and 500,000 VND.</div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <h3 class="accordion-header" id="faq11">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11">
-            How much does it cost to rent a motorbike by the week in Hanoi?
-          </button>
-        </h3>
-        <div id="collapse11" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">Weekly rental rates range from 600,000 VND to 1,000,000 VND per week.</div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <h3 class="accordion-header" id="faq12">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse12">
-            How much does it cost to rent a motorbike for a month?
-          </button>
-        </h3>
-        <div id="collapse12" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">Monthly rental rates range from 900,000 VND to 2,000,000 VND per month.</div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <h3 class="accordion-header" id="faq13">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse13">
-            What are the requirements for renting a motorbike in Hanoi?
-          </button>
-        </h3>
-        <div id="collapse13" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">A deposit of 2,000,000 VND to 5,000,000 VND is typically required, depending on the type of bike. You will also need to provide a valid ID or passport.</div>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
@@ -554,12 +1193,11 @@
   </div>
 </section>
 
-<!-- FOOTER (improved readability) -->
+<!-- FOOTER -->
 <footer id="footer" class="fade-in" role="contentinfo">
   <div class="led-border" aria-hidden="true"></div>
   <div class="container-max">
     <div class="footer-grid mb-4">
-      <!-- Column 1 -->
       <div>
         <h5 class="fw-bold text-uppercase mb-3">About Nguyen Tu Motorbike</h5>
         <p style="color:#f5f5f5">We provide quality used motorbikes for sale and long-term rentals in Hanoi. Trusted by both locals and expats for reliability, good service, and fair prices.</p>
@@ -568,20 +1206,21 @@
         <p class="mb-1">🕘 <span style="color:#f5f5f5">09:00 – 21:00 (Open Daily)</span></p>
         <p>✉️ <a href="mailto:nguyentuantu8@gmail.com" style="color:#f5f5f5">nguyentuantu8@gmail.com</a></p>
       </div>
-      <!-- Column 2 -->
       <div>
         <h5 class="fw-bold text-uppercase mb-3">Quick Links</h5>
         <ul class="list-unstyled">
-          <li><a href="#hero" class="footer-link">🏠 Home</a></li>
-          <li><a href="#bikes-for-sale" class="footer-link">💰 Motorbikes for Sale</a></li>
-          <li><a href="#faq" class="footer-link">❓ FAQs</a></li>
-          <li><a href="#reviews" class="footer-link">⭐ Customer Reviews</a></li>
-          <li><a href="https://maps.app.goo.gl/c2sxNmnwuxMCo3bz7?g_st=ipc" class="footer-link" target="_blank" rel="noopener noreferrer">📍 Find Us on Google Map</a></li>
+          <li><a href="index.html" class="footer-link">🏠 Home</a></li>
+          <li><a href="about.html" class="footer-link">ℹ️ About</a></li>
+          <li><a href="sale-bikes.html" class="footer-link">💰 Motorbikes for Sale</a></li>
+          <li><a href="rent-bikes.html" class="footer-link">🛵 Motorbikes for Rent</a></li>
+          <li><a href="faq.html" class="footer-link">❓ FAQs</a></li>
+          <li><a href="privacy-policy.html" class="footer-link">🔒 Privacy Policy</a></li>
+          <li><a href="terms.html" class="footer-link">📜 Terms &amp; Conditions</a></li>
+          <li><a href="contact.html" class="footer-link">📞 Contact Us</a></li>
         </ul>
       </div>
-      <!-- Column 3 -->
       <div>
-        <h5 class="fw-bold text-uppercase mb-3">Connect & Support</h5>
+        <h5 class="fw-bold text-uppercase mb-3">Connect &amp; Support</h5>
         <div class="d-flex gap-3 mb-3">
           <a href="https://zalo.me/0942467674" target="_blank" class="social-icon" title="Chat on Zalo" rel="noopener noreferrer"><i class="bi bi-chat-dots"></i></a>
           <a href="https://wa.me/84942467674" target="_blank" class="social-icon" title="Chat on WhatsApp" rel="noopener noreferrer"><i class="bi bi-whatsapp"></i></a>
@@ -589,6 +1228,7 @@
           <a href="https://athanoi.github.io/moto/" target="_blank" class="social-icon" title="Official Website" rel="noopener noreferrer"><i class="bi bi-globe"></i></a>
         </div>
         <p style="color:#f5f5f5">🌐 Official Website:<br><a href="https://athanoi.github.io/moto/" class="fw-bold" style="color:#FFD700" target="_blank" rel="noopener noreferrer">athanoi.github.io/moto</a></p>
+        <p class="mt-2" style="color:#f5f5f5">📍 <a href="https://maps.app.goo.gl/c2sxNmnwuxMCo3bz7?g_st=ipc" style="color:#f5f5f5" target="_blank" rel="noopener noreferrer">Find us on Google Maps</a></p>
       </div>
     </div>
 
@@ -612,11 +1252,25 @@
   </button>
 </div>
 
-<!-- Scripts (complete: offcanvas, swiper, fade-in, parallax, floating contact) -->
+<!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
 <script>
+/* ===== Header shrink on scroll (NEW) ===== */
+(function(){
+  const header = document.querySelector('header');
+  if (!header) return;
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 40) {
+      header.classList.add('header-compact');
+    } else {
+      header.classList.remove('header-compact');
+    }
+  });
+})();
+
 /* ===== Offcanvas mobile toggle ===== */
 (function(){
   const mobileBtn = document.getElementById('mobileMenuBtn');
@@ -671,7 +1325,7 @@ try {
   document.querySelectorAll('.fade-in').forEach(s => observer.observe(s));
 })();
 
-/* ===== Hero parallax (mouse & device tilt) - lightweight ===== */
+/* ===== Hero parallax (mouse & device tilt) ===== */
 (function(){
   const hero = document.getElementById('hero');
   const heroCard = document.getElementById('heroCard');
@@ -720,7 +1374,6 @@ try {
     if (opts) opts.setAttribute('aria-hidden', expanded ? 'false' : 'true');
   });
 
-  // close on outside click
   document.addEventListener('click', (e)=>{
     if (!contactFloating.contains(e.target) && contactFloating.classList.contains('active')) {
       contactFloating.classList.remove('active');
@@ -729,10 +1382,149 @@ try {
     }
   });
 
-  // mobile: handle touchstart for better UX
   mainContactBtn.addEventListener('touchstart', ev=>{ ev.preventDefault(); mainContactBtn.click(); }, { passive: false });
 })();
 
+/* ===== Mobile Service submenu toggle ===== */
+(function(){
+  const toggleBtn = document.getElementById('mobileServiceToggle');
+  const submenu = document.getElementById('mobileServiceSubmenu');
+  if (!toggleBtn || !submenu) return;
+  toggleBtn.addEventListener('click', () => {
+    submenu.classList.toggle('show');
+    toggleBtn.classList.toggle('open');
+  });
+})();
+
+/* ===== Theme Logic (Sync Button & Switch) ===== */
+(function(){
+  const html = document.documentElement;
+  const btn = document.getElementById('themeToggle');
+  const switchInput = document.getElementById('themeSwitch');
+
+  if (!btn && !switchInput) return;
+
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const saved = localStorage.getItem('theme');
+  const initial = saved || (prefersDark ? 'dark' : 'light');
+
+  setTheme(initial);
+
+  if (btn){
+    btn.addEventListener('click', () => {
+      const current = html.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+      const next = current === 'dark' ? 'light' : 'dark';
+      setTheme(next);
+    });
+  }
+
+  if (switchInput){
+    switchInput.addEventListener('change', () => {
+      const next = switchInput.checked ? 'dark' : 'light';
+      setTheme(next);
+    });
+  }
+
+  function setTheme(mode){
+    html.setAttribute('data-theme', mode);
+    localStorage.setItem('theme', mode);
+    syncControls(mode);
+  }
+
+  function syncControls(mode){
+    if (btn){
+      btn.innerHTML = mode === 'dark' ? '☀️ Light' : '🌙 Dark';
+    }
+    if (switchInput){
+      switchInput.checked = (mode === 'dark');
+    }
+  }
+})();
+
+/* ===== Opening hours mini-app (auto open/closed + popover) ===== */
+(function(){
+  const pill = document.getElementById('statusPill');
+  const labelMain = document.getElementById('statusLabelMain');
+  const labelHours = document.getElementById('statusLabelHours');
+  const popover = document.getElementById('statusPopover');
+
+  if (!pill || !labelMain || !labelHours || !popover) return;
+
+  const OPEN_HOUR = 9;   // 09:00
+  const CLOSE_HOUR = 21; // 21:00
+
+  function getHanoiDate(){
+    const now = new Date();
+    // Convert to Asia/Bangkok (Hanoi GMT+7)
+    const hanoiString = now.toLocaleString('en-US', { timeZone: 'Asia/Bangkok' });
+    return new Date(hanoiString);
+  }
+
+  function updateStatus(){
+    const now = getHanoiDate();
+    const hour = now.getHours();
+
+    const isOpen = hour >= OPEN_HOUR && hour < CLOSE_HOUR;
+
+    if (isOpen){
+      pill.classList.remove('closed');
+      labelMain.textContent = 'Open now';
+      labelHours.textContent = '09:00 – 21:00';
+    } else {
+      pill.classList.add('closed');
+      labelMain.textContent = 'Closed now';
+
+      if (hour < OPEN_HOUR){
+        // Chưa mở cửa
+        labelHours.textContent = 'Opens today at 09:00';
+      } else {
+        // Đã đóng cửa, mở lại ngày hôm sau
+        labelHours.textContent = 'Opens tomorrow at 09:00';
+      }
+    }
+  }
+
+  function togglePopover(){
+    const isShown = popover.classList.contains('show');
+    if (isShown){
+      popover.classList.remove('show');
+      popover.setAttribute('aria-hidden', 'true');
+    } else {
+      popover.classList.add('show');
+      popover.setAttribute('aria-hidden', 'false');
+    }
+  }
+
+  // Click + Enter/Space để bật mini app
+  pill.addEventListener('click', togglePopover);
+  pill.addEventListener('keydown', (e)=>{
+    if (e.key === 'Enter' || e.key === ' '){
+      e.preventDefault();
+      togglePopover();
+    }
+  });
+
+  // Click ra ngoài để đóng
+  document.addEventListener('click', (e)=>{
+    if (!popover.classList.contains('show')) return;
+    if (pill.contains(e.target) || popover.contains(e.target)) return;
+    popover.classList.remove('show');
+    popover.setAttribute('aria-hidden', 'true');
+  });
+
+  // Escape để đóng
+  document.addEventListener('keydown', (e)=>{
+    if (e.key === 'Escape' && popover.classList.contains('show')){
+      popover.classList.remove('show');
+      popover.setAttribute('aria-hidden', 'true');
+    }
+  });
+
+  // Init + auto cập nhật mỗi 5 phút
+  updateStatus();
+  setInterval(updateStatus, 5 * 60 * 1000);
+})();
 </script>
+
 </body>
 </html>
