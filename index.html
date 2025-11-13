@@ -790,6 +790,17 @@
     .contact-floating.active .contact-options{opacity:1;pointer-events:auto;transform:translateY(0)}
     @keyframes pulse{0%{box-shadow:0 0 10px rgba(255,60,60,0.35),0 0 20px rgba(255,60,60,0.15)}50%{box-shadow:0 0 25px rgba(255,60,60,0.6),0 0 40px rgba(255,60,60,0.25)}100%{box-shadow:0 0 10px rgba(255,60,60,0.35),0 0 20px rgba(255,60,60,0.15)}}
 
+    /* ===== START: CSS MỚI ĐỂ ẨN NÚT CONTACT KHI OFFCANVAS MỞ ===== */
+    /* Ẩn nút contact khi offcanvas mở */
+    body.offcanvas-open-custom .contact-floating{
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(20px);
+      /* Thêm transition để hiệu ứng mượt mà */
+      transition: opacity .3s ease, transform .3s ease; 
+    }
+    /* ===== END: CSS MỚI ===== */
+
     .muted{color:var(--muted)}
     .text-center { text-align:center }
     .mb-2 { margin-bottom: .5rem; }
@@ -1279,7 +1290,7 @@
 <div class="contact-floating" aria-hidden="false" aria-label="Quick contact">
   <div class="contact-options" id="contactOptions" aria-hidden="true">
     <a href="tel:+84942467674" title="Call" aria-label="Call"><i class="bi bi-telephone-fill"></i></a>
-    <a href="https://zalo.me/0942467674" target="_blank" title="Zalo" aria-label="Zalo" rel="noopener noreferrer"><i class="bi bi-chat-dots-fill"></i></a>
+    <a href="httpsZalo" aria-label="Zalo" rel="noopener noreferrer"><i class="bi bi-chat-dots-fill"></i></a>
     <a href="https://wa.me/84942467674" target="_blank" title="WhatsApp" aria-label="WhatsApp" rel="noopener noreferrer"><i class="bi bi-whatsapp"></i></a>
   </div>
   <button class="main-btn" id="mainContactBtn" aria-expanded="false" aria-controls="contactOptions" title="Contact menu">
@@ -1406,7 +1417,7 @@ try {
     contactFloating.classList.toggle('active');
     const expanded = contactFloating.classList.contains('active');
     mainContactBtn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
-    if (opts) opts.setAttribute('aria-hidden', expanded ? 'false' : 'true');
+    if (opts) opts.setAttribute('aria-hidden', expanded ? 'true' : 'false');
   });
 
   document.addEventListener('click', (e)=>{
@@ -1583,6 +1594,21 @@ try {
     });
   });
 })();
+
+/* ===== START: JS MỚI - Ẩn / hiện nút contact khi mở / đóng offcanvas ===== */
+(function(){
+  const offcanvasEl = document.getElementById('offcanvasMenu');
+  if (!offcanvasEl || !bootstrap?.Offcanvas) return;
+
+  offcanvasEl.addEventListener('show.bs.offcanvas', function(){
+    document.body.classList.add('offcanvas-open-custom');
+  });
+
+  offcanvasEl.addEventListener('hidden.bs.offcanvas', function(){
+    document.body.classList.remove('offcanvas-open-custom');
+  });
+})();
+/* ===== END: JS MỚI ===== */
 </script>
 
 </body>
