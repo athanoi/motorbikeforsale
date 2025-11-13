@@ -198,6 +198,7 @@
       border:1px solid rgba(255,255,255,0.16);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
+      cursor:pointer; /* NEW */
     }
     .status-dot{
       width:8px;
@@ -224,6 +225,78 @@
       0%{ transform:scale(1); box-shadow:0 0 0 0px rgba(34,197,94,0.6); }
       70%{ transform:scale(1); box-shadow:0 0 0 6px rgba(34,197,94,0); }
       100%{ transform:scale(1); box-shadow:0 0 0 0px rgba(34,197,94,0); }
+    }
+
+    /* Closed mode styles */
+    .status-pill.closed{
+      background:rgba(0,0,0,0.7);
+      border-color:rgba(248,113,113,0.7);
+    }
+    .status-pill.closed .status-dot{
+      background:#ef4444;
+      box-shadow:0 0 0 4px rgba(248,113,113,0.55);
+      animation:none;
+    }
+
+    /* Mini app opening-hours popover */
+    .status-popover{
+      position:fixed;
+      top:64px;
+      right:16px;
+      background:rgba(10,10,15,0.97);
+      color:#f5f5f5;
+      padding:10px 12px;
+      border-radius:14px;
+      box-shadow:0 18px 40px rgba(0,0,0,0.6);
+      font-size:12px;
+      width:230px;
+      max-width:calc(100% - 32px);
+      z-index:1300;
+      opacity:0;
+      transform:translateY(-10px);
+      pointer-events:none;
+      transition:opacity .2s ease, transform .2s ease;
+      border:1px solid rgba(255,255,255,0.12);
+    }
+    .status-popover.show{
+      opacity:1;
+      transform:translateY(0);
+      pointer-events:auto;
+    }
+    .status-popover-header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:6px;
+    }
+    .status-popover-title{
+      font-weight:700;
+      font-size:12px;
+    }
+    .status-popover-tz{
+      font-size:10px;
+      opacity:0.7;
+    }
+    .status-popover-row{
+      display:flex;
+      justify-content:space-between;
+      font-size:12px;
+      margin-bottom:4px;
+    }
+    .status-popover-note{
+      margin-top:6px;
+      font-size:11px;
+      opacity:0.8;
+    }
+
+    /* Mobile tweak: popover full width top */
+    @media (max-width: 575.98px) {
+      .status-popover{
+        left:8px;
+        right:8px;
+        width:auto;
+        top:70px;
+      }
     }
 
     /* Mobile Menu Btn */
@@ -700,7 +773,7 @@
     @media(max-width:768px){.footer-grid{grid-template-columns:1fr}}
     footer h5{color:#FFD700;text-shadow:0 0 6px rgba(255,215,0,0.25);letter-spacing:1px}
     .footer-link{color:#f5f5f5;display:inline-block;margin:6px 0;font-weight:600;transition:color .25s,transform .25s}
-    .footer-link:hover{color:#FFD700;transform:translateX(6px)}
+    .footer-link:hover{color:#FFD7700;transform:translateX(6px)}
     .social-icon{font-size:1.7rem;color:#f5f5f5;transition:transform .3s,color .3s,text-shadow .3s}
     .social-icon:hover{color:#FFD700;transform:scale(1.25) rotate(-8deg);text-shadow:0 0 12px #FFD700}
     .back-to-top{font-weight:700;transition:all .3s}
@@ -818,12 +891,12 @@
 
     <!-- RIGHT: STATUS MINI APP + THEME + MENU -->
     <div class="brand-right">
-      <!-- MINI APP OPEN STATUS -->
-      <div class="status-pill" aria-label="Opening hours">
+      <!-- MINI APP OPEN STATUS (UPDATED HTML) -->
+      <div class="status-pill" id="statusPill" aria-label="Opening hours (tap to view schedule)" role="button" tabindex="0">
         <span class="status-dot" aria-hidden="true"></span>
         <div>
-          <div class="status-label-main">Open today</div>
-          <div class="status-label-hours">09:00 – 21:00</div>
+          <div class="status-label-main" id="statusLabelMain">Open today</div>
+          <div class="status-label-hours" id="statusLabelHours">09:00 – 21:00</div>
         </div>
       </div>
 
@@ -853,11 +926,26 @@
           </li>
 
           <li><a href="faq.html" class="nav-link-item"><span class="icon">❓</span> FAQ</a></li>
-          <li><a href="privacy-policy.html" class="nav-link-item"><span class="icon">🔒</span> Privacy Policy</a></li>
+          <li><a href="privacy-policy.html" class="nav-link-item"><span class="icon">🔒</span> Privacy</a></li>
           <li><a href="terms.html" class="nav-link-item"><span class="icon">📜</span> Terms &amp; Conditions</a></li>
           <li><a href="contact.html" class="nav-link-item"><span class="icon">📞</span> Contact</a></li>
         </ul>
       </nav>
+    </div>
+  </div>
+
+  <!-- Opening hours popover (NEW HTML) -->
+  <div class="status-popover" id="statusPopover" aria-hidden="true">
+    <div class="status-popover-header">
+      <span class="status-popover-title">Opening hours</span>
+      <span class="status-popover-tz">Asia/Bangkok (GMT+7)</span>
+    </div>
+    <div class="status-popover-row">
+      <span>Mon – Sun</span>
+      <span>09:00 – 21:00</span>
+    </div>
+    <div class="status-popover-note">
+      * Holiday hours may vary — message us via Zalo / WhatsApp.
     </div>
   </div>
 
@@ -1351,6 +1439,90 @@ try {
       switchInput.checked = (mode === 'dark');
     }
   }
+})();
+
+/* ===== Opening hours mini-app (auto open/closed + popover) ===== */
+(function(){
+  const pill = document.getElementById('statusPill');
+  const labelMain = document.getElementById('statusLabelMain');
+  const labelHours = document.getElementById('statusLabelHours');
+  const popover = document.getElementById('statusPopover');
+
+  if (!pill || !labelMain || !labelHours || !popover) return;
+
+  const OPEN_HOUR = 9;   // 09:00
+  const CLOSE_HOUR = 21; // 21:00
+
+  function getHanoiDate(){
+    const now = new Date();
+    // Convert to Asia/Bangkok (Hanoi GMT+7)
+    const hanoiString = now.toLocaleString('en-US', { timeZone: 'Asia/Bangkok' });
+    return new Date(hanoiString);
+  }
+
+  function updateStatus(){
+    const now = getHanoiDate();
+    const hour = now.getHours();
+
+    const isOpen = hour >= OPEN_HOUR && hour < CLOSE_HOUR;
+
+    if (isOpen){
+      pill.classList.remove('closed');
+      labelMain.textContent = 'Open now';
+      labelHours.textContent = '09:00 – 21:00';
+    } else {
+      pill.classList.add('closed');
+      labelMain.textContent = 'Closed now';
+
+      if (hour < OPEN_HOUR){
+        // Chưa mở cửa
+        labelHours.textContent = 'Opens today at 09:00';
+      } else {
+        // Đã đóng cửa, mở lại ngày hôm sau
+        labelHours.textContent = 'Opens tomorrow at 09:00';
+      }
+    }
+  }
+
+  function togglePopover(){
+    const isShown = popover.classList.contains('show');
+    if (isShown){
+      popover.classList.remove('show');
+      popover.setAttribute('aria-hidden', 'true');
+    } else {
+      popover.classList.add('show');
+      popover.setAttribute('aria-hidden', 'false');
+    }
+  }
+
+  // Click + Enter/Space để bật mini app
+  pill.addEventListener('click', togglePopover);
+  pill.addEventListener('keydown', (e)=>{
+    if (e.key === 'Enter' || e.key === ' '){
+      e.preventDefault();
+      togglePopover();
+    }
+  });
+
+  // Click ra ngoài để đóng
+  document.addEventListener('click', (e)=>{
+    if (!popover.classList.contains('show')) return;
+    if (pill.contains(e.target) || popover.contains(e.target)) return;
+    popover.classList.remove('show');
+    popover.setAttribute('aria-hidden', 'true');
+  });
+
+  // Escape để đóng
+  document.addEventListener('keydown', (e)=>{
+    if (e.key === 'Escape' && popover.classList.contains('show')){
+      popover.classList.remove('show');
+      popover.setAttribute('aria-hidden', 'true');
+    }
+  });
+
+  // Init + auto cập nhật mỗi 5 phút
+  updateStatus();
+  setInterval(updateStatus, 5 * 60 * 1000);
 })();
 </script>
 
