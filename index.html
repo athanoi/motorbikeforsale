@@ -780,7 +780,8 @@
     .back-to-top:hover{color:#FFD700;text-shadow:0 0 10px #FFD700}
 
     /* ===== Floating Contact Menu Pro ===== */
-    .contact-floating{position:fixed;bottom:22px;right:18px;z-index:1400}
+    /* Đã sửa z-index từ 1400 xuống 1000 để nằm dưới offcanvas (có z-index 1050) */
+    .contact-floating{position:fixed;bottom:22px;right:18px;z-index:1000}
     .main-btn{width:60px;height:60px;background:linear-gradient(135deg,#D6001C,#ff3c3c);border-radius:50%;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.6rem;cursor:pointer;box-shadow:0 0 15px rgba(255,60,60,0.6);animation:pulse 2s infinite;transition:transform .2s}
     .main-btn:hover{transform:scale(1.06)}
     .contact-options{display:flex;flex-direction:column;align-items:center;gap:10px;margin-bottom:10px;opacity:0;pointer-events:none;transform:translateY(20px);transition:all .4s ease}
